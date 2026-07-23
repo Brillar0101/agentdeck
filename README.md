@@ -77,4 +77,12 @@ Board 3D exports and the routing `.dsn`/`.ses` files are derived and also exclud
 
 ## Licence
 
-Open hardware. No licence file yet — add one before redistributing.
+Multi-licensed, as is normal for open hardware — see [LICENSING.md](LICENSING.md).
+
+| What | Licence |
+|---|---|
+| Software (`firmware/`, `host/`, `tools/`) | [MIT](LICENSES/MIT.txt) |
+| Hardware (board, enclosure, fab files) | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
+| Documentation | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
+
+Vendor footprints, datasheets and reference images keep their original terms.
