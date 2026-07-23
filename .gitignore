@@ -38,4 +38,8 @@ tools/freerouting.jar
 3d/.bak-*.blend
 
 # --- third-party reference clone (github.com/jal-co/pi-codex-micro) ---
-reference/pi-codex-micro
+docs/reference/pi-codex-micro
+
+# --- third-party product photographs (not ours to redistribute) ---
+docs/reference/codex-micro-*.webp
+docs/reference/codex-micro-*.png

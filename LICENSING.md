@@ -7,7 +7,7 @@ cover source code, a PCB design, and written documentation at once.
 | What | Covers | Licence |
 |---|---|---|
 | **Software** | `firmware/`, `host/`, `tools/`, `*.py` | [MIT](LICENSES/MIT.txt) |
-| **Hardware** | `*.kicad_pcb`, `*.kicad_sch`, `*.kicad_sym`, `*.pretty/`, `fab/`, `3d/*.stl`, `3d/*.blend`, enclosure models | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
+| **Hardware** | `*.kicad_pcb`, `*.kicad_sch`, `*.kicad_sym`, `*.pretty/`, `fab/`, `enclosure/*.stl`, `enclosure/*.blend`, enclosure models | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
 | **Documentation** | `README.md`, `DESIGN.md`, `PLAN.md`, `*/README.md`, images | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
 
 SPDX identifiers: `MIT`, `CERN-OHL-S-2.0`, `CC-BY-4.0`.
@@ -42,18 +42,38 @@ remains under its original terms:
 
 - `JLC.3dshapes/`, `JLC.pretty/` — component footprints and 3D models from LCSC /
   JLCPCB and their manufacturers
-- `datasheets/`, `reference/*.pdf` — vendor documentation (Raspberry Pi, Alps,
-  and others), redistributed for reference only
-- `reference/*.webp`, `reference/*.png` — third-party product images, used for
-  design reference and not licensed for redistribution
-- `3d/keycaps/`, `3d/encoder/` — keycap and knob models sourced from their
+- `docs/datasheets/`, `docs/reference/*.pdf` — vendor documentation (Raspberry Pi,
+  Alps and others), redistributed for reference only
+- `docs/reference/*.webp`, `docs/reference/*.png` — **product photographs of
+  OpenAI / Work Louder's Codex Micro.** These are not ours, are used only as
+  design reference, and are **not** licensed for redistribution. Remove them
+  before making this repository public.
+- `docs/reference/pi-codex-micro/` — a clone of a third-party project
+  (github.com/jal-co/pi-codex-micro) under its own licence; excluded from git
+- `enclosure/keycaps/`, `enclosure/encoder/` — keycap and knob models sourced from their
   respective authors; check the original terms before redistributing
 - `tools/freerouting.jar` is **not** included; download it separately
   ([freerouting](https://github.com/freerouting/freerouting), GPL-3.0)
 
+## Inspiration and independence
+
+ClaudeMicro is an **independent, Codex Micro-inspired project**. The idea of a
+macropad for supervising coding agents — agent keys that show live state, an
+accept/reject pair, a reasoning-effort dial — follows OpenAI and Work Louder's
+**Codex Micro**, and the layout here deliberately echoes it.
+
+This project is **not affiliated with, endorsed by, or produced in cooperation
+with OpenAI, Work Louder, or Anthropic.** The schematic, PCB layout, firmware and
+enclosure in this repository are original work; no files from the Codex Micro were
+used. "Codex", "Codex Micro", "OpenAI", "Work Louder", "Claude" and "Anthropic"
+are trademarks of their respective owners, referenced here only descriptively.
+The "ClaudeMicro" name is a working project name, not a product name, and carries
+no claim to Anthropic's marks.
+
 ## Attribution
 
-Copyright (c) 2026 Brillar0101.
+Copyright (c) 2026 Brillar0101 — for the original work only. Third-party material
+listed above stays with its owners.
 
 There is no warranty. Nothing in this repository has been manufactured or
 hardware-verified — see the status table in the README.

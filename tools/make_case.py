@@ -31,7 +31,7 @@ from mathutils import Vector
 
 MM = 0.001
 ROOT = "/Users/barakaeli/kicad-projects/claude-micro/"
-SCENE = ROOT + "3d/ClaudeMicro-v2-assembled.blend"
+SCENE = ROOT + "enclosure/ClaudeMicro-v2-assembled.blend"
 pos = json.load(open("/tmp/positions.json"))
 USB_ON_TOP = pos["usb"]["top"]
 HOLES = [(6, 6), (84, 6), (6, 84), (84, 84)]
@@ -168,9 +168,9 @@ def exp(o, p):
     except AttributeError: bpy.ops.export_mesh.stl(filepath=p, use_selection=True, global_scale=1000.0)
 
 
-exp(bot, ROOT + "3d/case-bottom.stl")
-exp(top, ROOT + "3d/case-top-lid.stl")
-exp(plugs[0], ROOT + "3d/case-cover-plug.stl")
+exp(bot, ROOT + "enclosure/case-bottom.stl")
+exp(top, ROOT + "enclosure/case-top-lid.stl")
+exp(plugs[0], ROOT + "enclosure/case-cover-plug.stl")
 top.hide_set(True); top.hide_viewport = True; top.hide_render = True
 bpy.ops.wm.save_mainfile()
 print("CASE DONE")

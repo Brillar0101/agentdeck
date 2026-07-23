@@ -4,14 +4,14 @@ knob + joystick cap + two-part case, positioned from the live PCB.
 Run headless:  Blender -b --python tools/build_assembly.py
 Inputs:  /tmp/ClaudeMicro_sw.glb (board glb exported WITH switch models)
          /tmp/positions.json     (key/control/USB positions from the board)
-Output:  3d/ClaudeMicro-v3-assembled.blend + case STLs
+Output:  enclosure/ClaudeMicro-v3-assembled.blend + case STLs
 """
 import bpy, math, json
 from mathutils import Vector, Matrix
 
 MM = 0.001
 ROOT = "/Users/barakaeli/kicad-projects/claude-micro/"
-KC, ENC, JOY = ROOT + "3d/keycaps/", ROOT + "3d/encoder/", ROOT + "3d/joystick/"
+KC, ENC, JOY = ROOT + "enclosure/keycaps/", ROOT + "enclosure/encoder/", ROOT + "enclosure/joystick/"
 pos = json.load(open("/tmp/positions.json"))
 USB_ON_TOP = pos["usb"]["top"]
 
@@ -185,8 +185,8 @@ def exp(o, p):
     except AttributeError: bpy.ops.export_mesh.stl(filepath=p, use_selection=True, global_scale=1000.0)
 
 
-exp(bot, ROOT + "3d/ClaudeMicro-v3-case-bottom.stl")
-exp(top, ROOT + "3d/ClaudeMicro-v3-case-top.stl")
+exp(bot, ROOT + "enclosure/ClaudeMicro-v3-case-bottom.stl")
+exp(top, ROOT + "enclosure/ClaudeMicro-v3-case-top.stl")
 top.hide_set(True); top.hide_viewport = True; top.hide_render = True
-bpy.ops.wm.save_as_mainfile(filepath=ROOT + "3d/ClaudeMicro-v3-assembled.blend")
+bpy.ops.wm.save_as_mainfile(filepath=ROOT + "enclosure/ClaudeMicro-v3-assembled.blend")
 print("V3 ASSEMBLED DONE")

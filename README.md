@@ -9,6 +9,15 @@ Six "agent" keys light up to show each agent's state (idle / thinking / working 
 blocked / done), command keys accept or reject work, and the dial and joystick
 handle scrubbing and navigation.
 
+> **This is a Codex Micro-inspired project.** The concept follows OpenAI and
+> Work Louder's **Codex Micro**, and the control layout deliberately echoes it.
+> It is an independent build — **not affiliated with, endorsed by, or produced
+> with OpenAI, Work Louder, or Anthropic.** The board, firmware and enclosure
+> here are original work; no Codex Micro files were used. Some material in this
+> repository (vendor footprints, datasheets, reference photographs, third-party
+> cap and knob models) is **not ours to license** — see
+> [LICENSING.md](LICENSING.md).
+
 ## Status
 
 | Part | State |
@@ -34,13 +43,14 @@ Nothing has been manufactured yet, so none of it is hardware-verified.
 
 ```
 ClaudeMicro.kicad_pcb / .kicad_sch     board and schematic
+JLC.pretty/ JLC.3dshapes/ *.kicad_sym  footprint, 3D and symbol libraries
+fab/                                   Gerbers, BOM and CPL for JLCPCB
 firmware/                              CircuitPython firmware (boot.py, code.py)
 host/claude_bridge.py                  host-side agent-status bridge
-tools/                                 board + case generation scripts
-fab/                                   Gerbers, BOM, CPL for JLCPCB
-3d/                                    Blender assembly, case STLs, cap/knob models
-datasheets/, reference/                vendor documentation
-DESIGN.md, PLAN.md                     design notes and roadmap
+enclosure/                             Blender assembly, case STLs, cap/knob models
+tools/                                 board and case generation scripts
+docs/                                  design notes, datasheets, reference material
+LICENSES/                              full licence texts
 ```
 
 ## Enclosure
@@ -56,7 +66,7 @@ and a plate-style lid:
 | Key openings | 17.4 mm (switch body 15.0 + 1.2 mm per side) |
 | Travel clearance | 1.84 mm before a cap meets the plate |
 
-Print `3d/case-bottom.stl`, `3d/case-top-lid.stl`, and 4× `3d/case-cover-plug.stl`.
+Print `enclosure/case-bottom.stl`, `enclosure/case-top-lid.stl`, and 4x `enclosure/case-cover-plug.stl`.
 
 ## Firmware
 
