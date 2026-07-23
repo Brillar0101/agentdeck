@@ -15,7 +15,7 @@ handle scrubbing and navigation.
 |---|---|
 | Schematic + PCB | Complete — 4 layers, fully routed, **0 DRC errors** |
 | Firmware | Written (CircuitPython), untested on hardware |
-| Host bridge | Written — maps Claude Code hooks to per-key RGB |
+| Host bridge | Written — maps Claude Code hooks to agent-key colours |
 | Enclosure | Modelled, STLs exported, not yet printed |
 | Fab package | Gerbers / BOM / CPL generated (regenerate after board edits) |
 
@@ -23,8 +23,9 @@ Nothing has been manufactured yet, so none of it is hardware-verified.
 
 ## Layout
 
-- **13 keys** on an 18.7 × 19.3 mm grid — 6 agent keys, 4 command keys,
-  a 1.75u action key, and an FN layer key
+- **13 keys** on an 18.7 × 19.3 mm grid — 6 agent keys (colour = live agent
+  state), accept / reject / new-chat / model keys, a wide push-to-talk key,
+  a macro key, and an FN layer key
 - **EC11 rotary encoder** (top-left) and **Alps SKQUCAA010 5-way joystick** (top-right)
 - **SK6812MINI-E** reverse-mount RGB under each key
 - **USB-C** on the rear face; W25Q128 flash; BOOT button; SWD pads
@@ -61,8 +62,12 @@ Print `3d/case-bottom.stl`, `3d/case-top-lid.stl`, and 4× `3d/case-cover-plug.s
 
 Copy `firmware/boot.py` and `code.py` onto a CIRCUITPY drive running
 CircuitPython 9.x, with `adafruit_hid` and `neopixel` in `lib/`.
-See `firmware/README.md` for the pin map and the three constants to verify on
-first hardware (joystick direction, LED chain order, touch polarity).
+
+Six agent keys show each agent's live state (idle / thinking / working /
+blocked / done); accept, reject, new-chat, model, push-to-talk and macro keys
+send Ctrl+Alt chords; the dial sets reasoning effort and the joystick navigates.
+`firmware/README.md` has the full control table, colour legend, pin map, and the
+three constants to confirm on first hardware.
 
 ## Regenerating
 

@@ -1,31 +1,34 @@
 #!/usr/bin/env python3
 """ClaudeMicro host bridge.
 
-Maps Claude Code (or any agent CLI) activity onto the macropad's per-key RGB
-via the board's second USB CDC channel.
+Drives the macropad's six agent keys from agent activity, and can read the
+pad's key/dial/joystick events back.
 
-Usage:
-    claude_bridge.py demo                    # cycle all states (smoke test)
-    claude_bridge.py set <key 0-11> <state>  # idle|think|work|block|done|err|off
-    claude_bridge.py all <state>
-    claude_bridge.py hook <state> [key]      # for Claude Code hooks; reads and
-                                             # discards hook JSON on stdin,
-                                             # default key = 0
+    claude_bridge.py demo                  cycle every state on every agent key
+    claude_bridge.py agent <1-6> <state>   set one agent slot
+    claude_bridge.py all <state>           set all six
+    claude_bridge.py watch                 print events coming from the pad
+    claude_bridge.py hook <state> [slot]   for Claude Code hooks (reads stdin)
 
-Claude Code hooks example (~/.claude/settings.json):
+States: idle | think | work | block | done | err | off
+
+Claude Code hooks (~/.claude/settings.json) - one agent slot per project, or
+pass a slot number per hook:
+
     "hooks": {
-      "PreToolUse":  [{"hooks": [{"type": "command",
+      "UserPromptSubmit": [{"hooks": [{"type": "command",
+        "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook think"}]}],
+      "PreToolUse":       [{"hooks": [{"type": "command",
         "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook work"}]}],
-      "Notification":[{"hooks": [{"type": "command",
+      "Notification":     [{"hooks": [{"type": "command",
         "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook block"}]}],
-      "Stop":        [{"hooks": [{"type": "command",
+      "Stop":             [{"hooks": [{"type": "command",
         "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook done"}]}]
     }
 
 Requires: pip install pyserial
 """
 import sys
-import time
 
 try:
     import serial
@@ -34,23 +37,17 @@ except ImportError:
     sys.exit("pip install pyserial")
 
 STATES = {"idle", "think", "work", "block", "done", "err", "off"}
-
-
-def find_port():
-    """Second (data) CDC interface of the ClaudeMicro board."""
-    candidates = []
-    for p in list_ports.comports():
-        text = " ".join(filter(None, (p.manufacturer, p.product, p.description)))
-        if "ClaudeMicro" in text or "CircuitPython" in text:
-            candidates.append(p.device)
-    if not candidates:
-        sys.exit("ClaudeMicro not found. Is it plugged in and running the firmware?")
-    # CircuitPython exposes console first, data second; pick the highest-numbered
-    return sorted(candidates)[-1]
+SLOTS = range(1, 7)
 
 
 def open_link():
-    return serial.Serial(find_port(), 115200, timeout=1)
+    """Second (data) CDC interface of the pad; console is the first."""
+    ports = [p.device for p in list_ports.comports()
+             if "ClaudeMicro" in " ".join(filter(None, (p.manufacturer, p.product, p.description)))
+             or "CircuitPython" in " ".join(filter(None, (p.manufacturer, p.product, p.description)))]
+    if not ports:
+        sys.exit("ClaudeMicro not found - plugged in and running the firmware?")
+    return serial.Serial(sorted(ports)[-1], 115200, timeout=1)
 
 
 def send(link, msg):
@@ -64,26 +61,38 @@ def main():
     cmd = args[0]
 
     if cmd == "hook":
-        sys.stdin.read()                     # consume hook JSON payload
+        sys.stdin.read()                       # consume the hook payload
         state = args[1] if len(args) > 1 else "work"
-        key = args[2] if len(args) > 2 else "0"
-        link = open_link()
-        send(link, f"A {key} {state}")
+        slot = args[2] if len(args) > 2 else "1"
+        send(open_link(), f"G {slot} {state}")
         return
 
     link = open_link()
-    if cmd == "set" and len(args) == 3 and args[2] in STATES:
-        send(link, f"A {args[1]} {args[2]}")
+
+    if cmd == "agent" and len(args) == 3 and args[2] in STATES and int(args[1]) in SLOTS:
+        send(link, f"G {args[1]} {args[2]}")
+
     elif cmd == "all" and len(args) == 2 and args[1] in STATES:
-        for i in range(12):
-            send(link, f"A {i} {args[1]}")
+        for s in SLOTS:
+            send(link, f"G {s} {args[1]}")
+
     elif cmd == "demo":
+        import time
         for state in ("idle", "think", "work", "block", "done", "err"):
             print(state)
-            for i in range(12):
-                send(link, f"A {i} {state}")
-            time.sleep(1.2)
+            for s in SLOTS:
+                send(link, f"G {s} {state}")
+            time.sleep(1.5)
         send(link, "X")
+
+    elif cmd == "watch":
+        print("listening (Ctrl-C to stop)")
+        send(link, "P")
+        while True:
+            line = link.readline().decode(errors="replace").strip()
+            if line:
+                print(line)
+
     else:
         sys.exit(__doc__)
 
