@@ -1,0 +1,41 @@
+# --- OS / editor ---
+.DS_Store
+.history/
+_restore_backup_*/
+
+# --- KiCad per-user state & locks ---
+*.kicad_prl
+*~*.lck
+~*.lck
+*-backups/
+.backups/
+
+# --- scratch KiCad copies used for 3D exports ---
+ClaudeMicro_v2sw.*
+ClaudeMicro_v3sw.*
+
+# --- autorouter intermediates (regenerate from the board) ---
+*.dsn
+*.ses
+fr*.log
+daemon/
+
+# --- third-party tool (download separately) ---
+# https://github.com/freerouting/freerouting/releases
+tools/freerouting.jar
+
+# --- derived 3D exports (regenerate: kicad-cli pcb export glb) ---
+*.glb
+*.blend1
+*.blend2
+
+# --- duplicate / superseded Blender scenes ---
+3d/ClaudeMicro-assembled.blend
+3d/ClaudeMicro-assembled-v1-saved.blend
+3d/ClaudeMicro-v2.blend
+3d/ClaudeMicro-v2-assembled-saved.blend
+3d/ClaudeMicro-v3-assembled.blend
+3d/.bak-*.blend
+
+# --- third-party reference clone (github.com/jal-co/pi-codex-micro) ---
+reference/pi-codex-micro

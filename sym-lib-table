@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "JLC")(type "KiCad")(uri "${KIPRJMOD}/JLC.kicad_sym")(options "")(descr "JLCPCB/LCSC symbols via easyeda2kicad"))
+  (lib (name "ClaudeMicro_Custom")(type "KiCad")(uri "${KIPRJMOD}/ClaudeMicro_Custom.kicad_sym")(options "")(descr "Custom symbols: joystick, touch pad, SWD"))
+)

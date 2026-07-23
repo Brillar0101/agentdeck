@@ -1,0 +1,9 @@
+(footprint "TouchPad_D12"
+  (version 20240108) (generator "gen_custom_fps")
+  (layer "F.Cu")
+  (descr "TTP223 sense electrode 12mm, covered by soldermask (mask=panel)")
+  (attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+  (fp_text reference "TP1" (at 0 -7.2) (layer "F.Fab") (hide yes) (effects (font (size 1 1) (thickness 0.15))))
+  (fp_text value "TOUCH" (at 0 7.2) (layer "F.Fab") (hide yes) (effects (font (size 1 1) (thickness 0.15))))
+  (pad "1" smd circle (at 0 0) (size 12 12) (layers "F.Cu"))
+)
