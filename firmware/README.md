@@ -50,8 +50,8 @@ editing `BINDINGS`, `DIAL_*` and `JOY_BIND` at the top of `code.py`.
 | `err` | magenta |
 
 Only the six agent keys show state; the other keys carry a steady hint colour
-and brighten while FN is held. The bottom-left FN key has no LED (12 LEDs on the
-board serve SW1–SW12).
+and brighten while FN is held. The FN key (SW14) has its own LED: dim white at
+rest, bright white while the layer is active.
 
 ## Host bridge
 
@@ -75,7 +75,7 @@ PreToolUse → working, Notification → blocked, Stop → done).
 | SW14 (FN, bottom-left) | GP20 |
 | Dial A / B / press | GP12 / GP13 / GP14 |
 | Joystick U/D/L/R / centre | GP15–GP18 / GP19 |
-| SK6812 chain (12 LEDs) | GP21 |
+| SK6812 chain (13 LEDs) | GP21 |
 | Aux LEDs link / activity / error | GP22 / GP23 / GP24 |
 
 ## Verify on first hardware

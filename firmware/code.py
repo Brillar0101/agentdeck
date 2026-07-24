@@ -17,13 +17,13 @@ SW1..SW12 keys            GP0..GP11
 SW14 key (bottom-left)    GP20
 EC11 dial A / B / press   GP12 / GP13 / GP14
 Joystick U/D/L/R, centre  GP15..GP18, GP19
-SK6812 chain (12 LEDs)    GP21   - one per SW1..SW12; SW14 has no LED
+SK6812 chain (13 LEDs)    GP21   - one per key (SW1..SW12, then SW14)
 Aux LEDs link/act/err     GP22 / GP23 / GP24
 
 Host protocol (second USB CDC channel, newline-delimited ASCII)
 --------------------------------------------------------------
 ->  "G <slot> <state>"  agent slot 1-6:  idle|think|work|block|done|err|off
-->  "A <led> <state>"   raw LED index 0-11, same states
+->  "A <led> <state>"   raw LED index 0-12, same states
 ->  "B <r> <g> <b>"     all LEDs one colour     ->  "X"  reset to idle
 ->  "P"                 ping (answers "P")
 <-  "K <name> <0|1>"    key event by role name  <-  "E <+1|-1>"  dial
@@ -47,7 +47,7 @@ ENC_A, ENC_B, ENC_SW = board.GP12, board.GP13, board.GP14
 JOY_PINS = [board.GP15, board.GP16, board.GP17, board.GP18, board.GP19]
 JOY_NAMES = "UDLRC"          # verify on hardware; reorder if directions feel wrong
 PIXEL_PIN = board.GP21
-NUM_LEDS = 12
+NUM_LEDS = 13               # one per key: LED index 0-11 = SW1-SW12, 12 = SW14 (FN)
 AUX_PINS = [board.GP22, board.GP23, board.GP24]      # link, activity, error
 
 # ---------------------------------------------------------------- roles
@@ -101,6 +101,7 @@ STATE_COLORS = {
 ROLE_COLORS = {              # non-agent keys get a steady hint colour
     "ACCEPT": (0, 14, 3), "REJECT": (16, 0, 0), "NEWCHAT": (0, 8, 14),
     "MODEL": (10, 0, 14), "PTT": (14, 6, 0), "MACRO": (6, 6, 6),
+    "FN": (2, 2, 2),         # dim white at rest; lights up while the layer is held
 }
 FLASH = (44, 44, 44)
 
@@ -160,6 +161,8 @@ def render(now):
                 c = tuple(int(v * (0.25 + 0.75 * pulse)) for v in c)
             elif agent_state[i] == "block":
                 c = c if pulse > 0.5 else (0, 0, 0)      # blink: needs attention
+        elif role == "FN":
+            c = (30, 30, 30) if fn_held else ROLE_COLORS["FN"]   # bright while layer active
         else:
             c = ROLE_COLORS.get(role, (0, 0, 0))
             if fn_held:
