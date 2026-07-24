@@ -3,6 +3,10 @@
 CircuitPython firmware turning the board into an agent-control surface, plus a
 host bridge that drives the agent keys from real agent activity.
 
+An Arduino/C++ port with identical behaviour lives in
+[`arduino/`](arduino/README.md) if you prefer a compiled build over
+CircuitPython.
+
 ## Install
 
 1. Hold **BOOT**, plug in USB-C → the `RPI-RP2` drive appears.
