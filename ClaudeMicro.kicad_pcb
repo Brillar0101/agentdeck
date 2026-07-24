@@ -20550,7 +20550,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "ClaudeMicro v0.1 · OSHW · github.com/Brillar0101"
+	(gr_text "ClaudeMicro v0.1 · OSHW · CERN-OHL-S v2 · github.com/Brillar0101"
 		(at 86.5 45 90)
 		(layer "B.SilkS")
 		(uuid "4ab369df-4da2-4c89-9f1b-18888e1f1475")
