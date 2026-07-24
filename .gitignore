@@ -45,5 +45,5 @@ docs/reference/codex-micro-*.webp
 docs/reference/codex-micro-*.png
 
 # --- stray board backups from ad-hoc edits ---
-.backups_led*.kicad_pcb
+.backups_*.kicad_pcb
 *.kicad_pcb-bak
