@@ -22,7 +22,8 @@ daemon/
 
 # --- third-party tool (download separately) ---
 # https://github.com/freerouting/freerouting/releases
-tools/freerouting.jar
+# generation/automation scripts and the autorouter jar are kept local only
+tools/
 
 # --- derived 3D exports (regenerate: kicad-cli pcb export glb) ---
 *.glb

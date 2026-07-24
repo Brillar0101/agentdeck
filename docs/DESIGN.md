@@ -121,9 +121,9 @@ freerouting -> stitch/verify -> DRC -> fab export. Renders in render/.
 - [x] Research + plan (PLAN.md)
 - [x] Parts verified at JLCPCB
 - [x] Libraries pulled (10/11)
-- [x] Joystick footprint generator (tools/gen_custom_fps.py: joystick THT, touch pad, SWD pads)
-- [x] gen_schematic.py — ERC 0 errors, 69 components, custom symbols (tools/gen_custom_syms.py)
-- [x] place_pcb.py + layout
+- [x] Custom footprints drawn (joystick THT, touch pad, SWD pads)
+- [x] Schematic complete — ERC 0 errors, 69 components, custom symbols
+- [x] PCB placement + layout
 - [x] Routing + DRC (see below)
 - [ ] Fab outputs
 - [ ] QMK firmware

@@ -6,7 +6,7 @@ cover source code, a PCB design, and written documentation at once.
 
 | What | Covers | Licence |
 |---|---|---|
-| **Software** | `firmware/`, `host/`, `tools/`, `*.py` | [MIT](LICENSES/MIT.txt) |
+| **Software** | `firmware/`, `host/`, `*.py` | [MIT](LICENSES/MIT.txt) |
 | **Hardware** | `*.kicad_pcb`, `*.kicad_sch`, `*.kicad_sym`, `*.pretty/`, `fab/`, `enclosure/*.stl`, `enclosure/*.blend`, enclosure models | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
 | **Documentation** | `README.md`, `DESIGN.md`, `PLAN.md`, `*/README.md`, images | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
 
@@ -52,8 +52,6 @@ remains under its original terms:
   (github.com/jal-co/pi-codex-micro) under its own licence; excluded from git
 - `enclosure/keycaps/`, `enclosure/encoder/` — keycap and knob models sourced from their
   respective authors; check the original terms before redistributing
-- `tools/freerouting.jar` is **not** included; download it separately
-  ([freerouting](https://github.com/freerouting/freerouting), GPL-3.0)
 
 ## Inspiration and independence
 

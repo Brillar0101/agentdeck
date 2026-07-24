@@ -48,7 +48,6 @@ fab/                                   Gerbers, BOM and CPL for JLCPCB
 firmware/                              CircuitPython firmware (boot.py, code.py)
 host/claude_bridge.py                  host-side agent-status bridge
 enclosure/                             Blender assembly, case STLs, cap/knob models
-tools/                                 board and case generation scripts
 docs/                                  design notes, datasheets, reference material
 LICENSES/                              full licence texts
 ```
@@ -82,9 +81,8 @@ three constants to confirm on first hardware.
 
 ## Regenerating
 
-The autorouter jar is not committed. Download
-[freerouting](https://github.com/freerouting/freerouting/releases) into `tools/`.
-Board 3D exports and the routing `.dsn`/`.ses` files are derived, and also excluded.
+Derived files are not committed: board 3D exports and the intermediate
+`.dsn`/`.ses` routing files are excluded and can be re-exported from the board.
 
 ## Licence
 
@@ -92,7 +90,7 @@ Multi-licensed, as is normal for open hardware. See [LICENSING.md](LICENSING.md)
 
 | What | Licence |
 |---|---|
-| Software (`firmware/`, `host/`, `tools/`) | [MIT](LICENSES/MIT.txt) |
+| Software (`firmware/`, `host/`) | [MIT](LICENSES/MIT.txt) |
 | Hardware (board, enclosure, fab files) | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
 | Documentation | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
 
