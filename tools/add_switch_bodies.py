@@ -7,7 +7,7 @@ body on the user-facing side. Carriers are excluded from BOM and position files.
 """
 import pcbnew
 
-B = "/Users/barakaeli/kicad-projects/claude-micro/ClaudeMicro.kicad_pcb"
+B = "/Users/barakaeli/kicad-projects/claude-micro/hardware/ClaudeMicro.kicad_pcb"
 mm = pcbnew.FromMM
 KEY_REFS = {f"SW{i}" for i in range(1, 13)} | {"SW14"}
 # switch centre (pole/keycap) = socket footprint origin + this board-space offset

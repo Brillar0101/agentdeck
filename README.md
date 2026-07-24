@@ -41,8 +41,9 @@ Nothing has been manufactured yet, so none of it is hardware-verified.
 ## Repository
 
 ```
-ClaudeMicro.kicad_pcb / .kicad_sch     board and schematic
-JLC.pretty/ JLC.3dshapes/ *.kicad_sym  footprint, 3D and symbol libraries
+hardware/                              KiCad project and libraries
+  ClaudeMicro.kicad_pcb / .kicad_sch   board and schematic
+  JLC.pretty/ JLC.3dshapes/ *.kicad_sym  footprint, 3D and symbol libraries
 fab/                                   Gerbers, BOM and CPL for JLCPCB
 firmware/                              CircuitPython firmware (boot.py, code.py)
 host/claude_bridge.py                  host-side agent-status bridge

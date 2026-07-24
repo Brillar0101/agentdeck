@@ -14,7 +14,7 @@ re-route; the finish pipeline rebuilds carriers and mounting holes.
 """
 import re
 
-F = "/Users/barakaeli/kicad-projects/claude-micro/ClaudeMicro.kicad_pcb"
+F = "/Users/barakaeli/kicad-projects/claude-micro/hardware/ClaudeMicro.kicad_pcb"
 SWITCH_LIB = "CONN-SMD_HOTPLUGPAKAGE__C9900010116"
 CENTER_DX, CENTER_DY = 2.5, -4.8   # switch centre = socket origin + this
 

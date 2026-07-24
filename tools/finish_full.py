@@ -10,7 +10,7 @@ import sys
 import pcbnew
 
 mm = pcbnew.FromMM
-B = "/Users/barakaeli/kicad-projects/claude-micro/ClaudeMicro.kicad_pcb"
+B = "/Users/barakaeli/kicad-projects/claude-micro/hardware/ClaudeMicro.kicad_pcb"
 SES = sys.argv[1]
 HOLES = [(6, 6), (84, 6), (6, 84), (84, 84)]
 
