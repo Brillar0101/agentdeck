@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "V0.1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -645,13 +645,18 @@
       {
         "filename": "ClaudeMicro.kicad_sch",
         "name": "ClaudeMicro",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "c1a0de00-0001-4000-8000-000000000001"
       }
     ],
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "c1a0de00-0001-4000-8000-000000000001",
+      "ClaudeMicro"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
