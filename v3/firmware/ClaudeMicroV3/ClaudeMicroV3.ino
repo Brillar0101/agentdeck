@@ -1,14 +1,17 @@
 /* ClaudeMicro V3 firmware - ESP32-S3, USB HID + BLE HID, OLED, touch PTT.
  *
- * Build: arduino-cli compile --fqbn esp32:esp32:esp32s3:USBMode=hwcdc,\
- *        CDCOnBoot=cdc,FlashSize=8M,PSRAM=opi  v3/firmware/ClaudeMicroV3
- * Libraries: Adafruit_NeoPixel, U8g2 (OLED), NimBLE-Arduino, ESP32-USB-HID (core).
+ * Build (native USB HID needs TinyUSB/OTG mode; N8R2 = 8MB flash, QSPI PSRAM):
+ *   arduino-cli compile --fqbn \
+ *     esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled \
+ *     v3/firmware/ClaudeMicroV3
+ * Libraries: Adafruit_NeoPixel, U8g2 (OLED), NimBLE-Arduino.
  *
  * Host protocol (CDC, newline-delimited ASCII) = V1's plus screen:
- *   inbound:  G <slot> <state> | A <led> <state> | B <r> <g> <b> | X | P
- *             S <line> <text>          (NEW: write OLED status line 0-3)
- *   outbound: K <role> <0|1> | E <+-1> | J ... (no joystick on V3) | T <0|1> (touch)
- * States: idle think work block done err (V1 color language).
+ *   inbound:  G <slot 1-6> <state> (agent-key LEDs) | A <led> <state> |
+ *             B <r> <g> <b> | X | P
+ *             S <line 0-3> <text>      (NEW: write OLED status line)
+ *   outbound: K <idx> <0|1> <role> | E <+-1> | T <0|1> (touch) | L <layer>
+ * States: idle think work block done err off (V1 color language).
  */
 #include <Adafruit_NeoPixel.h>
 #include <U8g2lib.h>
@@ -28,17 +31,34 @@ bool keyState[NUM_KEYS] = {};
 uint32_t keyDebounce[NUM_KEYS] = {};
 constexpr uint32_t DEBOUNCE_MS = 8;
 
-bool usbMounted() { return USB; }  // refined at bring-up: tud_mounted()
+extern "C" bool tud_mounted(void);   // TinyUSB: USB configured by a host
+bool usbMounted() { return tud_mounted(); }
+
+static void specialKey(const KeyBinding &b, bool pressed) {
+  if (!pressed) return;
+  if (strcmp(b.role, "LAYER+") == 0 && currentLayer < NUM_LAYERS - 1) currentLayer++;
+  else if (strcmp(b.role, "LAYER-") == 0 && currentLayer > 0) currentLayer--;
+  else return;
+  Serial.printf("L %d\n", currentLayer);
+  uiMarkDirty();
+}
 
 void sendKey(uint8_t keyIndex, bool pressed) {
   const KeyBinding &b = KEYMAP[currentLayer][keyIndex];
-  if (usbMounted()) {
-    if (pressed) usbKeyboard.pressRaw(b.keycode); else usbKeyboard.releaseRaw(b.keycode);
-    if (b.mods) { /* modifiers handled in keymap.cpp helper */ }
+  if (b.keycode == 0) {
+    specialKey(b, pressed);            // LAYER+/-, FN, PTTLOCK, host macros
+  } else if (usbMounted()) {
+    for (int i = 0; i < 8; i++)        // HID modifier usages 0xE0..0xE7
+      if (b.mods & (1 << i)) {
+        if (pressed) usbKeyboard.pressRaw(0xE0 + i);
+        else usbKeyboard.releaseRaw(0xE0 + i);
+      }
+    if (pressed) usbKeyboard.pressRaw(b.keycode);
+    else usbKeyboard.releaseRaw(b.keycode);
   } else {
     bleSendKey(b, pressed);
   }
-  Serial.printf("K %d %d\n", keyIndex, pressed ? 1 : 0);
+  Serial.printf("K %d %d %s\n", keyIndex, pressed ? 1 : 0, b.role);
 }
 
 void scanMatrix() {

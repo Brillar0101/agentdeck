@@ -15,7 +15,15 @@ struct StateColor { const char *name; uint8_t r, g, b; };
 static const StateColor STATES[] = {
   {"idle", 8, 8, 12}, {"think", 40, 20, 60}, {"work", 10, 40, 70},
   {"block", 80, 30, 0}, {"done", 10, 60, 15}, {"err", 80, 5, 5},
+  {"off", 0, 0, 0},
 };
+
+// LED chain is serpentine over the 4x6 key grid (place_pcb.py): row r, col c
+// -> LED r*6 + (r even ? c : 5-c). Agent keys are row 1 (indices 6..11).
+static int keyToLed(int key) {
+  int r = key / 6, c = key % 6;
+  return r * 6 + ((r % 2) == 0 ? c : 5 - c);
+}
 
 static char oledLines[4][22] = {"ClaudeMicro V3", "", "", ""};
 static bool oledDirty = true;
@@ -48,7 +56,8 @@ void pollTouch() {
 
 // ---- host protocol ----
 static void applyState(int led, const char *state) {
-  for (auto &s : STATES)
+  if (led < 0 || led >= NUM_LEDS) return;
+  for (const auto &s : STATES)
     if (strcmp(s.name, state) == 0) {
       leds.setPixelColor(led, leds.Color(s.r, s.g, s.b));
       leds.show();
@@ -63,8 +72,10 @@ void pollHostSerial() {
     char c = Serial.read();
     if (c != '\n' && n < sizeof(line) - 1) { line[n++] = c; continue; }
     line[n] = 0; n = 0;
-    char cmd; int a1, a2, a3; char text[80];
-    if (sscanf(line, "G %d %79s", &a1, text) == 2) applyState(a1, text);
+    int a1, a2, a3; char text[80];
+    // G <slot 1-6> = V1 agent slots -> the AGENT keys on row 1
+    if (sscanf(line, "G %d %79s", &a1, text) == 2 && a1 >= 1 && a1 <= 6)
+      applyState(keyToLed(6 + a1 - 1), text);
     else if (sscanf(line, "A %d %79s", &a1, text) == 2) applyState(a1, text);
     else if (sscanf(line, "B %d %d %d", &a1, &a2, &a3) == 3) {
       for (int i = 0; i < NUM_LEDS; i++) leds.setPixelColor(i, leds.Color(a1, a2, a3));
@@ -74,9 +85,10 @@ void pollHostSerial() {
     else if (sscanf(line, "S %d %79[^\n]", &a1, text) == 2 && a1 >= 0 && a1 < 4) {
       strncpy(oledLines[a1], text, 21); oledLines[a1][21] = 0; oledDirty = true;
     }
-    (void)cmd;
   }
 }
+
+void uiMarkDirty() { oledDirty = true; }
 
 // ---- OLED UI ----
 void uiSplash(U8G2 &oled) {
