@@ -9,6 +9,7 @@ pad's key/dial/joystick events back.
     claude_bridge.py all <state>           set all six
     claude_bridge.py watch                 print events coming from the pad
     claude_bridge.py hook <state> [slot]   for Claude Code hooks (reads stdin)
+    claude_bridge.py screen <line> <text>  write OLED status line 0-3 (V3 only)
 
 States: idle | think | work | block | done | err | off
 
@@ -84,6 +85,9 @@ def main():
                 send(link, f"G {s} {state}")
             time.sleep(1.5)
         send(link, "X")
+
+    elif cmd == "screen" and len(args) >= 3 and args[1] in ("0", "1", "2", "3"):
+        send(link, f"S {args[1]} {' '.join(args[2:])[:21]}")
 
     elif cmd == "watch":
         print("listening (Ctrl-C to stop)")

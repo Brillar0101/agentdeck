@@ -88,6 +88,8 @@ void setup() {
   leds.begin(); leds.setBrightness(60); leds.show();
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
   oled.begin();
+  USB.productName("ClaudeMicroV3");    // claude_bridge.py matches by name
+  USB.manufacturerName("princetekki");
   usbKeyboard.begin(); USB.begin();
   bleBegin("ClaudeMicroV3");
   Serial.begin(115200);

@@ -8,8 +8,8 @@ generator's PINOUT table (diff them after any hardware change).
 ## Build
 
 ```
-arduino-cli compile --fqbn esp32:esp32:esp32s3 v3/firmware/ClaudeMicroV3
-arduino-cli upload  --fqbn esp32:esp32:esp32s3 -p /dev/tty.usbmodem* ...
+arduino-cli compile --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" v3/firmware/ClaudeMicroV3
+arduino-cli upload  --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" -p /dev/tty.usbmodem* v3/firmware/ClaudeMicroV3
 ```
 Libraries: Adafruit NeoPixel, U8g2, NimBLE-Arduino.
 
