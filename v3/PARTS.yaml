@@ -48,6 +48,8 @@ parts:
     unit_price: 2.28
     qty_per_board: 1
     notes: User-selected. Fallback same-driver module must be chosen at order time.
+    models: 3D uses KiCad std Adafruit_SSD1306.step as a stand-in (no vendor
+      model published for HS96L03W2C03); footprint dims are the real module.
 
   - ref_prefix: SW
     name: Kailh Choc V1 switch (direct solder, NOT from JLC)
@@ -95,9 +97,9 @@ parts:
     lcsc: C7484
     package: SOT-23-5
     pitch_mm: 0.95
-    dims_2d: [3.0, 2.8]
+    dims_2d: [3.7, 3.2]        # land-pattern extent (body+leads 3.0x2.8)
     height_3d: 1.2
-    dims_source: v1-footprint
+    dims_source: v3-fp
     hand_solder: easy
     stock: CONFIRMED
     stock_date: 2026-07-28
@@ -110,9 +112,9 @@ parts:
     lcsc: C361165
     package: EC11-THT
     pitch_mm: null
-    dims_2d: [11.7, 14.7]      # body (V1 make_case constants)
+    dims_2d: [15.3, 16.4]      # plan view incl THT mounting tabs (body 11.7x14.7)
     height_3d: 19.0            # with knob (V1 blend: knob 19x20x19)
-    dims_source: v1-blend
+    dims_source: v3-fp-courtyard
     hand_solder: easy
     stock: CONFIRMED
     stock_date: 2026-07-28
@@ -138,9 +140,9 @@ parts:
     lcsc: C7519
     package: SOT-23-6
     pitch_mm: 0.95
-    dims_2d: [2.9, 2.8]
+    dims_2d: [3.6, 3.4]        # land-pattern extent (body+leads 2.9x2.8)
     height_3d: 1.2
-    dims_source: v1-footprint
+    dims_source: v3-fp
     hand_solder: easy
     stock: CONFIRMED
     stock_date: 2026-07-28
@@ -166,9 +168,9 @@ parts:
     lcsc: C15127
     package: SOT-23
     pitch_mm: 0.95
-    dims_2d: [2.9, 2.5]
+    dims_2d: [3.9, 3.5]        # land-pattern extent (body+leads 2.9x2.5)
     height_3d: 1.1
-    dims_source: datasheet
+    dims_source: v3-fp
     hand_solder: easy
     stock: VERIFY
     unit_price: 0.03
@@ -195,9 +197,9 @@ parts:
     lcsc: C82942
     package: SOT-23-5
     pitch_mm: 0.95
-    dims_2d: [2.9, 2.8]
+    dims_2d: [3.7, 3.2]        # land-pattern extent (body+leads 2.9x2.8)
     height_3d: 1.2
-    dims_source: datasheet
+    dims_source: v3-fp
     hand_solder: easy
     stock: VERIFY
     unit_price: 0.06
@@ -209,9 +211,9 @@ parts:
     lcsc: C265088
     package: JST-PH-2-SMD
     pitch_mm: 2.0
-    dims_2d: [7.9, 4.5]
+    dims_2d: [8.0, 7.7]        # incl side wire-entry boss (housing 7.9x4.5)
     height_3d: 6.0
-    dims_source: datasheet
+    dims_source: v3-fp-fab
     hand_solder: easy
     stock: VERIFY
     unit_price: 0.10
@@ -222,15 +224,17 @@ parts:
     lcsc: C431540
     package: MSK12C02-SMD
     pitch_mm: 1.3
-    dims_2d: [8.9, 3.6]
+    dims_2d: [8.9, 5.1]        # incl actuator throw (body 8.9x3.6)
     height_3d: 3.5
-    dims_source: datasheet
+    dims_source: v3-fp-fab
     hand_solder: easy
     stock: CONFIRMED
     stock_date: 2026-07-28
     unit_price: 0.06
     qty_per_board: 1
     notes: Edge-mounted, actuator overhangs board edge (NeuralCard pattern).
+    models: 3D uses KiCad std SW_SPDT_PCM12.step (same ultraminiature SPDT
+      slide family) as a stand-in; footprint dims are the real MSK12C02.
 
   - ref_prefix: SW26
     name: TS-1187A tact (BOOT + RESET)
