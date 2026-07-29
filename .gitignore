@@ -28,10 +28,6 @@ daemon/
 /tools/
 v3/tools/freerouting.jar
 v3/tools/__pycache__/
-v4/tools/freerouting.jar
-v4/tools/__pycache__/
-v3/hardware/.history/
-v4/hardware/.history/
 
 # --- derived 3D exports (regenerate: kicad-cli pcb export glb) ---
 *.glb

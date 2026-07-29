@@ -24,7 +24,6 @@ handle scrubbing and navigation.
 | V1 (rev 0.1) | 90x90 4-layer RP2040, 13 keys | JLCPCB PCBA | `hardware/` |
 | V2 | V1 + PowerDeck two-deck concept | paper design | sibling repo `claude-micro-powerdeck` |
 | V3 | ~150x110 2-layer ESP32-S3, 24 keys, OLED, touch, LiPo, USB+BLE | hand-soldered (parts from JLCPCB/LCSC) | `v3/` — see `docs/DESIGN-V3.md` |
-| V4 | V3 platform + voice (wake word, mic/amp/speaker), 1.69" touch LCD, 2nd encoder | hand-soldered | `v4/` — see `docs/DESIGN-V4.md` |
 
 ## Status
 
