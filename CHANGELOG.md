@@ -9,7 +9,12 @@ Versions are hardware revisions, not software releases.
 
 ## [Unreleased]
 
-Nothing yet.
+### V3 (in progress)
+- New hand-solderable version under `v3/`: ESP32-S3-WROOM, 24-key 4x6 Choc matrix,
+  0.96" OLED, capacitive touch PTT, LiPo + TP4056 charging, USB-C + BLE HID.
+- Parts manifest `v3/PARTS.yaml` (2D/3D dims, LCSC stock) enforced by
+  `v3/tools/verify_parts.py`; design doc `docs/DESIGN-V3.md`; V3 tools are
+  git-tracked (unlike V1 generators).
 
 ## [0.1.0] - 2026-07-24
 
