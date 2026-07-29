@@ -9,6 +9,14 @@ Versions are hardware revisions, not software releases.
 
 ## [Unreleased]
 
+### V4 (started)
+- Voice + screen successor under `v4/`: V3 platform plus I2S MEMS mic with
+  on-device wake word (ESP-SR), NS4168 class-D amp + speaker, 1.69" 240x280
+  ST7789 touch LCD (replaces the supply-fragile 0.96" OLED), second EC11.
+- Scaffold: `docs/DESIGN-V4.md` (deltas, audio placement rules 11-14, phase
+  plan) and `v4/PARTS.yaml` (carried lines live-confirmed 2026-07-29; new
+  audio/LCD lines stock-checked - NS4168 confirmed, mic and LCD gated VERIFY).
+
 ### V3 (in progress)
 - New hand-solderable version under `v3/`: ESP32-S3-WROOM, 24-key 4x6 Choc matrix,
   0.96" OLED, capacitive touch PTT, LiPo + TP4056 charging, USB-C + BLE HID.
