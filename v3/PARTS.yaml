@@ -35,21 +35,26 @@ parts:
     notes: MCU. Native USB HID + BLE. Keep antenna end overhanging board edge keepout.
 
   - ref_prefix: OLED1
-    name: HS96L03W2C03 0.96" OLED 128x64 I2C (SSD1315)
-    lcsc: C5248080
-    package: FPC-solder-tab-module
-    pitch_mm: 0.65
-    dims_2d: [26.7, 19.3]      # glass module; FPC tab extra
-    height_3d: 2.0
+    name: Generic 0.96" OLED breakout 128x64 I2C 4-pin (SSD1306/SSD1315)
+    lcsc: null                 # DECISION 2026-07-29: sourced externally.
+    package: 4-pin-header-module
+    pitch_mm: 2.54
+    dims_2d: [27.0, 27.5]      # common breakout PCB incl. header row
+    height_3d: 4.0             # PCB + glass + header profile above our pads
     dims_source: datasheet
-    hand_solder: drag
-    stock: VERIFY              # 2026-07-29 live check: only 2 pcs at LCSC -
-    stock_date: 2026-07-29     # CRITICALLY LOW, pick same-pinout fallback at order
-    unit_price: 2.29
+    hand_solder: easy          # 4 pads at 2.54mm via pin header
+    stock: EXTERNAL            # AliExpress/Amazon/Adafruit, ~$2, ubiquitous
+    stock_date: 2026-07-29
+    unit_price: 2.00
     qty_per_board: 1
-    notes: User-selected. Fallback same-driver module must be chosen at order time.
-    models: 3D uses KiCad std Adafruit_SSD1306.step as a stand-in (no vendor
-      model published for HS96L03W2C03); footprint dims are the real module.
+    notes: LCSC stocks only bare 30-pin FPC COG glass in this class - verified
+      against the C18723026 datasheet (docs/datasheets/v3/x096.pdf, pin table
+      pp.5-6, FPC NFP1315-51) and C5248080 (2 pcs left, same construction).
+      Bare glass needs external charge-pump passives and a 0.7mm 30-pin land -
+      not our design. The V3 OLED_HS96L03 footprint (4x 2.54mm pads,
+      GND/VCC/SCL/SDA) matches generic breakouts; U8g2 drives 1306/1315 alike.
+    models: 3D uses KiCad std Adafruit_SSD1306.step as a stand-in; footprint
+      pads are the 4-pin header row.
 
   - ref_prefix: SW
     name: Kailh Choc V1 switch (direct solder, NOT from JLC)
