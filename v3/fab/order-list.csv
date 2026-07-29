@@ -1,0 +1,18 @@
+LCSC Part Number,Description,Quantity
+C2913204,ESP32-S3-WROOM-1-N8R2,4
+C5248080,"HS96L03W2C03 0.96"" OLED 128x64 I2C (SSD1315)",4
+C81598,1N4148W matrix diode,108
+C5149201,SK6812MINI-E reverse-mount RGB,90
+C7484,SN74AHCT1G125DBVR level buffer (LED data),7
+C361165,EC11 rotary encoder w/ switch,4
+C165948,USB-C receptacle TYPE-C-31-M-12,7
+C7519,USBLC6-2SC6 USB ESD,7
+C16581,TP4056 LiPo charger 1A,7
+C15127,AO3401A P-FET load sharing,13
+C8678,SS34 Schottky 3A (VBUS -> VSYS diode-OR leg),13
+C82942,ME6211C33 3.3V LDO low-Iq,7
+C265088,JST-PH 2.0 2-pin battery connector (right angle SMD),7
+C431540,MSK12C02 power slide switch,7
+C318884,TS-1187A tact (BOOT + RESET),16
+SEE-NOTES-0603-KIT,"0603 resistors (5.1k CC x2, 330R LED, 10k pulls, 2.4k PROG=500mA, 100k/47k Vbat div, 27R USB x2)",63
+SEE-NOTES-0603-KIT,0603 100nF decoupling + 0805 10uF/22uF bulk,54
