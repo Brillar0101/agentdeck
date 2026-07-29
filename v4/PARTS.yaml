@@ -262,13 +262,12 @@ parts:
     height_3d: 2.5
     dims_source: estimate
     hand_solder: drag
-    stock: VERIFY              # 2026-07-29: no native LCSC catalog module.
-                               # Path A: LCSC bare 1.69" panel + 0.5mm FPC
-                               #   connector (within hand-solder floor).
-                               # Path B: EXTERNAL 8-pin header module
-                               #   (ubiquitous, ~$3; same mounting trick as
-                               #   the V3 OLED fallback). Footprint must be
-                               #   drawn to the chosen path before Phase 2.
+    stock: EXTERNAL            # DECIDED 2026-07-29: Path B - external header
+                               # module (Waveshare-class 1.69" touch LCD,
+                               # ST7789V2 + CST816-class touch, ubiquitous).
+                               # Land = 1x12 2.54mm pads: 8 display pins +
+                               # 4 touch pins; a non-touch 8-pin module also
+                               # fits (touch pads left empty).
     unit_price: 3.00
     qty_per_board: 1
 
