@@ -175,6 +175,21 @@ parts:
     qty_per_board: 1
     notes: NeuralCard DESIGN.md section-3 pattern - VBUS present disconnects battery.
 
+  - ref_prefix: D25
+    name: SS34 Schottky 3A (VBUS -> VSYS diode-OR leg)
+    lcsc: C8678
+    package: SMA(DO-214AC)
+    pitch_mm: null
+    dims_2d: [4.3, 2.6]
+    height_3d: 2.3
+    dims_source: datasheet
+    hand_solder: easy
+    stock: VERIFY              # basic part, effectively always stocked
+    unit_price: 0.03
+    qty_per_board: 1
+    notes: Required by DESIGN-V3 "VSYS = diode-OR of VBUS/VBAT" - without it the
+      AO3401A gate (VBUS) equals its source (VSYS) and the FET never turns on.
+
   - ref_prefix: U5
     name: ME6211C33 3.3V LDO low-Iq
     lcsc: C82942
