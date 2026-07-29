@@ -8,10 +8,10 @@ C361165,EC11 rotary encoder w/ switch,4
 C165948,USB-C receptacle TYPE-C-31-M-12,7
 C7519,USBLC6-2SC6 USB ESD,7
 C16581,TP4056 LiPo charger 1A,7
-C15127,AO3401A P-FET load sharing,13
+C15127,AO3401A P-FET load sharing,7
 C8678,SS34 Schottky 3A (VBUS -> VSYS diode-OR leg),13
 C82942,ME6211C33 3.3V LDO low-Iq,7
-C265088,JST-PH 2.0 2-pin battery connector (right angle SMD),7
+C295747,JST-PH 2.0 2-pin battery connector (right angle SMD),7
 C431540,MSK12C02 power slide switch,7
 C318884,TS-1187A tact (BOOT + RESET),16
 SEE-NOTES-0603-KIT,"0603 resistors (5.1k CC x2, 330R LED, 10k pulls, 2.4k PROG=500mA, 100k/47k Vbat div, 27R USB x2)",63
