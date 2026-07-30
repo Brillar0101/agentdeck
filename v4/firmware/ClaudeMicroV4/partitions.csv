@@ -1,0 +1,17 @@
+# ClaudeMicro V4 - custom 8 MB (ESP32-S3-WROOM-1-N8R2) layout with an ESP-SR
+# model partition. Single app slot: OTA is intentionally NOT available, the
+# board flashes over native USB (hold BOOT, tap RESET). The "model" entry is
+# copied verbatim (name/type/subtype) from the core's esp_sr_16.csv so that
+# esp-sr's srmodel SPIFFS loader finds it; only offset/size differ.
+#
+# 0x000000 bootloader (pre-partition-table region, 32 KB)
+# ...      partition table @ 0x8000
+# 0x800000 end of flash (8 MB)
+#
+# Name,   Type, SubType,  Offset,   Size,     Flags
+nvs,      data, nvs,      0x9000,   0x5000,
+otadata,  data, ota,      0xE000,   0x2000,
+app0,     app,  factory,  0x10000,  0x380000,
+model,    data, spiffs,   0x390000, 0x3A0000,
+spiffs,   data, spiffs,   0x730000, 0xC0000,
+coredump, data, coredump, 0x7F0000, 0x10000,

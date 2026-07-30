@@ -4,9 +4,10 @@
 // ESP_SR ("Hi ESP" WakeNet9 - the stock model compiled into this core;
 // custom "hey Claude" needs Espressif model training, documented TODO).
 //
-// The stock esp_sr partition scheme is 16MB-only; our N8R2 is 8MB, so on
-// the default scheme there is no "model" flash partition. We probe for it
-// at runtime and fall back to PTT-only voice (touch pad) when absent.
+// The stock esp_sr partition scheme is 16MB-only; our N8R2 is 8MB, so this
+// sketch ships its own partitions.csv (3.75 MB app + 3.25 MB "model"). A
+// board flashed with any other scheme has no "model" partition, so we probe
+// for it at runtime and fall back to PTT-only voice (touch pad) when absent.
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include <math.h>
@@ -16,21 +17,24 @@
 #include "pins.h"
 #include "audio.h"
 
-// Wake word is a compile-time OPT-IN. ESP_SR (wakenet + multinet + flite
-// g2p) links ~3 MB of model/code and overflows the 1.25 MB app partition of
-// the default 8 MB scheme this project builds with - and the stock
-// "esp_sr_16" partition scheme is 16 MB-only, no fit for the N8R2. Flip to 1
-// only with a custom partition table (>=3 MB app + a "model" partition with
-// srmodels.bin flashed); see README "Wake word". Until then voice is
-// PTT-only (touch pad), reported honestly at boot.
+// Wake word is compile-time gated but ON by default: ESP_SR (wakenet +
+// multinet + flite g2p) links well past the 1.25 MB app slot of the stock
+// scheme, so the build REQUIRES this sketch's partitions.csv, selected with
+// the FQBN option PartitionScheme=custom (see README "Build"). Set to 0 to
+// get a small PTT-only image that fits any stock scheme.
 #ifndef CLAUDEMICRO_WAKEWORD
-#define CLAUDEMICRO_WAKEWORD 0
+#define CLAUDEMICRO_WAKEWORD 1
 #endif
 
-#if CLAUDEMICRO_WAKEWORD && __has_include("ESP_SR.h")
+#if CLAUDEMICRO_WAKEWORD
+// Deliberately NOT behind __has_include: arduino-cli discovers libraries by
+// resolving the #include directives it can see, so a header hidden behind a
+// failing __has_include is never looked for, ESP_SR never lands on the
+// include path, and the guard makes itself true forever (wake word silently
+// compiled out). Include it outright and let __has_include below decide.
 #include "ESP_SR.h"
 #endif
-#if CLAUDEMICRO_WAKEWORD && CONFIG_IDF_TARGET_ESP32S3 \
+#if CLAUDEMICRO_WAKEWORD && __has_include("ESP_SR.h") && CONFIG_IDF_TARGET_ESP32S3 \
     && (CONFIG_MODEL_IN_FLASH || CONFIG_MODEL_IN_SDCARD)
 #define HAVE_ESP_SR 1
 #else
