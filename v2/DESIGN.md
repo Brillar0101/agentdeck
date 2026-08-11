@@ -17,6 +17,60 @@ Target spec against the competition:
 | Frame | CNC aluminum | printed case (V1 tooling), CNC later |
 | Software | proprietary Input app | open firmware + text-file config |
 
+## Clean sheet
+
+V2 is drawn from scratch in `v2/hardware/`: new schematic, new layout, no
+copper or project files copied from V1. What carries over is knowledge, not
+files - part choices that were already verified, the key spacing, and the
+case generator (which is parametric and takes the new outline as input).
+
+## What the market is saying (researched 2026-08-11)
+
+The Codex Micro's reception and the Creator Micro 2's support board are a
+map of what to avoid:
+
+- Price is the loudest complaint: $230 reads as "a $100 tax for icon
+  keycaps and a software preset" (adityabawankule.io). AgentDeck's DIY
+  cost target is the whole answer; keep the V2 BOM lean.
+- The real-user complaints on Work Louder's feedback board are software,
+  not hardware: the Codex HID session gets stuck in a
+  fail-disconnect-reconnect loop, the agent layer dies after the computer
+  sleeps until ChatGPT is restarted, and devices "keep getting stuck"
+  and need resets.
+- Vendor lock-in draws fire: the device only talks to Codex.
+- The pragmatic take (echoed across reviews): "the shortcuts are the part
+  that actually saves time; the lights are a nice demo." Dedicated
+  accept / reject / stop / new-session keys must be first-class.
+- The Stream Deck is the benchmark people reach for on status display
+  (per-key LCDs) but it lacks the dial and needs Elgato software running.
+- The DIY wave (claude-lamp, Claude-Macropad-V2, traffic lights, smart
+  bulbs) validates one feature above all: a host-driven "Claude is
+  waiting on you" light. And every DIY build is single-session - the
+  six-key multi-session panel remains the unmet need.
+
+### Improvements adopted into V2
+
+1. **Survives sleep.** The host bridge re-syncs full LED and LCD state on
+   every wake / reconnect event; the device never holds stale state. This
+   is the Creator Micro 2's most-reported failure.
+2. **No reconnect loops.** Status transport is fire-and-forget HID reports
+   with a heartbeat, not a stateful session that can wedge. If the host
+   goes quiet the deck shows "host offline" on the LCD and keeps working
+   as a plain keyboard.
+3. **Standalone first.** Every key sends its chord with no host software
+   installed. The bridge only adds status; it is never required.
+4. **Agent-agnostic protocol.** The state model (idle / thinking / working
+   / blocked / done) is generic; Claude Code is the first backend, not
+   the only one. Open protocol, text-file config.
+5. **A dedicated STOP key** in the new macro row (Esc / interrupt), the
+   single most-requested action key in DIY builds.
+6. **Unbrickable recovery.** BOOT and RESET buttons on the ESP32-S3 serial
+   bootloader; recovery is a USB cable, never an RMA.
+7. **No BLE mode traps.** Explicit radio preference stored on-device, USB
+   always wins when plugged in; no triple-tap mode cycling.
+8. **The dial stays.** It is the one control the Stream Deck comparison
+   concedes; reasoning-effort on a detented knob is a differentiator.
+
 ## Architecture
 
 The RP2040 has no radio, so V2 moves to the **ESP32-S3-WROOM-1-N8R2** module
