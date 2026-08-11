@@ -46,7 +46,7 @@ parts:
     notes: Matches Creator Micro 2 PRO 2100mAh class. Thickness drives the
       deeper tray in the case generator.
 
-  - ref_prefix: D14-D33
+  - ref_prefix: DM1-DM20
     name: 1N4148W matrix diode
     lcsc: C81598
     source: v3/PARTS.yaml
@@ -87,7 +87,7 @@ parts:
       backlight load (~30mA) which it covers.
 
   # ---- carried from V1 (fab/AgentDeck-BOM-v1.0.0.csv) ----
-  - ref_prefix: D1-D13
+  - ref_prefix: D1-D20
     name: SK6812MINI-E reverse-mount RGB
     lcsc: C5149201
     source: v1
