@@ -1,4 +1,4 @@
-# ClaudeMicro V4 — Voice + Screen AI Control Deck
+# AgentDeck V4 — Voice + Screen AI Control Deck
 
 > Method unchanged from V3: script-generated KiCad (v4/tools, tracked),
 > freerouting + finish pipeline, home hand assembly, manifest-first

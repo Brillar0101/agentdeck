@@ -2,5 +2,5 @@
   (version 7)
   (lib (name "V4")(type "KiCad")(uri "${KIPRJMOD}/V4.kicad_sym")(options "")(descr "V4 symbols: ESP32-S3/USB-C/USBLC6/LDO/P-FET/tact copied from NeuralCard JLC + TP4056/MSK12C02/ChocV1 + new LCD_169_Touch/MEMS_Mic_I2S/NS4168"))
   (lib (name "JLC_V1")(type "KiCad")(uri "${KIPRJMOD}/../../hardware/JLC.kicad_sym")(options "")(descr "V1 JLCPCB/LCSC symbols: SK6812MINI-E, SN74AHCT1G125, EC11"))
-  (lib (name "ClaudeMicro_Custom")(type "KiCad")(uri "${KIPRJMOD}/../../hardware/ClaudeMicro_Custom.kicad_sym")(options "")(descr "V1 custom symbols: TouchPad, ProgPads_1x4"))
+  (lib (name "AgentDeck_Custom")(type "KiCad")(uri "${KIPRJMOD}/../../hardware/AgentDeck_Custom.kicad_sym")(options "")(descr "V1 custom symbols: TouchPad, ProgPads_1x4"))
 )

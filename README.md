@@ -1,4 +1,4 @@
-# ClaudeMicro
+# AgentDeck
 
 A 90 x 90 mm RP2040 desk macropad. It has 13 Kailh Choc hot-swap keys with
 per-key RGB, a rotary encoder, a 5-way joystick, and USB-C, on a 4-layer PCB,
@@ -22,7 +22,7 @@ handle scrubbing and navigation.
 | Version | Board | Assembly | Where |
 |---|---|---|---|
 | V1 (rev 0.1) | 90x90 4-layer RP2040, 13 keys | JLCPCB PCBA | `hardware/` |
-| V2 | V1 + PowerDeck two-deck concept | paper design | sibling repo `claude-micro-powerdeck` |
+| V2 | V1 + PowerDeck two-deck concept | paper design | sibling repo `agentdeck-powerdeck` |
 | V3 | ~150x110 2-layer ESP32-S3, 24 keys, OLED, touch, LiPo, USB+BLE | hand-soldered (parts from JLCPCB/LCSC) | `v3/` — see `docs/DESIGN-V3.md` |
 | V4 | V3 platform + voice (wake word, mic/amp/speaker), 1.69" touch LCD, 2nd encoder | hand-soldered | `v4/` — see `docs/DESIGN-V4.md` |
 
@@ -51,11 +51,11 @@ Nothing has been manufactured yet, so none of it is hardware-verified.
 
 ```
 hardware/                              KiCad project and libraries
-  ClaudeMicro.kicad_pcb / .kicad_sch   board and schematic
+  AgentDeck.kicad_pcb / .kicad_sch   board and schematic
   JLC.pretty/ JLC.3dshapes/ *.kicad_sym  footprint, 3D and symbol libraries
 fab/                                   Gerbers, BOM and CPL for JLCPCB
 firmware/                              CircuitPython firmware (boot.py, code.py)
-host/claude_bridge.py                  host-side agent-status bridge
+host/agentdeck_bridge.py                  host-side agent-status bridge
 enclosure/                             Blender assembly, case STLs, cap/knob models
 docs/                                  design notes, datasheets, reference material
 LICENSES/                              full licence texts

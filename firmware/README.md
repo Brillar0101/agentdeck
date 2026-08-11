@@ -1,4 +1,4 @@
-# ClaudeMicro Firmware
+# AgentDeck Firmware
 
 CircuitPython firmware turning the board into an agent-control surface, plus a
 host bridge that drives the agent keys from real agent activity.
@@ -61,14 +61,14 @@ rest, bright white while the layer is active.
 
 ```bash
 pip install pyserial
-python3 ../host/claude_bridge.py demo             # cycle every state
-python3 ../host/claude_bridge.py agent 3 block    # agent 3 red/blinking
-python3 ../host/claude_bridge.py all done         # all six green
-python3 ../host/claude_bridge.py watch            # print key/dial/joystick events
+python3 ../host/agentdeck_bridge.py demo             # cycle every state
+python3 ../host/agentdeck_bridge.py agent 3 block    # agent 3 red/blinking
+python3 ../host/agentdeck_bridge.py all done         # all six green
+python3 ../host/agentdeck_bridge.py watch            # print key/dial/joystick events
 ```
 
 Wire it to Claude Code with hooks — a ready-to-paste `settings.json` snippet is
-in the header of `host/claude_bridge.py` (UserPromptSubmit → thinking,
+in the header of `host/agentdeck_bridge.py` (UserPromptSubmit → thinking,
 PreToolUse → working, Notification → blocked, Stop → done).
 
 ## Hardware map

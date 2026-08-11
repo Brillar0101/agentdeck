@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""ClaudeMicro host bridge.
+"""AgentDeck host bridge.
 
 Drives the macropad's six agent keys from agent activity, and can read the
 pad's key/dial/joystick events back.
 
-    claude_bridge.py demo                  cycle every state on every agent key
-    claude_bridge.py agent <1-6> <state>   set one agent slot
-    claude_bridge.py all <state>           set all six
-    claude_bridge.py watch                 print events coming from the pad
-    claude_bridge.py hook <state> [slot]   for Claude Code hooks (reads stdin)
-    claude_bridge.py screen <line> <text>  write OLED status line 0-3 (V3 only)
+    agentdeck_bridge.py demo                  cycle every state on every agent key
+    agentdeck_bridge.py agent <1-6> <state>   set one agent slot
+    agentdeck_bridge.py all <state>           set all six
+    agentdeck_bridge.py watch                 print events coming from the pad
+    agentdeck_bridge.py hook <state> [slot]   for Claude Code hooks (reads stdin)
+    agentdeck_bridge.py screen <line> <text>  write OLED status line 0-3 (V3 only)
 
 States: idle | think | work | block | done | err | off
 
@@ -18,13 +18,13 @@ pass a slot number per hook:
 
     "hooks": {
       "UserPromptSubmit": [{"hooks": [{"type": "command",
-        "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook think"}]}],
+        "command": "python3 ~/kicad-projects/agentdeck/host/agentdeck_bridge.py hook think"}]}],
       "PreToolUse":       [{"hooks": [{"type": "command",
-        "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook work"}]}],
+        "command": "python3 ~/kicad-projects/agentdeck/host/agentdeck_bridge.py hook work"}]}],
       "Notification":     [{"hooks": [{"type": "command",
-        "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook block"}]}],
+        "command": "python3 ~/kicad-projects/agentdeck/host/agentdeck_bridge.py hook block"}]}],
       "Stop":             [{"hooks": [{"type": "command",
-        "command": "python3 ~/kicad-projects/claude-micro/host/claude_bridge.py hook done"}]}]
+        "command": "python3 ~/kicad-projects/agentdeck/host/agentdeck_bridge.py hook done"}]}]
     }
 
 Requires: pip install pyserial
@@ -44,10 +44,10 @@ SLOTS = range(1, 7)
 def open_link():
     """Second (data) CDC interface of the pad; console is the first."""
     ports = [p.device for p in list_ports.comports()
-             if "ClaudeMicro" in " ".join(filter(None, (p.manufacturer, p.product, p.description)))
+             if "AgentDeck" in " ".join(filter(None, (p.manufacturer, p.product, p.description)))
              or "CircuitPython" in " ".join(filter(None, (p.manufacturer, p.product, p.description)))]
     if not ports:
-        sys.exit("ClaudeMicro not found - plugged in and running the firmware?")
+        sys.exit("AgentDeck not found - plugged in and running the firmware?")
     return serial.Serial(sorted(ports)[-1], 115200, timeout=1)
 
 

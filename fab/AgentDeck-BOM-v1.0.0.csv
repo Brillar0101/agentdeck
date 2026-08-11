@@ -1,0 +1,26 @@
+Item,Designators,Qty,Value,Footprint,Supplier,Supplier PN,MPN,Status,Notes
+1,"C10,C11,C12,C15,C19,C20,C21,C22,C23,C24,C25,C26,C27,C28,C29,C3,C30,C31,C5,C6,C7,C8,C9",23,100nF 50V X7R,C_0603,LCSC,C14663,CC0603KRX7R9BB104,In cart,
+2,"D1,D2,D3,D4,D5,D6,D10,D11,D12,D13,D14,D15,D16",13,SK6812MINI-E RGB,LED-SMD_4P-3.2x2.8,LCSC,C5149201,SK6812MINI-E,In cart,"MOQ 5; ordered 15. Reverse-mount under keycap"
+3,"R5,R7,R10,R11,R12",5,1k 1% 0603,R_0603,LCSC,C21190,0603WAF1001T5E,In cart,MOQ 100
+4,"D7,D8,D9",3,Red LED 0603,LED-SMD_1.6x0.8,LCSC,C2286,KT-0603R,In cart,
+5,"C16,C17",2,10uF 10V X5R 0603,C_0603,LCSC,C19702,CL10A106KP8NNNC,In cart,"MOQ 20. NOT the 0805 C15850 already in cart - package differs"
+6,"C1,C2",2,15pF 50V C0G 0603,C_0603,LCSC,C1644,CL10C150JB8NNNC,In cart,MOQ 50. Crystal load caps
+7,"C13,C14",2,1uF 0603,C_0603,LCSC,C128624,CC0603KRX5R9BB105,Already in cart,"Equivalent to BOM's C15849 - same value and package"
+8,"R3,R4",2,27R 1% 0603,R_0603,LCSC,C25190,0603WAF270JT5E,In cart,"CORRECTED 2026-08-10: old BOM listed C22967 which is 27k - USB would not enumerate"
+9,"R1,R2",2,5.1k 1% 0603,R_0603,LCSC,C23186,0603WAF5101T5E,Already in cart,USB-C CC pulldowns
+10,R8,1,10k 1% 0603,R_0603,LCSC,C25804,0603WAF1002T5E,In cart - BACKORDERED,0 in stock; substitute any 10k 0603 if it blocks the order
+11,R9,1,330R 1% 0603,R_0603,LCSC,C23138,0603WAF3300T5E,In cart,MOQ 100
+12,U4,1,74AHCT1G125 buffer,SOT-23-5,LCSC,C7484,SN74AHCT1G125DBVR,In cart,MOQ 5. LED data level shift
+13,Y1,1,12MHz crystal,CRYSTAL-SMD_3.2x2.5,LCSC,C20625731,ABM8-272-T3,In cart,MOQ 5
+14,U3,1,AMS1117-3.3 LDO,SOT-223-3,LCSC,C6186,AMS1117-3.3,In cart,"MOQ 5. NOT the ME6211 C82942 in cart - different package"
+15,SW13,1,Tact switch BOOTSEL,SW-SMD_5.1x5.1,LCSC,C318884,TS-1187A-B-A-B,Already in cart,
+16,ENC1,1,EC11 rotary encoder,SW-TH_EC11E1820402,LCSC,C361165,EC11E1834403,In cart,"NOTE: LCSC ships the -1834403 variant; footprint is named for -1820402. Check shaft length against the case"
+17,U1,1,RP2040,LQFN-56 7x7,LCSC,C2040,RP2040,In cart,
+18,J1,1,USB-C receptacle,TYPE-C-31-M-12,LCSC,C165948,TYPE-C-31-M-12,Already in cart,
+19,U6,1,USBLC6-2SC6 ESD,SOT-23-6,LCSC,C7519,USBLC6-2SC6,Already in cart,
+20,U2,1,W25Q128JVSIQ 16MB flash,SOIC-8,LCSC,C97521,W25Q128JVSIQ,In cart,
+21,"SW1,SW2,SW3,SW4,SW5,SW6,SW7,SW8,SW9,SW10,SW11,SW12,SW14",13,Kailh Choc hot-swap socket,CONN-SMD_HOTPLUGPAKAGE,AliExpress,,CPG135001S30,NOT ON LCSC,"LCSC C5333465 discontinued - 'Not Available'. Kailh Choc V1 sockets, ubiquitous on AliExpress"
+22,JS1,1,5-way navigation switch,SKQUCAA010 (THT),AliExpress,,SKQUCAA010,NOT ON LCSC,"Also Newark 59M1983 / Farnell 1435775. DigiKey does not stock it. LCSC's C139794 (SKRHABE010) would need a new footprint AND a case change"
+23,"SW1-SW12,SW14",13,Kailh Choc V1 switch,plugs into socket,AliExpress,,,Not a PCB part,Never an LCSC line - keyboard vendor only
+24,"SW1-SW12,SW14",13,Choc keycap,n/a,AliExpress,,,Not a PCB part,Keyboard vendor
+25,MH1-MH4,4,M2 standoff + screw,n/a,AliExpress,,,Not a PCB part,Case hardware

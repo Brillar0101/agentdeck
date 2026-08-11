@@ -1,6 +1,6 @@
-# ClaudeMicro V3 firmware
+# AgentDeck V3 firmware
 
-Arduino (ESP32-S3), dual-transport HID: USB when plugged, BLE ("ClaudeMicroV3")
+Arduino (ESP32-S3), dual-transport HID: USB when plugged, BLE ("AgentDeckV3")
 when on battery. Host protocol is V1's CDC protocol plus `S <line> <text>` for
 the OLED. See `docs/DESIGN-V3.md` for architecture; `pins.h` mirrors the
 generator's PINOUT table (diff them after any hardware change).
@@ -8,8 +8,8 @@ generator's PINOUT table (diff them after any hardware change).
 ## Build
 
 ```
-arduino-cli compile --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" v3/firmware/ClaudeMicroV3
-arduino-cli upload  --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" -p /dev/tty.usbmodem* v3/firmware/ClaudeMicroV3
+arduino-cli compile --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" v3/firmware/AgentDeckV3
+arduino-cli upload  --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled" -p /dev/tty.usbmodem* v3/firmware/AgentDeckV3
 ```
 Libraries: Adafruit NeoPixel, U8g2, NimBLE-Arduino.
 

@@ -1449,7 +1449,7 @@
 			(uuid "c6de0fef-e36c-462c-bfe9-36b094f4e1c5")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4542,7 +4542,7 @@
 			(uuid "acdf45b8-1d5c-4c03-99c8-86981852c36e")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5777,7 +5777,7 @@
 			(uuid "205150d2-39b6-46e2-9b8b-38597aac5fb4")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8859,7 +8859,7 @@
 			(uuid "d018ced1-3706-4b7b-8b5e-96c5340daa01")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SW-TH_EC11E1820402-L11.7-W12.0-H24.5-P2.5-LS14.5.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SW-TH_EC11E1820402-L11.7-W12.0-H24.5-P2.5-LS14.5.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9546,7 +9546,7 @@
 			(uuid "9a4bcefa-dfe1-4bd4-ae9d-cd2aba49d3d8")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/USB-C_SMD-TYPE-C-31-M-12_1.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/USB-C_SMD-TYPE-C-31-M-12_1.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13663,7 +13663,7 @@
 			(uuid "d3588911-1c97-4257-8d13-fe1b3a031ead")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -14229,7 +14229,7 @@
 			(uuid "db6f7e63-cb49-4b15-ad3b-7e62555bca1a")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SW-TH_EC11E1820402-L11.7-W12.0-H24.5-P2.5-LS14.5.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SW-TH_EC11E1820402-L11.7-W12.0-H24.5-P2.5-LS14.5.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15710,7 +15710,7 @@
 			(uuid "7bf0a8fd-7072-4136-a2a4-a36ac8e61af2")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15985,7 +15985,7 @@
 			(uuid "0e4c5f00-add8-47b5-bba5-2fe84e6cb79f")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -16693,7 +16693,7 @@
 			(uuid "d722b464-7fea-40d9-a4a4-cad7ffec34aa")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -18115,7 +18115,7 @@
 			(uuid "62925bfd-57ed-4749-bad0-5d85dc800fee")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -19666,7 +19666,7 @@
 			(uuid "6ef9da5c-dd48-4fe7-a827-391a50e4fc94")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -20526,7 +20526,7 @@
 			(uuid "b8b0c36c-8d6f-47a1-aa18-5d8c7f60f930")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -20801,7 +20801,7 @@
 			(uuid "8d481e1a-e039-48cd-a8fd-13cd57ec0cb6")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -21076,7 +21076,7 @@
 			(uuid "cd141ece-d116-459d-af34-f05a8cedc14d")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -21632,7 +21632,7 @@
 			(uuid "daad22a8-b6db-4cf2-a969-2e6783b5b80c")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -23943,7 +23943,7 @@
 			(uuid "dcabdf6f-8446-4836-aa9e-45e0dde27d22")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -24386,7 +24386,7 @@
 			(uuid "d062e436-a775-4a98-9eb2-b03c6205c3a8")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -24661,7 +24661,7 @@
 			(uuid "f0c1f992-a32d-431d-bfd0-65cd6291d379")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -26516,7 +26516,7 @@
 			(uuid "24253510-4798-442b-8489-9382f15935d4")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -26791,7 +26791,7 @@
 			(uuid "e0d93afa-508a-427b-8dcc-1cb4538c302a")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -28084,7 +28084,7 @@
 			(uuid "9762bd66-029d-4594-85d5-6c747a2f37aa")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -29506,7 +29506,7 @@
 			(uuid "618b80ef-2d05-4735-ba7b-38ec18c27d15")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -29781,7 +29781,7 @@
 			(uuid "d776b752-8db7-41da-a5f4-01bdd31a8508")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -30056,7 +30056,7 @@
 			(uuid "c6b509b4-6220-4667-aee9-49ba27761dea")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -30916,7 +30916,7 @@
 			(uuid "8c7362e7-ca72-4b2a-965a-6368599837f5")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -31343,7 +31343,7 @@
 			(uuid "b225013b-1de4-4a78-bfdf-e3ff9b7f0cd3")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -31770,7 +31770,7 @@
 			(uuid "21d7287e-e7af-4622-864b-088f9f7e3588")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32045,7 +32045,7 @@
 			(uuid "2344e8d8-33e1-4926-96cf-6c896cafcb9e")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32320,7 +32320,7 @@
 			(uuid "4c75516c-c44a-4a48-8a6e-7ed49fdb59e6")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32595,7 +32595,7 @@
 			(uuid "1cd25782-c7a8-4c32-8cf1-7e74fdcdc340")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32870,7 +32870,7 @@
 			(uuid "2224bb9c-be54-40d1-b532-e45134070d11")
 		)
 		(embedded_fonts no)
-		(model "/Users/barakaeli/kicad-projects/claude-micro/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
+		(model "/Users/barakaeli/kicad-projects/agentdeck/hardware/JLC.3dshapes/LED-SMD_4P-L3.2-W2.8-LS5.9_SK6812MINI-E.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -33265,7 +33265,7 @@
 			(justify right)
 		)
 	)
-	(gr_text "ClaudeMicro V4 - princetekki.com"
+	(gr_text "AgentDeck V4 - princetekki.com"
 		(at 24 106.3 0)
 		(layer "F.SilkS")
 		(uuid "c346da6b-756c-4ffb-b84a-c458b744c68b")
@@ -33277,7 +33277,7 @@
 			(justify left)
 		)
 	)
-	(gr_text "ClaudeMicroV4  ESP32-S3-WROOM-1"
+	(gr_text "AgentDeckV4  ESP32-S3-WROOM-1"
 		(at 119 7 0)
 		(layer "B.SilkS")
 		(uuid "3ebc53f2-e6d7-46c3-8a28-62e5c2a8d099")

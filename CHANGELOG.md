@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to ClaudeMicro are recorded here. The board is text-based
+All notable changes to AgentDeck are recorded here. The board is text-based
 KiCad, so each fabricated revision maps to a tagged commit: a physical board can
 be traced back to the exact design it was made from.
 
@@ -43,7 +43,7 @@ hardware-verified yet.
   chords; FN layer key.
 
 ### Host
-- `host/claude_bridge.py` maps Claude Code hooks to agent-key colours.
+- `host/agentdeck_bridge.py` maps Claude Code hooks to agent-key colours.
 
 ### Enclosure
 - Two-part printable case (bottom + plate lid) plus cover plugs, modelled in
@@ -52,5 +52,5 @@ hardware-verified yet.
 ### Fab
 - Gerbers, drill, BOM, and CPL generated for JLCPCB.
 
-[Unreleased]: https://github.com/Brillar0101/claude-micro/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/Brillar0101/claude-micro/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Brillar0101/agentdeck/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Brillar0101/agentdeck/releases/tag/v0.1.0

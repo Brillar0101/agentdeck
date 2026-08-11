@@ -3,7 +3,7 @@
 Run with KiCad's bundled python:
   /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/\
 Current/bin/python3 v3/tools/export_positions_v3.py \
-      --pcb v3/hardware/ClaudeMicroV3.kicad_pcb \
+      --pcb v3/hardware/AgentDeckV3.kicad_pcb \
       --out v3/enclosure/positions.json
 
 Writes key centers, mounting holes, control parts (with courtyard bboxes),

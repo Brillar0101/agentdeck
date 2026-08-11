@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generate v4/hardware/ClaudeMicroV4.kicad_sch (and V4.kicad_sym) section by section.
+"""Generate v4/hardware/AgentDeckV4.kicad_sch (and V4.kicad_sym) section by section.
 
-ClaudeMicro V4 — V3 platform + voice (I2S mic + NS4168 amp) + 1.69" touch LCD
+AgentDeck V4 — V3 platform + voice (I2S mic + NS4168 amp) + 1.69" touch LCD
 + second EC11. Ported from v3/tools/gen_schematic.py (KiCad 10 S-expressions).
 Coordinates: sheet mm, 1.27 grid, y DOWN. Symbols placed at angle 0, no mirror,
 so a pin at symbol-local (lx, ly) maps to sheet (px + lx, py - ly).
@@ -37,7 +37,7 @@ V1_HW = os.path.normpath(os.path.join(HERE, "..", "..", "hardware"))
 NC = "/Users/barakaeli/Open Source Hardware/NeuralCard"
 
 ROOT_UUID = "c4a1b2d4-0004-4000-8000-000000000004"
-PROJECT = "ClaudeMicroV4"
+PROJECT = "AgentDeckV4"
 
 KSYM = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols"
 DEVICE_LIB = f"{KSYM}/Device.kicad_sym"
@@ -45,7 +45,7 @@ POWER_LIB = f"{KSYM}/power.kicad_sym"
 CONN_LIB = f"{KSYM}/Connector_Generic.kicad_sym"
 V4_LIB = os.path.join(HW, "V4.kicad_sym")
 JLC_V1_LIB = os.path.join(V1_HW, "JLC.kicad_sym")
-CUSTOM_LIB = os.path.join(V1_HW, "ClaudeMicro_Custom.kicad_sym")
+CUSTOM_LIB = os.path.join(V1_HW, "AgentDeck_Custom.kicad_sym")
 NC_JLC_LIB = os.path.join(NC, "JLC.kicad_sym")
 
 # ------------------------------------------------ V4.kicad_sym (project lib)
@@ -200,8 +200,8 @@ LIBSYMS = {
     "JLC_V1:SK6812MINI-E_C5149201": (JLC_V1_LIB, "SK6812MINI-E_C5149201"),
     "JLC_V1:SN74AHCT1G125DBVR": (JLC_V1_LIB, "SN74AHCT1G125DBVR"),
     "JLC_V1:EC11E1834403": (JLC_V1_LIB, "EC11E1834403"),
-    "ClaudeMicro_Custom:TouchPad": (CUSTOM_LIB, "TouchPad"),
-    "ClaudeMicro_Custom:ProgPads_1x4": (CUSTOM_LIB, "ProgPads_1x4"),
+    "AgentDeck_Custom:TouchPad": (CUSTOM_LIB, "TouchPad"),
+    "AgentDeck_Custom:ProgPads_1x4": (CUSTOM_LIB, "ProgPads_1x4"),
 }
 
 # pin local coords (lx, ly) per lib_id
@@ -256,8 +256,8 @@ PIN_XY = {
     "JLC_V1:EC11E1834403": {"A": (-2.54, -7.62), "B": (2.54, -7.62), "C": (0.0, -7.62),
                             "D": (-2.54, 7.62), "E": (2.54, 7.62),
                             "F": (7.62, 0.0), "G": (-7.62, 0.0)},
-    "ClaudeMicro_Custom:TouchPad": {"1": (0.0, -7.62)},
-    "ClaudeMicro_Custom:ProgPads_1x4": {"1": (-12.7, 3.81), "2": (-12.7, 1.27),
+    "AgentDeck_Custom:TouchPad": {"1": (0.0, -7.62)},
+    "AgentDeck_Custom:ProgPads_1x4": {"1": (-12.7, 3.81), "2": (-12.7, 1.27),
                                         "3": (-12.7, -1.27), "4": (-12.7, -3.81)},
 }
 
@@ -273,7 +273,7 @@ FP = {
     "Q1": "Package_TO_SOT_SMD:SOT-23",
     "J1": "JLC_V1:USB-C_SMD-TYPE-C-31-M-12_1",
     "J2": "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-    "J3": "ClaudeMicro:ProgPads_1x4",
+    "J3": "AgentDeck:ProgPads_1x4",
     "J4": "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
     "SW25": "V3:MSK12C02",
     "SW26": "JLC_V1:SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
@@ -283,7 +283,7 @@ FP = {
     "D25": "Diode_SMD:D_SMA",
     "LCD1": "V4:LCD_1x12_2p54_Module",
     "MK1": "V4:MEMS_Mic_I2S_3p5x2p65",
-    "TP1": "ClaudeMicro:TouchPad_D12",
+    "TP1": "AgentDeck:TouchPad_D12",
 }
 for _n in range(1, 25):
     FP[f"SW{_n}"] = "V3:ChocV1_Direct"
@@ -660,10 +660,10 @@ def section_mcu():
     rc_net("Device:R", "R10", "10k", 70.0, 180.0, ("pwr", "+3V3"), ("lbl", "IO0"))
     sw_btn("SW26", 90.0, 300.0, "IO0")
 
-    # UART prog pads J3 (reuse ClaudeMicro_Custom ProgPads_1x4):
+    # UART prog pads J3 (reuse AgentDeck_Custom ProgPads_1x4):
     # pad1=3V3, pad2=TXD(GPIO43), pad3=GND, pad4=RXD(GPIO44)
     px_, py_ = 200.0, 300.0
-    pp = "ClaudeMicro_Custom:ProgPads_1x4"
+    pp = "AgentDeck_Custom:ProgPads_1x4"
     part(pp, "J3", "ProgPads 3V3/TX/GND/RX", px_, py_, ["1", "2", "3", "4"])
     for pn, spec in (("1", ("pwr", "+3V3")), ("2", ("lbl", "TXD")),
                      ("3", ("gnd",)), ("4", ("lbl", "RXD"))):
@@ -758,7 +758,7 @@ def section_periph():
 
     # touch pad (ESP32-S3 native touch, GPIO1/T1)
     tx, ty = 285.0, 190.0
-    tp = "ClaudeMicro_Custom:TouchPad"
+    tp = "AgentDeck_Custom:TouchPad"
     part(tp, "TP1", "TouchPad", tx, ty, ["1"])
     px, py = ep(tx, ty, tp, "1")
     tap_dir(("lbl", "TOUCH"), px, py, 'D')
@@ -849,7 +849,7 @@ out = f'''(kicad_sch
 \t(uuid "{ROOT_UUID}")
 \t(paper "A0")
 \t(title_block
-\t\t(title "ClaudeMicroV4")
+\t\t(title "AgentDeckV4")
 \t\t(rev "V0.1")
 \t\t(company "Barakaeli Lawuo")
 \t\t(comment 1 "Voice + screen AI control deck - 24 keys, 1.69in touch LCD, I2S audio, LiPo, ESP32-S3")
@@ -866,7 +866,7 @@ out = f'''(kicad_sch
 \t(embedded_fonts no)
 )
 '''
-sch_path = os.path.join(HW, "ClaudeMicroV4.kicad_sch")
+sch_path = os.path.join(HW, "AgentDeckV4.kicad_sch")
 open(sch_path, "w").write(out)
 print(f"wrote {sch_path}: {len(out)} bytes, {len(items)} items")
 print_pinout()

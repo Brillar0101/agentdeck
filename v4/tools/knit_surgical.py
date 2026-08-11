@@ -17,7 +17,7 @@ import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
-BOARD = os.path.join(HW, "ClaudeMicroV4.kicad_pcb")
+BOARD = os.path.join(HW, "AgentDeckV4.kicad_pcb")
 
 src = open(os.path.join(HERE, "finish_v4.py")).read()
 tree = ast.parse(src)

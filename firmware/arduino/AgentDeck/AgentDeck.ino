@@ -1,4 +1,4 @@
-// ClaudeMicro firmware, Arduino port (RP2040, arduino-pico core).
+// AgentDeck firmware, Arduino port (RP2040, arduino-pico core).
 //
 // A control surface for supervising coding agents: six agent keys that show
 // each agent's live state in colour, command keys for accept / reject / new
@@ -165,8 +165,8 @@ void chord(uint8_t key, bool withShift, bool hold, bool pressed) {
 void tap(uint8_t key) { chord(key, false, false, true); }
 
 void setup() {
-  TinyUSBDevice.setManufacturerDescriptor("ClaudeMicro");
-  TinyUSBDevice.setProductDescriptor("ClaudeMicro");
+  TinyUSBDevice.setManufacturerDescriptor("AgentDeck");
+  TinyUSBDevice.setProductDescriptor("AgentDeck");
 
   for (uint8_t i = 0; i < NUM_KEYS; i++) pinMode(KEY_PINS[i], INPUT_PULLUP);
   for (uint8_t i = 0; i < NUM_JOY; i++)  pinMode(JOY_PINS[i], INPUT_PULLUP);

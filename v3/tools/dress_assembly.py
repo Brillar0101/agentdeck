@@ -1,13 +1,13 @@
 """Dress the V3 assembly: real fastener meshes + natural PBR materials + render.
 
-Adds to v3/enclosure/ClaudeMicroV3-assembled.blend:
+Adds to v3/enclosure/AgentDeckV3-assembled.blend:
   * 6x M2.5x8 countersunk screws (ISO 7046: 90 deg head O5.0, shank O2.45)
     seated flush in the lid countersinks, tips inside the inserts
   * 6x brass heat-set inserts (OD 4.0 x 4.0) in the bottom-case bosses
   * PBR materials: matte ABS cases/plugs, steel screws, brass inserts,
     silicone battery wrap (keycaps/knob already PBR; board comes textured
     from the KiCad GLB export)
-  * a lit camera + EEVEE preview render -> ClaudeMicroV3-preview.png
+  * a lit camera + EEVEE preview render -> AgentDeckV3-preview.png
 
 Run:  blender -b --python v3/tools/dress_assembly.py
 """
@@ -18,9 +18,9 @@ import bpy
 from mathutils import Vector
 
 MM = 0.001
-ROOT = "/Users/barakaeli/kicad-projects/claude-micro/"
-BLEND = ROOT + "v3/enclosure/ClaudeMicroV3-assembled.blend"
-PREVIEW = ROOT + "v3/enclosure/ClaudeMicroV3-preview.png"
+ROOT = "/Users/barakaeli/kicad-projects/agentdeck/"
+BLEND = ROOT + "v3/enclosure/AgentDeckV3-assembled.blend"
+PREVIEW = ROOT + "v3/enclosure/AgentDeckV3-preview.png"
 pos = json.load(open(ROOT + "v3/enclosure/positions.json"))
 HOLES = [tuple(v) for _, v in sorted(pos["holes"].items())] if "holes" in pos \
     else [(6, 6), (144, 6), (6, 104), (144, 104), (6, 55), (144, 55)]

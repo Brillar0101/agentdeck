@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]          # .../v3
-DEFAULT_BOARD = ROOT / "hardware" / "ClaudeMicroV3.kicad_pcb"
+DEFAULT_BOARD = ROOT / "hardware" / "AgentDeckV3.kicad_pcb"
 TOL_MM = 0.5
 
 

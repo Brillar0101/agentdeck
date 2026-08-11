@@ -1,4 +1,4 @@
-"""ClaudeMicro V3 two-part case with brass heat-set inserts + cover plugs.
+"""AgentDeck V3 two-part case with brass heat-set inserts + cover plugs.
 
 Ported from tools/make_case.py (V1). Same fastener system, V3 geometry.
 Stack-up, z=0 is the PCB underside. The lid is deliberately LOW - the

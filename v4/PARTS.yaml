@@ -1,4 +1,4 @@
-# ClaudeMicro V4 - single source of truth for every component.
+# AgentDeck V4 - single source of truth for every component.
 # Same rules as v3/PARTS.yaml (see its header + docs/DESIGN-V4.md):
 # manifest-first, dims verified by tools, hand-solder floor 0.5 mm pitch,
 # stock: CONFIRMED (seen live on stock_date) | VERIFY | EXTERNAL | N/A.
@@ -8,7 +8,7 @@
 
 meta:
   version: 4
-  board: ClaudeMicroV4
+  board: AgentDeckV4
   currency: USD
   updated: 2026-07-29
 
@@ -231,7 +231,7 @@ parts:
   - ref_prefix: TP1
     name: Touch pad (copper, no component) - PTT fallback to voice
     lcsc: null
-    package: TouchPad_D12 (hardware/ClaudeMicro.pretty)
+    package: TouchPad_D12 (hardware/AgentDeck.pretty)
     pitch_mm: null
     dims_2d: [12.0, 12.0]
     height_3d: 0.0
@@ -289,7 +289,7 @@ parts:
       Runs from VSYS (3-5.5V). Placement rule 12.
 
   - ref_prefix: MK1
-    name: I2S MEMS microphone, bottom port
+    name: SPH0645LM4H-B I2S MEMS microphone, bottom port
     lcsc: null
     package: SMD 3.5x2.65 class
     pitch_mm: null
@@ -297,13 +297,30 @@ parts:
     height_3d: 1.0
     dims_source: datasheet
     hand_solder: medium
-    stock: VERIFY              # MSM261S4030H0R (C2840615) page DEAD at LCSC
-                               # 2026-07-29. Alternates to check at Phase 1:
-                               # any in-stock I2S (not PDM) MEMS mic; fallback
-                               # EXTERNAL INMP441 breakout (ubiquitous).
-    unit_price: 0.60
+    stock: EXTERNAL            # DECIDED 2026-08-10. MSM261S4030H0R (C2840615)
+                               # is dropped on two counts, not one:
+                               #  1. LCSC page still 404 (re-checked 2026-08-10);
+                               #     it survives only in JLCPCB's assembly
+                               #     catalogue, which is no use for a hand-built
+                               #     board that needs loose parts.
+                               #  2. Its datasheet says "Top-ported" - the whole
+                               #     acoustic design (rule 11, the 0.9 mm PCB
+                               #     port + mic_port_void ring cut by
+                               #     place_pcb.py) assumes a BOTTOM port. Built
+                               #     as drawn it would listen at the case, not
+                               #     through the hole.
+                               # SPH0645LM4H is bottom-ported I2S, in active
+                               # production, and the vendor-named replacement
+                               # for the discontinued ICS-43434 - so it matches
+                               # rule 11 and the port already in the board.
+                               # Distributor: DigiKey/Adafruit (not LCSC).
+                               # Fallback: INMP441 breakout, or ICS-43434 while
+                               # DigiKey stock lasts (~210k, EOL).
+    unit_price: 1.50
     qty_per_board: 1
-    notes: Bottom-ported - PCB port hole + case gasket (rule 11).
+    notes: Bottom-ported - PCB port hole + case gasket (rule 11). Verify the
+      SPH0645LM4H land pattern against V4.pretty before Phase 5; it is a
+      different footprint from the MSM261 the port was drawn around.
 
   - ref_prefix: SP1
     name: Speaker 4ohm 2W, ~28x20mm oval or 20mm round, JST plug

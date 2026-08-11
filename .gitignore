@@ -11,8 +11,8 @@ _restore_backup_*/
 .backups/
 
 # --- scratch KiCad copies used for 3D exports ---
-ClaudeMicro_v2sw.*
-ClaudeMicro_v3sw.*
+AgentDeck_v2sw.*
+AgentDeck_v3sw.*
 
 # --- autorouter intermediates (regenerate from the board) ---
 *.dsn
@@ -39,11 +39,11 @@ v4/hardware/.history/
 *.blend2
 
 # --- duplicate / superseded Blender scenes ---
-3d/ClaudeMicro-assembled.blend
-3d/ClaudeMicro-assembled-v1-saved.blend
-3d/ClaudeMicro-v2.blend
-3d/ClaudeMicro-v2-assembled-saved.blend
-3d/ClaudeMicro-v3-assembled.blend
+3d/AgentDeck-assembled.blend
+3d/AgentDeck-assembled-v1-saved.blend
+3d/AgentDeck-v2.blend
+3d/AgentDeck-v2-assembled-saved.blend
+3d/AgentDeck-v3-assembled.blend
 3d/.bak-*.blend
 
 # --- third-party reference clone (github.com/jal-co/pi-codex-micro) ---

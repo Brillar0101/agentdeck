@@ -1,4 +1,4 @@
-# ClaudeMicro firmware, Arduino version
+# AgentDeck firmware, Arduino version
 
 An Arduino/C++ port of the CircuitPython firmware in `../code.py`. It is a
 feature-for-feature match: all 13 keys, the encoder, the joystick, the per-key
@@ -19,7 +19,7 @@ filesystem to manage.
 - **Library:** install **Adafruit NeoPixel** (Library Manager). The `Keyboard`
   and `Adafruit_TinyUSB` libraries ship with the core.
 
-Open `ClaudeMicro/ClaudeMicro.ino`, select the port, and upload. To enter the
+Open `AgentDeck/AgentDeck.ino`, select the port, and upload. To enter the
 bootloader on a fresh board, hold BOOT while plugging in USB.
 
 ## One difference from the CircuitPython build
@@ -28,11 +28,11 @@ The CircuitPython firmware exposes two USB serial channels (a REPL console plus 
 separate data channel). The Arduino build exposes a **single** serial port and
 sends the host protocol over it, because there is no REPL to keep clear.
 
-The host bridge (`../../host/claude_bridge.py`) finds the pad by looking for
-"ClaudeMicro" in the USB descriptor, which this sketch sets, so the same bridge
+The host bridge (`../../host/agentdeck_bridge.py`) finds the pad by looking for
+"AgentDeck" in the USB descriptor, which this sketch sets, so the same bridge
 works with either firmware without changes.
 
 ## Pin map and protocol
 
 Identical to the CircuitPython version. See the header comment in
-`ClaudeMicro/ClaudeMicro.ino` and the tables in `../README.md`.
+`AgentDeck/AgentDeck.ino` and the tables in `../README.md`.

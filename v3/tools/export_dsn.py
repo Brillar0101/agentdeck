@@ -15,10 +15,10 @@ import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
-BRD = os.path.join(HW, "ClaudeMicroV3.kicad_pcb")
+BRD = os.path.join(HW, "AgentDeckV3.kicad_pcb")
 EXCLUDE = {"GND", "VSYS_SW", "CC2", "CC1"}   # CC1/CC2 pre-routed by place_pcb
 
-out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HW, "ClaudeMicroV3.dsn")
+out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HW, "AgentDeckV3.dsn")
 tmp = os.path.join(HW, "_route_copy.kicad_pcb")
 shutil.copyfile(BRD, tmp)
 for ext in (".kicad_pro",):

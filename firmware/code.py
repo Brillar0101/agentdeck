@@ -1,4 +1,4 @@
-"""ClaudeMicro firmware (CircuitPython 9.x, RP2040).
+"""AgentDeck firmware (CircuitPython 9.x, RP2040).
 
 A control surface for supervising coding agents: six agent keys that show each
 agent's live state in colour, command keys for accept / reject / new chat /

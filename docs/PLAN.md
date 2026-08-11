@@ -1,4 +1,4 @@
-# Claude Micro — plan (no build yet)
+# AgentDeck — plan (no build yet)
 
 > A desk controller for Claude Code, in the spirit of the Work Louder x OpenAI
 > Codex Micro. Planning document only. Nothing here is committed to hardware.
@@ -43,7 +43,7 @@ Default functions (reported + inferred):
 - Dial: scroll + select (press = confirm). Joystick: composer/UI navigation.
 - Touch dot: undocumented (likely layer/wake). 6 layers over everything.
 
-## 3. Claude Micro concept
+## 3. AgentDeck concept
 
 The pitch: the six lamps answer "which of my Claude sessions needs me?"
 without alt-tabbing. Claude Code is better suited than Codex here because
@@ -72,7 +72,7 @@ Claude Code hooks (SessionStart/Stop/Notification/PreToolUse...)
         v  (hook scripts POST state)
 local daemon (menu-bar or CLI; owns session<->key assignment)
         v  raw HID reports (LED states)          ^ key events
-Claude Micro over USB                    terminal automation
+AgentDeck over USB                    terminal automation
                                  (focus window, send keys, tmux targets)
 ```
 
@@ -142,7 +142,7 @@ What it teaches us:
    only needed for the LED direction.
 2. **Simulator-first works.** Their `/codex-micro sim` is a browser-based
    virtual device where every running agent session occupies an agent key
-   with live state, no hardware needed. We should build the Claude Micro
+   with live state, no hardware needed. We should build the AgentDeck
    as software first: same daemon, same protocol, virtual device in a
    browser. Hardware then just replaces the mock transport.
 3. **Expected HID shape of Work Louder hardware** (their protocol notes):
@@ -183,7 +183,7 @@ Micro 2 / Nomad line it's built on.
 
 ### Platform complaints (feedback board, documented bugs)
 
-| Complaint | Evidence | Claude Micro response |
+| Complaint | Evidence | AgentDeck response |
 |---|---|---|
 | Input app fails to detect devices (Mac M-series, several products) | multiple board posts | No proprietary configurator. QMK + standard VIA protocol; any VIA client works; config lives in a text file |
 | Firmware updates break older devices, no graceful recovery | "please handle old firmware versions" post | RP2040 UF2 bootloader: hold BOOTSEL, drag a file. Unbrickable by construction |
@@ -194,7 +194,7 @@ Micro 2 / Nomad line it's built on.
 
 ### Market reaction to the Codex Micro concept (HN/Reddit)
 
-| Criticism | Representative take | Claude Micro response |
+| Criticism | Representative take | AgentDeck response |
 |---|---|---|
 | Price: "$230 for 12 keys feels like a prank" | Reddit via TechRadar | DIY target $45-70; that IS the project |
 | "Why is a physical object better than a window on screen?" | HN top-voted skepticism | Honest answer: glanceable ambient status + eyes-stay-on-code muscle memory. And phase 0 ships the window version (the simulator) so the hardware is an optional tier, not a gate |

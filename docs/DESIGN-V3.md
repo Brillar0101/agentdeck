@@ -1,4 +1,4 @@
-# ClaudeMicro V3 — Hand-Solderable AI Control Deck
+# AgentDeck V3 — Hand-Solderable AI Control Deck
 
 > Method: script-generated KiCad (v3/tools, tracked in git this time), freerouting,
 > home hand assembly with parts ordered from JLCPCB/LCSC. Purpose unchanged from V1:
@@ -9,17 +9,17 @@
 | Version | What it is | Where |
 |---|---|---|
 | V1 | 90×90 4-layer RP2040 board, JLC-assembled (rev 0.1, ordered 2026-07-28) | `hardware/` |
-| V2 | V1 + PowerDeck two-deck concept (pogo/Qi) — paper design | `~/kicad-projects/claude-micro-powerdeck` |
+| V2 | V1 + PowerDeck two-deck concept (pogo/Qi) — paper design | `~/kicad-projects/agentdeck-powerdeck` |
 | V3 | THIS: bigger, hand-solderable, 24 keys, OLED, touch, LiPo, USB+BLE | `v3/` |
 
 Enclosure files named "v2/v3-assembled.blend" are *assembly iterations of V1* — an
-unfortunate collision; V3 outputs use the `ClaudeMicroV3-` prefix throughout.
+unfortunate collision; V3 outputs use the `AgentDeckV3-` prefix throughout.
 
 ## Feature set (from market research, see plan)
 
 24-key 4×6 Choc matrix · per-key SK6812 · 0.96" OLED (model/layer/agent-state/battery)
 · EC11 encoder · capacitive touch PTT pad · USB-C + BLE HID · 1000 mAh LiPo w/ USB-C
-charging · power switch · same host protocol as V1 (`host/claude_bridge.py`) + screen cmd.
+charging · power switch · same host protocol as V1 (`host/agentdeck_bridge.py`) + screen cmd.
 
 ## Architecture
 
@@ -101,7 +101,7 @@ time (LCSC links rotated). `v3/tools/place_pcb.py` implements these as constrain
 Matrix scan/debounce → USB HID *and* BLE HID (NimBLE), auto-switch by USB presence;
 OLED status UI; native touch → PTT; SK6812 state colors (V1 language: idle/think/
 work/block/done/err); battery % from ADC; CDC protocol = V1's plus `S <line> <text>`.
-USB name "ClaudeMicroV3" (claude_bridge.py matches by name).
+USB name "AgentDeckV3" (agentdeck_bridge.py matches by name).
 
 ## Rules recap (see v3/PARTS.yaml header)
 

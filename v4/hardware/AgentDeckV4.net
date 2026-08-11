@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/Users/barakaeli/kicad-projects/claude-micro/v4/hardware/ClaudeMicroV4.kicad_sch")
+		(source "/Users/barakaeli/kicad-projects/agentdeck/v4/hardware/AgentDeckV4.kicad_sch")
 		(date "2026-07-29T13:44:55")
 		(tool "Eeschema 10.0.3")
 		(sheet
@@ -9,11 +9,11 @@
 			(name "/")
 			(tstamps "/")
 			(title_block
-				(title "ClaudeMicroV4")
+				(title "AgentDeckV4")
 				(company "Barakaeli Lawuo")
 				(rev "V0.1")
 				(date)
-				(source "ClaudeMicroV4.kicad_sch")
+				(source "AgentDeckV4.kicad_sch")
 				(comment
 					(number "1")
 					(value "Voice + screen AI control deck - 24 keys, 1.69in touch LCD, I2S audio, LiPo, ESP32-S3")
@@ -79,7 +79,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -133,7 +133,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -187,7 +187,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -241,7 +241,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -295,7 +295,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -349,7 +349,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -403,7 +403,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -457,7 +457,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -511,7 +511,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -565,7 +565,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -619,7 +619,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -673,7 +673,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -727,7 +727,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -781,7 +781,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -835,7 +835,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -889,7 +889,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -943,7 +943,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -997,7 +997,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1051,7 +1051,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1105,7 +1105,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1159,7 +1159,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1213,7 +1213,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1267,7 +1267,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1321,7 +1321,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1375,7 +1375,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1429,7 +1429,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1483,7 +1483,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1537,7 +1537,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1591,7 +1591,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1645,7 +1645,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1699,7 +1699,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1753,7 +1753,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1807,7 +1807,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1861,7 +1861,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1915,7 +1915,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1969,7 +1969,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2023,7 +2023,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2077,7 +2077,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2131,7 +2131,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2185,7 +2185,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2239,7 +2239,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2293,7 +2293,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2347,7 +2347,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2401,7 +2401,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2455,7 +2455,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2509,7 +2509,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2563,7 +2563,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2617,7 +2617,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2671,7 +2671,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2725,7 +2725,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2779,7 +2779,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2833,7 +2833,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2887,7 +2887,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2941,7 +2941,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2995,7 +2995,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3049,7 +3049,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3103,7 +3103,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3157,7 +3157,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3211,7 +3211,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3265,7 +3265,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3319,7 +3319,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3373,7 +3373,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3427,7 +3427,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3481,7 +3481,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3546,7 +3546,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3611,7 +3611,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3703,7 +3703,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3735,10 +3735,10 @@
 		(comp
 			(ref "J3")
 			(value "ProgPads 3V3/TX/GND/RX")
-			(footprint "ClaudeMicro:ProgPads_1x4")
+			(footprint "AgentDeck:ProgPads_1x4")
 			(fields
 				(field
-					(name "Footprint") "ClaudeMicro:ProgPads_1x4")
+					(name "Footprint") "AgentDeck:ProgPads_1x4")
 				(field
 					(name "Datasheet")
 				)
@@ -3747,7 +3747,7 @@
 				)
 			)
 			(libsource
-				(lib "ClaudeMicro_Custom")
+				(lib "AgentDeck_Custom")
 				(part "ProgPads_1x4")
 				(description "")
 			)
@@ -3757,7 +3757,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -3809,7 +3809,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3863,7 +3863,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -3939,7 +3939,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3995,7 +3995,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4051,7 +4051,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4107,7 +4107,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4163,7 +4163,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4219,7 +4219,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4275,7 +4275,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4331,7 +4331,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4387,7 +4387,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4443,7 +4443,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4499,7 +4499,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4555,7 +4555,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4611,7 +4611,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4667,7 +4667,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4723,7 +4723,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4779,7 +4779,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4835,7 +4835,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4891,7 +4891,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -4947,7 +4947,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5003,7 +5003,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5059,7 +5059,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5115,7 +5115,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5171,7 +5171,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5227,7 +5227,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5283,7 +5283,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -5341,7 +5341,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5394,7 +5394,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5448,7 +5448,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5502,7 +5502,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5556,7 +5556,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5610,7 +5610,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5664,7 +5664,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5718,7 +5718,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5772,7 +5772,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5826,7 +5826,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5880,7 +5880,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5934,7 +5934,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -5988,7 +5988,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -6042,7 +6042,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6088,7 +6088,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6134,7 +6134,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6180,7 +6180,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6226,7 +6226,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6272,7 +6272,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6318,7 +6318,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6364,7 +6364,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6410,7 +6410,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6456,7 +6456,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6502,7 +6502,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6548,7 +6548,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6594,7 +6594,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6640,7 +6640,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6686,7 +6686,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6732,7 +6732,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6778,7 +6778,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6824,7 +6824,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6870,7 +6870,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6916,7 +6916,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -6962,7 +6962,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7008,7 +7008,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7054,7 +7054,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7100,7 +7100,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7146,7 +7146,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7195,7 +7195,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7251,7 +7251,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7285,10 +7285,10 @@
 		(comp
 			(ref "TP1")
 			(value "TouchPad")
-			(footprint "ClaudeMicro:TouchPad_D12")
+			(footprint "AgentDeck:TouchPad_D12")
 			(fields
 				(field
-					(name "Footprint") "ClaudeMicro:TouchPad_D12")
+					(name "Footprint") "AgentDeck:TouchPad_D12")
 				(field
 					(name "Datasheet")
 				)
@@ -7297,7 +7297,7 @@
 				)
 			)
 			(libsource
-				(lib "ClaudeMicro_Custom")
+				(lib "AgentDeck_Custom")
 				(part "TouchPad")
 				(description "")
 			)
@@ -7307,7 +7307,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7350,7 +7350,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7517,7 +7517,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7576,7 +7576,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7638,7 +7638,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7702,7 +7702,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -7761,7 +7761,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ClaudeMicroV4.kicad_sch")
+				(value "AgentDeckV4.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -7805,7 +7805,7 @@
 	(variants)
 	(libparts
 		(libpart
-			(lib "ClaudeMicro_Custom")
+			(lib "AgentDeck_Custom")
 			(part "ProgPads_1x4")
 			(fields
 				(field
@@ -7846,7 +7846,7 @@
 			)
 		)
 		(libpart
-			(lib "ClaudeMicro_Custom")
+			(lib "AgentDeck_Custom")
 			(part "TouchPad")
 			(fields
 				(field
@@ -9027,8 +9027,8 @@
 	)
 	(libraries
 		(library
-			(logical "ClaudeMicro_Custom")
-			(uri "${KIPRJMOD}/../../hardware/ClaudeMicro_Custom.kicad_sym")
+			(logical "AgentDeck_Custom")
+			(uri "${KIPRJMOD}/../../hardware/AgentDeck_Custom.kicad_sym")
 		)
 		(library
 			(logical "Connector_Generic")

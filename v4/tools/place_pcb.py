@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Populate v4/hardware/ClaudeMicroV4.kicad_pcb from the netlist and place parts.
+"""Populate v4/hardware/AgentDeckV4.kicad_pcb from the netlist and place parts.
 
 Parameterized port of v3/tools/place_pcb.py (the DRC-0 V3 pipeline). Run with
 KiCad's bundled python (pcbnew):
@@ -24,8 +24,8 @@ import pcbnew
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))          # repo root
 HW = os.path.join(ROOT, "v4", "hardware")
-NET = os.path.join(HW, "ClaudeMicroV4.net")
-BRD = os.path.join(HW, "ClaudeMicroV4.kicad_pcb")
+NET = os.path.join(HW, "AgentDeckV4.net")
+BRD = os.path.join(HW, "AgentDeckV4.kicad_pcb")
 V1_SHAPES = os.path.join(ROOT, "hardware", "JLC.3dshapes")
 NC_SHAPES = "/Users/barakaeli/Open Source Hardware/NeuralCard/JLC.3dshapes"
 FPD = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints"
@@ -33,7 +33,7 @@ LIB = {
     "V4": os.path.join(HW, "V4.pretty"),
     "V3": os.path.join(ROOT, "v3", "hardware", "V3.pretty"),
     "JLC_V1": os.path.join(ROOT, "hardware", "JLC.pretty"),
-    "ClaudeMicro": os.path.join(ROOT, "hardware", "ClaudeMicro.pretty"),
+    "AgentDeck": os.path.join(ROOT, "hardware", "AgentDeck.pretty"),
     "Diode_SMD": f"{FPD}/Diode_SMD.pretty",
     "Connector_JST": f"{FPD}/Connector_JST.pretty",
     "Package_TO_SOT_SMD": f"{FPD}/Package_TO_SOT_SMD.pretty",
@@ -272,7 +272,7 @@ def text(board, t, x, y, size, layer, thick, justify=None, angle=0, mirror=False
 
 def add_silk(board):
     F, B = pcbnew.F_SilkS, pcbnew.B_SilkS
-    text(board, "ClaudeMicro V4 - princetekki.com", 24.0, 106.3, 1.6, F, 0.3,
+    text(board, "AgentDeck V4 - princetekki.com", 24.0, 106.3, 1.6, F, 0.3,
          justify="left")
     text(board, "FLASH: hold BOOT - tap RST - release BOOT", 88.0, 105.3, 1.0,
          F, 0.16, justify="left")
@@ -289,7 +289,7 @@ def add_silk(board):
     text(board, "PWR", 146.5, 51.5, 1.0, F, 0.16)
     text(board, "USB-C", 75.0, 10.2, 1.0, F, 0.16)
     # pinout legend on the back (inside the battery pocket zone - flat area)
-    legend = ["ClaudeMicroV4  ESP32-S3-WROOM-1",
+    legend = ["AgentDeckV4  ESP32-S3-WROOM-1",
               "ROW0-3=IO4-7   COL0-5=IO10-15",
               "SDA=IO8 SCL=IO9  LED=IO21  TOUCH=IO1",
               "LCD SCK/MOSI/DC=IO16/17/18  VBAT=IO2",
@@ -301,7 +301,42 @@ def add_silk(board):
          pcbnew.Dwgs_User, 0.2)
 
 
+def routed(path):
+    """Track/via count of an existing board, or (0, 0) if there is none."""
+    if not os.path.exists(path):
+        return 0, 0
+    try:
+        b = pcbnew.LoadBoard(path)
+    except Exception:
+        return 0, 0
+    t = sum(1 for x in b.GetTracks() if x.GetClass() == "PCB_TRACK")
+    v = sum(1 for x in b.GetTracks() if x.GetClass() == "PCB_VIA")
+    return t, v
+
+
+def guard():
+    """Refuse to regenerate over a routed board.
+
+    CreateEmptyBoard() means this script rebuilds the layout from the netlist
+    every run - any routing on disk is discarded. That is how the 29 Jul
+    routing was lost. Re-placing is still legitimate, so the guard is an
+    override rather than a wall: set PLACE_PCB_FORCE=1, having saved a copy.
+    """
+    t, v = routed(BRD)
+    if t + v <= 20:          # bare placement carries only the CC1/CC2 pre-routes
+        return
+    if os.environ.get("PLACE_PCB_FORCE") == "1":
+        print(f"WARNING: discarding {t} tracks and {v} vias (PLACE_PCB_FORCE=1)")
+        return
+    raise SystemExit(
+        f"refusing to run: {BRD} already carries {t} tracks and {v} vias, "
+        f"which this script would discard.\n"
+        f"Back the board up, then re-run with PLACE_PCB_FORCE=1 if you really "
+        f"do want to re-place from the netlist.")
+
+
 def main():
+    guard()
     comps, nets = parse_netlist(NET)
     board = pcbnew.CreateEmptyBoard()
     board.SetFileName(BRD)

@@ -1,5 +1,5 @@
 (fp_lib_table
   (version 7)
   (lib (name "JLC")(type "KiCad")(uri "${KIPRJMOD}/JLC.pretty")(options "")(descr "JLCPCB/LCSC footprints via easyeda2kicad"))
-  (lib (name "ClaudeMicro")(type "KiCad")(uri "${KIPRJMOD}/ClaudeMicro.pretty")(options "")(descr "Custom: joystick THT, touch pad, SWD pads"))
+  (lib (name "AgentDeck")(type "KiCad")(uri "${KIPRJMOD}/AgentDeck.pretty")(options "")(descr "Custom: joystick THT, touch pad, SWD pads"))
 )

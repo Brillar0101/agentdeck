@@ -1,11 +1,11 @@
-"""Build the ClaudeMicro V3 assembly in Blender: board GLB + 24 switches with
+"""Build the AgentDeck V3 assembly in Blender: board GLB + 24 switches with
 caps + encoder knob + battery placeholder. The case is added by make_case_v3.py.
 
 Pipeline (paths are arguments, nothing hardcoded):
   1. kicad python  v3/tools/export_positions_v3.py --pcb ... --out positions.json
   2. kicad-cli pcb export glb --subst-models --include-tracks --include-pads \
        --include-zones --include-silkscreen --include-soldermask --force \
-       -o ClaudeMicroV3.glb ClaudeMicroV3.kicad_pcb
+       -o AgentDeckV3.glb AgentDeckV3.kicad_pcb
   3. blender -b --python v3/tools/build_assembly_v3.py -- \
        --positions ... --glb ... --assets <repo enclosure dir> --blend <out.blend>
   4. blender -b --python v3/tools/make_case_v3.py -- ...

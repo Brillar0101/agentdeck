@@ -1,6 +1,6 @@
 # Licensing
 
-ClaudeMicro is an open-hardware project, so different parts carry different
+AgentDeck is an open-hardware project, so different parts carry different
 licences. This is the usual split for open hardware — one licence cannot sensibly
 cover source code, a PCB design, and written documentation at once.
 
@@ -55,7 +55,7 @@ remains under its original terms:
 
 ## Inspiration and independence
 
-ClaudeMicro is an **independent, Codex Micro-inspired project**. The idea of a
+AgentDeck is an **independent, Codex Micro-inspired project**. The idea of a
 macropad for supervising coding agents — agent keys that show live state, an
 accept/reject pair, a reasoning-effort dial — follows OpenAI and Work Louder's
 **Codex Micro**, and the layout here deliberately echoes it.
@@ -65,7 +65,7 @@ with OpenAI, Work Louder, or Anthropic.** The schematic, PCB layout, firmware an
 enclosure in this repository are original work; no files from the Codex Micro were
 used. "Codex", "Codex Micro", "OpenAI", "Work Louder", "Claude" and "Anthropic"
 are trademarks of their respective owners, referenced here only descriptively.
-The "ClaudeMicro" name is a working project name, not a product name, and carries
+The "AgentDeck" name is a working project name, not a product name, and carries
 no claim to Anthropic's marks.
 
 ## Attribution

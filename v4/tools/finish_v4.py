@@ -23,7 +23,7 @@ import pcbnew
 mm = pcbnew.FromMM
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
-B = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HW, "ClaudeMicroV4.kicad_pcb")
+B = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HW, "AgentDeckV4.kicad_pcb")
 SES = sys.argv[1]
 KICAD_CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 

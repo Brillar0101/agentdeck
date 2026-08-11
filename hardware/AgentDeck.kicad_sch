@@ -5,13 +5,13 @@
 	(uuid "c1a0de00-0001-4000-8000-000000000001")
 	(paper "A3")
 	(title_block
-		(title "Claude Micro")
+		(title "AgentDeck")
 		(rev "V0.1")
 		(company "Barakaeli Lawuo")
 		(comment 1 "Desk controller for Claude Code - RP2040, QMK, per-session RGB")
 	)
 	(lib_symbols
-		(symbol "ClaudeMicro_Custom:ProgPads_1x4"
+		(symbol "AgentDeck_Custom:ProgPads_1x4"
 			(pin_names
 				(offset 1.016)
 			)
@@ -162,7 +162,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ClaudeMicro_Custom:SKQUCAA010"
+		(symbol "AgentDeck_Custom:SKQUCAA010"
 			(pin_names
 				(offset 1.016)
 			)
@@ -408,7 +408,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ClaudeMicro_Custom:TouchPad"
+		(symbol "AgentDeck_Custom:TouchPad"
 			(pin_names
 				(offset 1.016)
 			)
@@ -12070,7 +12070,7 @@
 			(uuid "fbcf0c16-8ba9-43c7-95e1-9b6c1c43a3d6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0139")
 					(unit 1)
@@ -12147,7 +12147,7 @@
 			(uuid "a35c5a70-4b37-47bf-a784-cf91046056de")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0140")
 					(unit 1)
@@ -12228,7 +12228,7 @@
 			(uuid "d73c08bc-22da-4431-965d-8f09bf780dce")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C13")
 					(unit 1)
@@ -12309,7 +12309,7 @@
 			(uuid "867d94b6-f8a5-46d6-bbc1-506ea4125be7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C17")
 					(unit 1)
@@ -12386,7 +12386,7 @@
 			(uuid "5124e07a-3247-4bb3-8e3b-e8d6d30dea24")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0020")
 					(unit 1)
@@ -12467,7 +12467,7 @@
 			(uuid "1219d548-3775-4050-8e10-143bb225ade7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW3")
 					(unit 1)
@@ -12544,7 +12544,7 @@
 			(uuid "c8049304-ec13-4010-a7b5-be594b4f10d6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0104")
 					(unit 1)
@@ -12625,7 +12625,7 @@
 			(uuid "bd9f3b7f-7fb7-44bd-b236-cc35fe23785f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R3")
 					(unit 1)
@@ -12702,7 +12702,7 @@
 			(uuid "537e364d-d853-46e9-b7b8-816847e0c894")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0081")
 					(unit 1)
@@ -12779,7 +12779,7 @@
 			(uuid "c4f2fa3d-454e-4824-9d05-360a4e753d43")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0013")
 					(unit 1)
@@ -12856,7 +12856,7 @@
 			(uuid "d0f93a4f-4838-4694-9dc1-fb549f47fdc6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0003")
 					(unit 1)
@@ -12949,7 +12949,7 @@
 			(uuid "39bb8b7f-18d9-4238-8d27-fb40a16eabad")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U6")
 					(unit 1)
@@ -13030,7 +13030,7 @@
 			(uuid "224106bd-a367-475e-b05d-ed440eb123ed")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW11")
 					(unit 1)
@@ -13107,7 +13107,7 @@
 			(uuid "04f7b9dc-d9cd-4a5f-8f11-397c8a077c76")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#FLG01")
 					(unit 1)
@@ -13184,7 +13184,7 @@
 			(uuid "1dbcbe02-c72c-4e59-8a55-a8926aee54a9")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0128")
 					(unit 1)
@@ -13265,7 +13265,7 @@
 			(uuid "80df4a53-d280-44d2-88d1-ff042ec495a7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW1")
 					(unit 1)
@@ -13342,7 +13342,7 @@
 			(uuid "6e065239-8067-4ac1-b97b-926d8f24e171")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0077")
 					(unit 1)
@@ -13419,7 +13419,7 @@
 			(uuid "892d170a-136e-4842-8e21-0f69a478619d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0120")
 					(unit 1)
@@ -13496,7 +13496,7 @@
 			(uuid "c8473aaa-c5ff-4b85-9480-f50fba3f8e4c")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0094")
 					(unit 1)
@@ -13573,7 +13573,7 @@
 			(uuid "bccf4686-344c-4089-b624-f601ab88f81a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0049")
 					(unit 1)
@@ -13650,7 +13650,7 @@
 			(uuid "a18f8c04-3897-430d-ac07-894bd62623b7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0037")
 					(unit 1)
@@ -13727,7 +13727,7 @@
 			(uuid "5748bf90-0d20-4ac5-af20-1310615c4315")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0085")
 					(unit 1)
@@ -13804,7 +13804,7 @@
 			(uuid "020c8134-399c-4098-8adb-7e8c0e2b602e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0004")
 					(unit 1)
@@ -13881,7 +13881,7 @@
 			(uuid "3370bb37-ac15-4c0e-b39d-0358508633e7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0047")
 					(unit 1)
@@ -13962,7 +13962,7 @@
 			(uuid "f1c81516-0051-4e0d-bf7b-759d00ae42dc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW10")
 					(unit 1)
@@ -14039,7 +14039,7 @@
 			(uuid "84a6c0c5-a72d-4395-9222-afc5b2bd650f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0038")
 					(unit 1)
@@ -14116,7 +14116,7 @@
 			(uuid "df92bdb6-0175-46ea-8c19-3d0b1800fee9")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0060")
 					(unit 1)
@@ -14203,7 +14203,7 @@
 			(uuid "4acc1121-a51d-4e2d-908a-82ddc50b2b36")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D6")
 					(unit 1)
@@ -14284,7 +14284,7 @@
 			(uuid "185b583b-bb3a-4176-996c-4d764b4b14b8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C6")
 					(unit 1)
@@ -14365,7 +14365,7 @@
 			(uuid "3879146f-5a7e-4f84-99bd-2ceaed8e4116")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D8")
 					(unit 1)
@@ -14442,7 +14442,7 @@
 			(uuid "dcace6ff-46ac-4ffe-840f-f5a99a3d8eb8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0143")
 					(unit 1)
@@ -14519,7 +14519,7 @@
 			(uuid "244fec0c-d4da-46f6-a27a-00da83321e89")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0125")
 					(unit 1)
@@ -14600,7 +14600,7 @@
 			(uuid "51182560-e120-41bb-aae5-f92fa044adad")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C21")
 					(unit 1)
@@ -14677,7 +14677,7 @@
 			(uuid "a34923ac-075a-48ec-ae44-a53ccc3c2107")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0042")
 					(unit 1)
@@ -14758,7 +14758,7 @@
 			(uuid "94e8e98f-3bb6-4ed3-92b2-c2fa57c7a392")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C29")
 					(unit 1)
@@ -14835,7 +14835,7 @@
 			(uuid "154b7951-bbbd-492a-90aa-286249838c09")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0021")
 					(unit 1)
@@ -14922,7 +14922,7 @@
 			(uuid "f647666a-a5cd-4e37-8669-fee392520b3e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D11")
 					(unit 1)
@@ -15009,7 +15009,7 @@
 			(uuid "f148e3be-1459-42b3-b234-46087a0d9562")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U3")
 					(unit 1)
@@ -15086,7 +15086,7 @@
 			(uuid "ee108bf0-adbe-45e5-b5e2-535a65fa3880")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0041")
 					(unit 1)
@@ -15163,7 +15163,7 @@
 			(uuid "520f6355-24b5-4564-9051-ae1889d2715b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0111")
 					(unit 1)
@@ -15250,7 +15250,7 @@
 			(uuid "c65c4c79-9ffa-42db-b504-91602de00178")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D15")
 					(unit 1)
@@ -15327,7 +15327,7 @@
 			(uuid "df749bf8-df49-4be1-b2fe-7b76f8a163f8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0137")
 					(unit 1)
@@ -15404,7 +15404,7 @@
 			(uuid "38b97cce-935b-4e55-8e21-295f1bdc7889")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0119")
 					(unit 1)
@@ -15481,7 +15481,7 @@
 			(uuid "e5daf1d8-c971-470f-a2f2-c250f6c3d8a2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0024")
 					(unit 1)
@@ -15558,7 +15558,7 @@
 			(uuid "2be81f16-769a-4a54-9b5a-16fecf805b7e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0043")
 					(unit 1)
@@ -15635,7 +15635,7 @@
 			(uuid "267a76f0-bfb1-4e5a-bde3-2ed38be41bad")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0032")
 					(unit 1)
@@ -15716,7 +15716,7 @@
 			(uuid "435f36c4-cc85-451b-8562-291ccd7598bb")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R6")
 					(unit 1)
@@ -15793,7 +15793,7 @@
 			(uuid "fcda68f4-edc0-4c69-871d-216916dc18e6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0017")
 					(unit 1)
@@ -15870,7 +15870,7 @@
 			(uuid "9c7fb768-e1f7-4cb0-83f6-4ce8b22fc277")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0072")
 					(unit 1)
@@ -15947,7 +15947,7 @@
 			(uuid "9856b2b3-bb3c-4762-8683-1678340b038b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0102")
 					(unit 1)
@@ -16028,7 +16028,7 @@
 			(uuid "7e34a3e9-f4d6-4dc8-b94b-b62eb7678038")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C19")
 					(unit 1)
@@ -16109,7 +16109,7 @@
 			(uuid "271ce590-b8a4-47b1-a54a-30eaffa82f61")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C24")
 					(unit 1)
@@ -16202,7 +16202,7 @@
 			(uuid "72496c51-36e5-4d1e-bed9-1f2ffefa7f74")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U5")
 					(unit 1)
@@ -16279,7 +16279,7 @@
 			(uuid "40320943-38b0-44a1-896b-3646e902fb6b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0101")
 					(unit 1)
@@ -16356,7 +16356,7 @@
 			(uuid "d3d322cc-72da-4280-8985-d028c86dff38")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0010")
 					(unit 1)
@@ -16437,7 +16437,7 @@
 			(uuid "ccad5528-1eb2-43d0-a3ef-bc68764638ad")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW6")
 					(unit 1)
@@ -16518,7 +16518,7 @@
 			(uuid "ba6b1222-4424-48a0-a112-0869b37c8141")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW8")
 					(unit 1)
@@ -16595,7 +16595,7 @@
 			(uuid "abdb4ae8-66cb-4138-bb15-6e176cf0769b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0040")
 					(unit 1)
@@ -16672,7 +16672,7 @@
 			(uuid "5f065478-cbb1-4012-ac21-a33d1db32ab6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0144")
 					(unit 1)
@@ -16749,7 +16749,7 @@
 			(uuid "ef3b5600-0846-4c5e-820f-690381affd95")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0142")
 					(unit 1)
@@ -16826,7 +16826,7 @@
 			(uuid "4e08923d-62cf-4719-94ce-fcda874265e6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0075")
 					(unit 1)
@@ -16903,7 +16903,7 @@
 			(uuid "5d03b72b-8093-4525-a7eb-351f5f3df16a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0011")
 					(unit 1)
@@ -16980,7 +16980,7 @@
 			(uuid "76ebd86b-1ece-46df-8b92-f53471b90154")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0015")
 					(unit 1)
@@ -17067,7 +17067,7 @@
 			(uuid "3497934a-7cb6-4112-b65b-ad65b80e2ca9")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "Y1")
 					(unit 1)
@@ -17148,7 +17148,7 @@
 			(uuid "62781d78-dd8d-4bc0-8623-f4a44ade7719")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW9")
 					(unit 1)
@@ -17225,7 +17225,7 @@
 			(uuid "cebb3bc1-a152-4744-a55c-58ef578bf6d2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0005")
 					(unit 1)
@@ -17312,7 +17312,7 @@
 			(uuid "51353431-39ce-469e-ad48-2ba668a494fb")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D14")
 					(unit 1)
@@ -17389,7 +17389,7 @@
 			(uuid "1f16c751-44e7-4e92-a727-dcf15e2a2774")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0107")
 					(unit 1)
@@ -17466,7 +17466,7 @@
 			(uuid "74942c9e-8107-4137-9263-6980a9aba497")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0105")
 					(unit 1)
@@ -17543,7 +17543,7 @@
 			(uuid "9401d7c2-1952-4dcc-a0f8-946e0d305ef1")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0106")
 					(unit 1)
@@ -17624,7 +17624,7 @@
 			(uuid "4a7cd06a-0511-4675-aed4-d85319fabbb0")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW12")
 					(unit 1)
@@ -17705,7 +17705,7 @@
 			(uuid "55d8bfdb-3c95-4489-a586-376d830bf60f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C23")
 					(unit 1)
@@ -17792,7 +17792,7 @@
 			(uuid "4b99c3c1-1ff2-408e-9bba-b2edfd1ad67d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D13")
 					(unit 1)
@@ -17869,7 +17869,7 @@
 			(uuid "ae7df474-a942-4c05-a804-05412b964ded")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0014")
 					(unit 1)
@@ -17946,7 +17946,7 @@
 			(uuid "12f92ada-d855-4e17-9d66-531111325dcf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0114")
 					(unit 1)
@@ -17955,7 +17955,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ClaudeMicro_Custom:ProgPads_1x4")
+		(lib_id "AgentDeck_Custom:ProgPads_1x4")
 		(at 157.48 168.91 0)
 		(unit 1)
 		(body_style 1)
@@ -17987,7 +17987,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "ClaudeMicro:ProgPads_1x4"
+		(property "Footprint" "AgentDeck:ProgPads_1x4"
 			(at 157.48 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -18033,7 +18033,7 @@
 			(uuid "91d8724c-3af2-4ade-a618-a6f3a91144e2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "J2")
 					(unit 1)
@@ -18110,7 +18110,7 @@
 			(uuid "dac06047-9f91-42d2-86f7-a42350b82a20")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0053")
 					(unit 1)
@@ -18191,7 +18191,7 @@
 			(uuid "144cca0d-c8f4-4879-b6e8-0f296791f85b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R9")
 					(unit 1)
@@ -18268,7 +18268,7 @@
 			(uuid "2856d23d-fbb8-428a-bc5e-34c66d0d671a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0048")
 					(unit 1)
@@ -18345,7 +18345,7 @@
 			(uuid "60bd2c9e-6e31-49ea-b392-d5249170d990")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0059")
 					(unit 1)
@@ -18426,7 +18426,7 @@
 			(uuid "2d501388-11fc-42d6-a3fd-dd0925fcb213")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C28")
 					(unit 1)
@@ -18503,7 +18503,7 @@
 			(uuid "9dd5d8b0-e73b-4392-ba81-405d108c3844")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0064")
 					(unit 1)
@@ -18580,7 +18580,7 @@
 			(uuid "f4a15f4e-7838-43b1-9c35-14ca749812f4")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0050")
 					(unit 1)
@@ -18657,7 +18657,7 @@
 			(uuid "ca2dc65e-7d97-40b9-8cf1-84aeb661133e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0123")
 					(unit 1)
@@ -18734,7 +18734,7 @@
 			(uuid "630b2b9f-2d48-431b-b788-a66ed1513b6c")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0097")
 					(unit 1)
@@ -18811,7 +18811,7 @@
 			(uuid "7bc1b271-3244-4325-bdc6-4b266164b75b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0110")
 					(unit 1)
@@ -19057,7 +19057,7 @@
 			(uuid "0af9f4e1-1880-46c2-826c-41117c1222d0")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U1")
 					(unit 1)
@@ -19144,7 +19144,7 @@
 			(uuid "bcb41e4e-491e-4a32-9411-4e216a1586a3")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D5")
 					(unit 1)
@@ -19221,7 +19221,7 @@
 			(uuid "9a98afb2-770f-4005-943e-48332c046e05")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0061")
 					(unit 1)
@@ -19308,7 +19308,7 @@
 			(uuid "e9957311-8a3b-44f4-805e-f6c181482d1f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW13")
 					(unit 1)
@@ -19389,7 +19389,7 @@
 			(uuid "5363e73e-8350-4e07-bdda-fedcb7a6b4d6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C9")
 					(unit 1)
@@ -19470,7 +19470,7 @@
 			(uuid "514a53f5-03ca-477a-b593-4af68c84f614")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C1")
 					(unit 1)
@@ -19551,7 +19551,7 @@
 			(uuid "72638785-60c2-4f76-9293-fff536b73ad6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C10")
 					(unit 1)
@@ -19628,7 +19628,7 @@
 			(uuid "65132c49-1e51-4620-806b-5414b0a77049")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0045")
 					(unit 1)
@@ -19705,7 +19705,7 @@
 			(uuid "b5a4359b-0c60-4119-8bbf-5a1829d15b61")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0087")
 					(unit 1)
@@ -19782,7 +19782,7 @@
 			(uuid "d41317f5-2155-4cb4-ad26-ed5e2e560f40")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#FLG03")
 					(unit 1)
@@ -19859,7 +19859,7 @@
 			(uuid "c7de09ad-a506-4554-86e2-fbf2c33e8265")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0118")
 					(unit 1)
@@ -19982,7 +19982,7 @@
 			(uuid "50ff5800-f337-4fc5-87c3-7e6978412ebd")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "J1")
 					(unit 1)
@@ -20059,7 +20059,7 @@
 			(uuid "0df2b0bc-44e2-465a-94f3-0591b46fe91b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0084")
 					(unit 1)
@@ -20140,7 +20140,7 @@
 			(uuid "ea6e01e7-c64a-47d6-a68b-fe19a7a9005d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R5")
 					(unit 1)
@@ -20217,7 +20217,7 @@
 			(uuid "0e8dc9b0-b0fc-489f-bfe5-76dcaf3e4b56")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0069")
 					(unit 1)
@@ -20298,7 +20298,7 @@
 			(uuid "60b908fa-c456-4530-a007-6f47975b58f8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW4")
 					(unit 1)
@@ -20375,7 +20375,7 @@
 			(uuid "79132037-8a67-4c2a-9d20-539650c0c6b2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0070")
 					(unit 1)
@@ -20452,7 +20452,7 @@
 			(uuid "7dd51f77-75cb-4893-890c-58f8c843c3cc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0100")
 					(unit 1)
@@ -20533,7 +20533,7 @@
 			(uuid "4c20a907-5f80-4010-a9ff-2b136c2eed70")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C26")
 					(unit 1)
@@ -20614,7 +20614,7 @@
 			(uuid "b55ddd10-49c3-4477-843e-7f74b69d07cd")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C22")
 					(unit 1)
@@ -20623,7 +20623,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ClaudeMicro_Custom:TouchPad")
+		(lib_id "AgentDeck_Custom:TouchPad")
 		(at 39.37 389.89 0)
 		(unit 1)
 		(body_style 1)
@@ -20655,7 +20655,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "ClaudeMicro:TouchPad_D12"
+		(property "Footprint" "AgentDeck:TouchPad_D12"
 			(at 39.37 389.89 0)
 			(hide yes)
 			(show_name no)
@@ -20692,7 +20692,7 @@
 			(uuid "7e1ae246-a353-441d-9b4a-3c6c4a7860fb")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "TP1")
 					(unit 1)
@@ -20773,7 +20773,7 @@
 			(uuid "4551682e-9833-4d98-a238-b810e212be03")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C11")
 					(unit 1)
@@ -20850,7 +20850,7 @@
 			(uuid "a2d4cdfa-897c-43eb-aa99-3e67ef8228fd")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0016")
 					(unit 1)
@@ -20931,7 +20931,7 @@
 			(uuid "b46645d0-71fb-4585-9fbd-9f405abaeceb")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C7")
 					(unit 1)
@@ -21008,7 +21008,7 @@
 			(uuid "d0aaa47f-aff8-4ad8-8f60-f5918cd03d08")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0057")
 					(unit 1)
@@ -21095,7 +21095,7 @@
 			(uuid "3f8d2708-efcb-4b8b-b067-09e064b4a026")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D10")
 					(unit 1)
@@ -21176,7 +21176,7 @@
 			(uuid "9a3b92c9-1ec0-4ea1-b7e0-2994ab4ca7cf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C25")
 					(unit 1)
@@ -21253,7 +21253,7 @@
 			(uuid "1e13a9f4-7025-493a-8b90-2c1e915d0335")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0076")
 					(unit 1)
@@ -21330,7 +21330,7 @@
 			(uuid "1a6d9629-862e-4ac1-9ae6-16132e24346b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#FLG02")
 					(unit 1)
@@ -21407,7 +21407,7 @@
 			(uuid "98c09803-0606-47e2-8517-78e545a03a6c")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0132")
 					(unit 1)
@@ -21485,7 +21485,7 @@
 			(uuid "44a405a8-8c32-4bed-96ba-fe40f785d7b4")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0002")
 					(unit 1)
@@ -21562,7 +21562,7 @@
 			(uuid "f461d4f4-ee74-4f3b-a532-c14b71eb3dc2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0058")
 					(unit 1)
@@ -21639,7 +21639,7 @@
 			(uuid "70cb6c24-06e1-4e7e-b31c-b18eb73f3516")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0092")
 					(unit 1)
@@ -21716,7 +21716,7 @@
 			(uuid "ade82ab2-85e6-43d5-90de-bc7a299f56ed")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0062")
 					(unit 1)
@@ -21793,7 +21793,7 @@
 			(uuid "992ca407-0669-429d-a1a2-4060a25ccf91")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0044")
 					(unit 1)
@@ -21870,7 +21870,7 @@
 			(uuid "13a190c9-cf0a-4523-a5b7-db02bf361170")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0112")
 					(unit 1)
@@ -21951,7 +21951,7 @@
 			(uuid "e3ebc259-e750-4f12-879f-aefa6be82fd4")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C20")
 					(unit 1)
@@ -22028,7 +22028,7 @@
 			(uuid "7b604184-c8e4-4abc-ba15-8059ae48d614")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0022")
 					(unit 1)
@@ -22105,7 +22105,7 @@
 			(uuid "cb8e943c-935b-44e4-87ec-00d155e728e7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0073")
 					(unit 1)
@@ -22182,7 +22182,7 @@
 			(uuid "0f14cbd2-4da8-439c-8af2-8faebe4411d8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0089")
 					(unit 1)
@@ -22259,7 +22259,7 @@
 			(uuid "7626d7c1-33ff-4788-9195-1c445e5c09b4")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0080")
 					(unit 1)
@@ -22358,7 +22358,7 @@
 			(uuid "b72b4311-6eba-4592-a347-ea1a4332d59e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U2")
 					(unit 1)
@@ -22435,7 +22435,7 @@
 			(uuid "18e23606-bd37-4f33-8cc8-805ee3c920b4")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0127")
 					(unit 1)
@@ -22512,7 +22512,7 @@
 			(uuid "b4efffe5-249b-4689-9364-73b8c456fb6e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0115")
 					(unit 1)
@@ -22589,7 +22589,7 @@
 			(uuid "56411ebb-8653-4062-aeae-8ec5291f655a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0096")
 					(unit 1)
@@ -22666,7 +22666,7 @@
 			(uuid "6cbe0e20-191c-4921-ae31-e700fc501ce7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0121")
 					(unit 1)
@@ -22743,7 +22743,7 @@
 			(uuid "40ddee37-2f82-46e7-b640-3c68647a4a47")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0018")
 					(unit 1)
@@ -22824,7 +22824,7 @@
 			(uuid "0225640a-1534-41e1-80e7-9579516e1f18")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C27")
 					(unit 1)
@@ -22901,7 +22901,7 @@
 			(uuid "7851cc81-2e3d-4e7d-aef6-f216b0a37473")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0126")
 					(unit 1)
@@ -22978,7 +22978,7 @@
 			(uuid "3a969114-a1d4-4a94-9cf4-34c250a81d3d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0065")
 					(unit 1)
@@ -23055,7 +23055,7 @@
 			(uuid "d9e6c82f-2f2d-4098-8493-dc3a2aa81732")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0129")
 					(unit 1)
@@ -23132,7 +23132,7 @@
 			(uuid "f6e4fbc1-850e-4dd8-b9d1-3d96dc2ee24b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0109")
 					(unit 1)
@@ -23209,7 +23209,7 @@
 			(uuid "13aaeb8c-03f0-4bf3-b273-59228dd61308")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0099")
 					(unit 1)
@@ -23290,7 +23290,7 @@
 			(uuid "a85145fc-da17-40c3-b4a4-d002b9f9e4c8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R2")
 					(unit 1)
@@ -23367,7 +23367,7 @@
 			(uuid "7597ed9f-7842-4e98-9c0b-9cb7e84f0354")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0035")
 					(unit 1)
@@ -23457,7 +23457,7 @@
 			(uuid "bf739949-0745-4cb1-aada-3fd0394ea484")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "U4")
 					(unit 1)
@@ -23534,7 +23534,7 @@
 			(uuid "bcab2916-4106-4056-ae88-808d61e7e6b6")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0086")
 					(unit 1)
@@ -23611,7 +23611,7 @@
 			(uuid "5c4525d4-6feb-41a0-9b73-134fc4e2c1cf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0091")
 					(unit 1)
@@ -23688,7 +23688,7 @@
 			(uuid "3d52e16e-f963-424e-a077-c10297b5908d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0066")
 					(unit 1)
@@ -23769,7 +23769,7 @@
 			(uuid "892e9860-3659-49df-82af-b2af8e2b7705")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW5")
 					(unit 1)
@@ -23846,7 +23846,7 @@
 			(uuid "1521a468-8075-48ce-aa25-d4c89f0ff2c0")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0141")
 					(unit 1)
@@ -23923,7 +23923,7 @@
 			(uuid "41604788-ed12-40fd-b511-706d5214fde0")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0090")
 					(unit 1)
@@ -24000,7 +24000,7 @@
 			(uuid "7d3bf126-a2aa-4db8-885e-f0fba7e90d4c")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0063")
 					(unit 1)
@@ -24081,7 +24081,7 @@
 			(uuid "75172d94-dba0-4cc4-8ce3-e529a8bd16ae")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C30")
 					(unit 1)
@@ -24162,7 +24162,7 @@
 			(uuid "4aa1aee9-5f22-4cdf-96ab-5715ae78ed61")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW2")
 					(unit 1)
@@ -24239,7 +24239,7 @@
 			(uuid "c8612db4-e104-4370-81ea-6bccdcb6d72b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0074")
 					(unit 1)
@@ -24320,7 +24320,7 @@
 			(uuid "9181df98-c5b8-452a-a590-2de608f72cd3")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C16")
 					(unit 1)
@@ -24397,7 +24397,7 @@
 			(uuid "1b6e2638-208b-4577-9c09-bfd0bd9ebdf0")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0117")
 					(unit 1)
@@ -24478,7 +24478,7 @@
 			(uuid "143f47d9-8f0b-455b-ae0d-79dbebcc0064")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R8")
 					(unit 1)
@@ -24555,7 +24555,7 @@
 			(uuid "e3256b57-6b1a-4fdc-8a90-bb85ff2fa042")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0108")
 					(unit 1)
@@ -24632,7 +24632,7 @@
 			(uuid "6556f90e-f8ee-47e3-b08c-c2be6c0b4019")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0056")
 					(unit 1)
@@ -24709,7 +24709,7 @@
 			(uuid "44f51362-e72c-4977-b9b5-deab1ec4c805")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0079")
 					(unit 1)
@@ -24786,7 +24786,7 @@
 			(uuid "4efc4895-26d6-4132-9d06-2c6ef31d7a2d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0130")
 					(unit 1)
@@ -24863,7 +24863,7 @@
 			(uuid "813efac7-1285-46f1-a7e4-61450c29fc3e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0134")
 					(unit 1)
@@ -24944,7 +24944,7 @@
 			(uuid "995bdc2a-1696-42ad-a209-dcbb44914f3b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C8")
 					(unit 1)
@@ -25021,7 +25021,7 @@
 			(uuid "1ce5f562-c33d-41b0-89f4-9b96c994f41f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0071")
 					(unit 1)
@@ -25098,7 +25098,7 @@
 			(uuid "0b6a3817-50cf-4565-a3d2-8466fe43c765")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0131")
 					(unit 1)
@@ -25185,7 +25185,7 @@
 			(uuid "201b5b3f-240c-4348-b2fd-eb8f7b698fbb")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D4")
 					(unit 1)
@@ -25262,7 +25262,7 @@
 			(uuid "726d77d9-6241-42a4-a22e-44a2d468c1c8")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0006")
 					(unit 1)
@@ -25343,7 +25343,7 @@
 			(uuid "27378768-ac42-4e11-bee8-2428d8166571")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R1")
 					(unit 1)
@@ -25424,7 +25424,7 @@
 			(uuid "45a14be4-82a0-4246-98fd-6f10cd0806df")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D9")
 					(unit 1)
@@ -25505,7 +25505,7 @@
 			(uuid "3450abd2-16a2-4b0c-bd44-2430b64a3663")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "SW7")
 					(unit 1)
@@ -25586,7 +25586,7 @@
 			(uuid "fde18001-d60d-4e47-8795-0c376108eee1")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C15")
 					(unit 1)
@@ -25667,7 +25667,7 @@
 			(uuid "b366e2c6-dd3f-4bad-ab70-36ab902071bf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R7")
 					(unit 1)
@@ -25744,7 +25744,7 @@
 			(uuid "1189e8d7-3c37-49d8-b3b2-0fb1a6bd6318")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0008")
 					(unit 1)
@@ -25825,7 +25825,7 @@
 			(uuid "53185536-aa1e-4ef4-857b-c4b9dd420ff5")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R11")
 					(unit 1)
@@ -25912,7 +25912,7 @@
 			(uuid "af273f2e-206e-4a06-85ba-15920ef1facf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D3")
 					(unit 1)
@@ -25993,7 +25993,7 @@
 			(uuid "1c9a0a32-c618-4b27-b293-9fe9431c1160")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C31")
 					(unit 1)
@@ -26070,7 +26070,7 @@
 			(uuid "70cdad09-5db2-4a1c-a5b5-872c544154ed")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0082")
 					(unit 1)
@@ -26157,7 +26157,7 @@
 			(uuid "2073250e-479f-4351-8e1c-c52b77693ded")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D2")
 					(unit 1)
@@ -26234,7 +26234,7 @@
 			(uuid "d6726ccf-68a0-48ad-ad6c-3242746c0c25")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0009")
 					(unit 1)
@@ -26311,7 +26311,7 @@
 			(uuid "f2de23e0-10bf-4c51-beca-9abb9a395a1f")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0051")
 					(unit 1)
@@ -26392,7 +26392,7 @@
 			(uuid "86a13fb4-1358-40de-93a8-ae65cd6c17f2")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C2")
 					(unit 1)
@@ -26473,7 +26473,7 @@
 			(uuid "ea4ad368-2d94-421d-b35c-fe3425d168ff")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R4")
 					(unit 1)
@@ -26550,7 +26550,7 @@
 			(uuid "216eeb8b-7c60-4620-afc5-5528e096b4a3")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0068")
 					(unit 1)
@@ -26631,7 +26631,7 @@
 			(uuid "9e6559a4-e722-450c-afdb-50db8a0a7064")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C4")
 					(unit 1)
@@ -26708,7 +26708,7 @@
 			(uuid "dbd9e35c-80cd-4cef-982a-f47b566611fc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0138")
 					(unit 1)
@@ -26785,7 +26785,7 @@
 			(uuid "e81d09e0-8fa5-4578-9405-dc7d4b3a7960")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0078")
 					(unit 1)
@@ -26872,7 +26872,7 @@
 			(uuid "78628d36-0f35-4ab7-a892-b045134d6efd")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D1")
 					(unit 1)
@@ -26953,7 +26953,7 @@
 			(uuid "e9e2ae99-f6cd-47b2-9789-4b3944dacb00")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R10")
 					(unit 1)
@@ -27030,7 +27030,7 @@
 			(uuid "b0800228-3f75-4afe-9dc6-e992ff585f1d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0098")
 					(unit 1)
@@ -27107,7 +27107,7 @@
 			(uuid "2000ed82-4629-4123-9c5c-05845b5ccb31")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0133")
 					(unit 1)
@@ -27188,7 +27188,7 @@
 			(uuid "13827409-70bb-4d60-a944-bb37c4064392")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C5")
 					(unit 1)
@@ -27265,7 +27265,7 @@
 			(uuid "a62e5a40-abab-4808-9c89-12f5cd80da6a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0039")
 					(unit 1)
@@ -27342,7 +27342,7 @@
 			(uuid "3b496c40-5e79-4881-bfff-c4f8f33f102b")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0095")
 					(unit 1)
@@ -27419,7 +27419,7 @@
 			(uuid "1778f720-6e19-4ceb-ab63-cfd25772b442")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0023")
 					(unit 1)
@@ -27496,7 +27496,7 @@
 			(uuid "d85e2a80-5260-44ba-865b-d066c8647f4a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0046")
 					(unit 1)
@@ -27573,7 +27573,7 @@
 			(uuid "20416445-4040-4176-a6bc-165c2686a382")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0083")
 					(unit 1)
@@ -27650,7 +27650,7 @@
 			(uuid "af2c8779-e8eb-484b-affb-d0695f3f2222")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0052")
 					(unit 1)
@@ -27731,7 +27731,7 @@
 			(uuid "ee80d137-6191-4b80-b0b2-cbb831b25391")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C14")
 					(unit 1)
@@ -27808,7 +27808,7 @@
 			(uuid "f3f3d0d9-9184-4d98-bfea-ee7af602c76a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0122")
 					(unit 1)
@@ -27889,7 +27889,7 @@
 			(uuid "1c48dba2-a692-4a1b-a935-ea68f1bb0d48")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "R12")
 					(unit 1)
@@ -27985,7 +27985,7 @@
 			(uuid "fc1a8e80-8558-43c9-aa89-8f23fa96de50")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "ENC1")
 					(unit 1)
@@ -28062,7 +28062,7 @@
 			(uuid "a9f0834b-6194-4c7e-b139-a30fc1c518d7")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0136")
 					(unit 1)
@@ -28139,7 +28139,7 @@
 			(uuid "c91bc60d-7a9b-44d6-ab05-05ce74baad9e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0001")
 					(unit 1)
@@ -28216,7 +28216,7 @@
 			(uuid "e877bd4b-4d83-444e-a81a-d792226cde90")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0067")
 					(unit 1)
@@ -28293,7 +28293,7 @@
 			(uuid "136b1240-2633-45f9-b248-938d5691789e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0012")
 					(unit 1)
@@ -28370,7 +28370,7 @@
 			(uuid "80d6a5c7-22ad-46ef-83ce-f320811c8f00")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0113")
 					(unit 1)
@@ -28447,7 +28447,7 @@
 			(uuid "72a11f88-f1ff-47cc-a41e-6bd4d9a9efaf")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0088")
 					(unit 1)
@@ -28524,7 +28524,7 @@
 			(uuid "8192aa1b-a526-43e5-b918-59838a710929")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0124")
 					(unit 1)
@@ -28533,7 +28533,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ClaudeMicro_Custom:SKQUCAA010")
+		(lib_id "AgentDeck_Custom:SKQUCAA010")
 		(at 480.06 330.2 0)
 		(unit 1)
 		(body_style 1)
@@ -28565,7 +28565,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "ClaudeMicro:SKQUCAA010"
+		(property "Footprint" "AgentDeck:SKQUCAA010"
 			(at 480.06 330.2 0)
 			(hide yes)
 			(show_name no)
@@ -28617,7 +28617,7 @@
 			(uuid "d733be60-6db5-4d28-8854-15a23e4a8a5c")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "JS1")
 					(unit 1)
@@ -28694,7 +28694,7 @@
 			(uuid "b98bde18-a483-467a-ad14-f76329aba95e")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0135")
 					(unit 1)
@@ -28771,7 +28771,7 @@
 			(uuid "57c5d464-64b3-4402-9984-8db46666c743")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0103")
 					(unit 1)
@@ -28852,7 +28852,7 @@
 			(uuid "cd8f808e-2089-4a06-80be-f38c8f9deb13")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C3")
 					(unit 1)
@@ -28929,7 +28929,7 @@
 			(uuid "102b6494-9b13-478c-aace-0b9c08060685")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0055")
 					(unit 1)
@@ -29006,7 +29006,7 @@
 			(uuid "2d2cc4bb-19d7-4caa-9696-ae8e26e5196d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0093")
 					(unit 1)
@@ -29083,7 +29083,7 @@
 			(uuid "fbc14b2a-8f89-4e66-b2b8-f8d6590eaf6d")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0036")
 					(unit 1)
@@ -29160,7 +29160,7 @@
 			(uuid "96390b79-6068-4ed4-a9e2-e56e0cd8c77a")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0007")
 					(unit 1)
@@ -29237,7 +29237,7 @@
 			(uuid "dcc79cd6-5bbb-453c-9b2e-f33b33bc4e57")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0019")
 					(unit 1)
@@ -29314,7 +29314,7 @@
 			(uuid "75310663-c354-474d-bda0-38667994d624")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0116")
 					(unit 1)
@@ -29395,7 +29395,7 @@
 			(uuid "85f02e32-941f-4f3e-aa0e-90bd4f0c09cc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "C12")
 					(unit 1)
@@ -29476,7 +29476,7 @@
 			(uuid "3ab8a650-2255-4d0f-b0d7-40400a62f2cc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D7")
 					(unit 1)
@@ -29553,7 +29553,7 @@
 			(uuid "8f5aa418-2408-497d-8199-98bc475a95be")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0054")
 					(unit 1)
@@ -29640,7 +29640,7 @@
 			(uuid "a40c97ee-f429-4b0f-b4f0-5412b27642bc")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "D12")
 					(unit 1)
@@ -29717,7 +29717,7 @@
 			(uuid "d847f8da-16fb-446f-9a1f-98301a430869")
 		)
 		(instances
-			(project "ClaudeMicro"
+			(project "AgentDeck"
 				(path "/c1a0de00-0001-4000-8000-000000000001"
 					(reference "#PWR0030")
 					(unit 1)

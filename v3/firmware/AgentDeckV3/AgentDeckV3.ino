@@ -1,9 +1,9 @@
-/* ClaudeMicro V3 firmware - ESP32-S3, USB HID + BLE HID, OLED, touch PTT.
+/* AgentDeck V3 firmware - ESP32-S3, USB HID + BLE HID, OLED, touch PTT.
  *
  * Build (native USB HID needs TinyUSB/OTG mode; N8R2 = 8MB flash, QSPI PSRAM):
  *   arduino-cli compile --fqbn \
  *     esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled \
- *     v3/firmware/ClaudeMicroV3
+ *     v3/firmware/AgentDeckV3
  * Libraries: Adafruit_NeoPixel, U8g2 (OLED), NimBLE-Arduino.
  *
  * Host protocol (CDC, newline-delimited ASCII) = V1's plus screen:
@@ -88,10 +88,10 @@ void setup() {
   leds.begin(); leds.setBrightness(60); leds.show();
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
   oled.begin();
-  USB.productName("ClaudeMicroV3");    // claude_bridge.py matches by name
+  USB.productName("AgentDeckV3");    // agentdeck_bridge.py matches by name
   USB.manufacturerName("princetekki");
   usbKeyboard.begin(); USB.begin();
-  bleBegin("ClaudeMicroV3");
+  bleBegin("AgentDeckV3");
   Serial.begin(115200);
   uiSplash(oled);
 }

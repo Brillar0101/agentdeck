@@ -1,10 +1,10 @@
-/* ClaudeMicro V4 firmware - ESP32-S3, USB HID + BLE HID, ST7789 touch LCD,
+/* AgentDeck V4 firmware - ESP32-S3, USB HID + BLE HID, ST7789 touch LCD,
  * I2S voice (MEMS mic + NS4168 amp), wake word, touch PTT, 2x EC11.
  *
  * Build (native USB HID needs TinyUSB/OTG mode; N8R2 = 8MB flash, QSPI PSRAM):
  *   arduino-cli compile --fqbn \
  *     esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled \
- *     v4/firmware/ClaudeMicroV4
+ *     v4/firmware/AgentDeckV4
  * Libraries: Adafruit_NeoPixel, Adafruit GFX + "Adafruit ST7735 and ST7789",
  * NimBLE-Arduino; ESP_I2S/ESP_SR come with the esp32 core (3.x).
  *
@@ -96,10 +96,10 @@ void setup() {
 
   leds.begin(); leds.setBrightness(60); leds.show();
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
-  USB.productName("ClaudeMicroV4");    // claude_bridge.py matches "ClaudeMicro"
+  USB.productName("AgentDeckV4");    // agentdeck_bridge.py matches "AgentDeck"
   USB.manufacturerName("princetekki");
   usbKeyboard.begin(); USB.begin();
-  bleBegin("ClaudeMicroV4");
+  bleBegin("AgentDeckV4");
   Serial.begin(115200);
   displayBegin();
   touchPanelBegin();

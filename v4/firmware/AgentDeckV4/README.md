@@ -1,11 +1,11 @@
-# ClaudeMicro V4 firmware
+# AgentDeck V4 firmware
 
-Arduino (ESP32-S3), dual-transport HID: USB when plugged, BLE ("ClaudeMicroV4")
+Arduino (ESP32-S3), dual-transport HID: USB when plugged, BLE ("AgentDeckV4")
 when on battery. V3 base plus I2S voice (MEMS mic + NS4168 amp), ST7789
 240x280 touch LCD (replaces the OLED), and a second EC11. Host protocol is
 V3's CDC protocol plus `N <freq> <ms>` (beep), `R` (mic RMS reply) inbound and
 `F`/`FS` (ENC2), `TK <n>` (soft-key tap), `W 1` (wake word) outbound - all
-additive, so `claude_bridge.py` needs no change (it matches the "ClaudeMicro"
+additive, so `agentdeck_bridge.py` needs no change (it matches the "AgentDeck"
 name substring). See `docs/DESIGN-V4.md` for architecture; `pins.h` mirrors
 the generator's PINOUT table (diff them after any hardware change).
 
@@ -13,8 +13,8 @@ the generator's PINOUT table (diff them after any hardware change).
 
 ```
 FQBN="esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=cdc,FlashSize=8M,PSRAM=enabled,PartitionScheme=custom"
-arduino-cli compile --clean --fqbn "$FQBN" v4/firmware/ClaudeMicroV4
-arduino-cli upload  --fqbn "$FQBN" -p /dev/tty.usbmodem* v4/firmware/ClaudeMicroV4
+arduino-cli compile --clean --fqbn "$FQBN" v4/firmware/AgentDeckV4
+arduino-cli upload  --fqbn "$FQBN" -p /dev/tty.usbmodem* v4/firmware/AgentDeckV4
 ```
 `PartitionScheme=custom` is **required**. The sketch-local `partitions.csv` is
 always what ends up in the flashed partition table (the core's
@@ -63,9 +63,9 @@ to `factory`, same as the stock `max_app_8MB` scheme.
 
 Sanity-check a build actually used this table:
 ```
-arduino-cli compile --clean --fqbn "$FQBN" --build-path /tmp/bp v4/firmware/ClaudeMicroV4
+arduino-cli compile --clean --fqbn "$FQBN" --build-path /tmp/bp v4/firmware/AgentDeckV4
 python3 ~/Library/Arduino15/packages/esp32/hardware/esp32/3.3.11/tools/gen_esp32part.py \
-        /tmp/bp/ClaudeMicroV4.ino.partitions.bin
+        /tmp/bp/AgentDeckV4.ino.partitions.bin
 ```
 That decodes the binary table that will be flashed to `0x8000`; it must list
 `app0 3584K` and `model 3712K`. (Verified 2026-07-29 on core 3.3.11.)
@@ -79,7 +79,7 @@ Put `partitions.csv` in the core's `tools/partitions/` as
 `~/Library/Arduino15/packages/esp32/hardware/esp32/3.3.11/boards.local.txt`:
 
 ```
-esp32s3.menu.PartitionScheme.cm_sr_8=ClaudeMicro SR 8M (3.5MB APP/3.6MB MODEL/768KB SPIFFS)
+esp32s3.menu.PartitionScheme.cm_sr_8=AgentDeck SR 8M (3.5MB APP/3.6MB MODEL/768KB SPIFFS)
 esp32s3.menu.PartitionScheme.cm_sr_8.build.partitions=claudemicro_8MB_sr
 esp32s3.menu.PartitionScheme.cm_sr_8.upload.maximum_size=3670016
 esp32s3.menu.PartitionScheme.cm_sr_8.upload.extra_flags=0x390000 {build.path}/srmodels.bin

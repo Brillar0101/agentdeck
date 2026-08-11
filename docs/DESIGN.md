@@ -1,4 +1,4 @@
-# Claude Micro — hardware design (v0, spec freeze)
+# AgentDeck — hardware design (v0, spec freeze)
 
 > Companion to PLAN.md (research + rationale). This file tracks the build.
 > Method: fully script-generated KiCad, same pipeline as NeuralCard
@@ -11,7 +11,7 @@
 - **V2**: two-deck system — this controller as the upper deck + a separate
   lower PowerDeck (Qi wireless charging + Li-ion battery) that attaches
   magnetically and feeds 5V through pogo pins. Spec:
-  ~/kicad-projects/claude-micro-powerdeck/DESIGN.md.
+  ~/kicad-projects/agentdeck-powerdeck/DESIGN.md.
 
 ## Frozen decisions (v1)
 
@@ -154,7 +154,7 @@ freerouting -> stitch/verify -> DRC -> fab export. Renders in render/.
 
 V2 = this V1 board as the upper deck + a separate lower deck with Qi charging
 + battery, magnetic pogo attach. Spec:
-~/kicad-projects/claude-micro-powerdeck/DESIGN.md. To make a V1 board
+~/kicad-projects/agentdeck-powerdeck/DESIGN.md. To make a V1 board
 V2-ready (optional, only if building V2): add 4 pogo-target pads
 (2xVBUS/2xGND) on B.Cu + 4 silk-marked magnet zones. Ideal-diode lives on
 the PowerDeck, so V1 needs no electrical change. V1 ships standalone as-is.

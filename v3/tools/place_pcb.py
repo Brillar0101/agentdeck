@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Populate v3/hardware/ClaudeMicroV3.kicad_pcb from the netlist and place parts.
+"""Populate v3/hardware/AgentDeckV3.kicad_pcb from the netlist and place parts.
 
 Ported from NeuralCard place_pcb.py. Run with KiCad's bundled python (pcbnew):
   /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/\
@@ -21,15 +21,15 @@ import pcbnew
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))          # repo root
 HW = os.path.join(ROOT, "v3", "hardware")
-NET = os.path.join(HW, "ClaudeMicroV3.net")
-BRD = os.path.join(HW, "ClaudeMicroV3.kicad_pcb")
+NET = os.path.join(HW, "AgentDeckV3.net")
+BRD = os.path.join(HW, "AgentDeckV3.kicad_pcb")
 V1_SHAPES = os.path.join(ROOT, "hardware", "JLC.3dshapes")
 NC_SHAPES = "/Users/barakaeli/Open Source Hardware/NeuralCard/JLC.3dshapes"
 FPD = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints"
 LIB = {
     "V3": os.path.join(HW, "V3.pretty"),
     "JLC_V1": os.path.join(ROOT, "hardware", "JLC.pretty"),
-    "ClaudeMicro": os.path.join(ROOT, "hardware", "ClaudeMicro.pretty"),
+    "AgentDeck": os.path.join(ROOT, "hardware", "AgentDeck.pretty"),
     "Diode_SMD": f"{FPD}/Diode_SMD.pretty",
     "Connector_JST": f"{FPD}/Connector_JST.pretty",
     "Package_TO_SOT_SMD": f"{FPD}/Package_TO_SOT_SMD.pretty",
@@ -253,7 +253,7 @@ def text(board, t, x, y, size, layer, thick, justify=None, angle=0, mirror=False
 
 def add_silk(board):
     F, B = pcbnew.F_SilkS, pcbnew.B_SilkS
-    text(board, "ClaudeMicro V3 - princetekki.com", 24.0, 106.3, 1.6, F, 0.3,
+    text(board, "AgentDeck V3 - princetekki.com", 24.0, 106.3, 1.6, F, 0.3,
          justify="left")
     text(board, "FLASH: hold BOOT - tap RST - release BOOT", 88.0, 105.3, 1.0,
          F, 0.16, justify="left")
@@ -268,7 +268,7 @@ def add_silk(board):
     text(board, "PWR", 146.5, 51.5, 1.0, F, 0.16)
     text(board, "USB-C", 75.0, 10.2, 1.0, F, 0.16)
     # pinout legend on the back (inside the battery pocket zone - flat area)
-    legend = ["ClaudeMicroV3  ESP32-S3-WROOM-1",
+    legend = ["AgentDeckV3  ESP32-S3-WROOM-1",
               "ROW0-3=IO4-7   COL0-5=IO10-15",
               "SDA=IO8 SCL=IO9  LED=IO21  TOUCH=IO1",
               "ENC A/B/SW=IO40/41/42  VBAT=IO2",

@@ -1,4 +1,4 @@
-# ClaudeMicro V3 - single source of truth for every component.
+# AgentDeck V3 - single source of truth for every component.
 #
 # RULES (docs/DESIGN-V3.md):
 #   * Every part used on the board MUST have an entry here BEFORE it enters the
@@ -14,7 +14,7 @@
 
 meta:
   version: 3
-  board: ClaudeMicroV3
+  board: AgentDeckV3
   currency: USD
   updated: 2026-07-28
 
@@ -265,7 +265,7 @@ parts:
   - ref_prefix: TP1
     name: Touch pad (copper, no component)
     lcsc: null
-    package: TouchPad_D12 (hardware/ClaudeMicro.pretty)
+    package: TouchPad_D12 (hardware/AgentDeck.pretty)
     pitch_mm: null
     dims_2d: [12.0, 12.0]
     height_3d: 0.0
