@@ -31,7 +31,7 @@ CASE_R = BOARD_R + WALL                # 8.6 mm outer corner radius
 LID_Z = (1.6, 5.5)                     # top plate: sits on the board face
 TRAY_Z = (-6.4, 1.6)                   # bottom shell
 FLOOR = 1.2                            # tray floor thickness
-FIT = 0.25                             # board-to-wall clearance per side
+FIT = 0.40                             # board-to-wall clearance per side (loose FDM drop-in fit)
 
 SCREWS = [(3.086, 3.086), (86.914, 3.086), (3.086, 86.914), (86.914, 86.914)]
 
