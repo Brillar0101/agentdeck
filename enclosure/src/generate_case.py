@@ -189,8 +189,10 @@ BOSS_TOP = 0.0                         # PCB underside - the board sits on these
 # absolute minimum: tunnel for the shell + a snug collar recess for a SLIM
 # cable overmould (10.5 x 5 typical). Chunky cables will not seat - widen
 # usbnotch if yours does not click in.
-cut(tray, box("usbport", 40.20, 49.80, -6.0, -2.0, -3.45, 0.15))
-cut(tray, box("usbnotch", 39.30, 50.70, NOTCH[2], NOTCH[3], -4.40, 1.00))
+# overshoot far through both faces - a flush-ended cut left a zero-thickness
+# membrane sealing the lower half of the port
+# (USB port is cut AFTER the edge bevel - see below - so the bevel cannot
+# choke the small opening)
 print("  USB slot %.1f mm wide, z %.2f..%.2f (%.2f tall), flared to %.1f mm at the mouth"
       % (USB_X[1] - USB_X[0], USB_Z_BOTTOM, LID_Z[1], LID_Z[1] - USB_Z_BOTTOM,
          FLARE_X[1] - FLARE_X[0]))
@@ -198,6 +200,15 @@ for i, (cx, cy) in enumerate(SCREWS):
     add(tray, cylinder("boss%d" % i, cx, cy, BOSS_D, tlo + FLOOR, BOSS_TOP))
 for i, (cx, cy) in enumerate(SCREWS):
     cut(tray, cylinder("ins%d" % i, cx, cy, INSERT_D, BOSS_TOP - INSERT_L - 0.4, BOSS_TOP + 1))
+# strip any zero-area membranes the booleans left behind
+import bmesh as _bm
+_b = _bm.new(); _b.from_mesh(tray.data)
+_bm.ops.remove_doubles(_b, verts=_b.verts, dist=1e-6)
+_deg = [f for f in _b.faces if f.calc_area() < 1e-10]
+if _deg:
+    _bm.ops.delete(_b, geom=_deg, context='FACES')
+_b.to_mesh(tray.data); _b.free(); tray.data.update()
+print("tray membranes cleaned:", len(_deg))
 print("tray: pocket + %d bosses, top at z=%.1f (PCB underside), %.1f mm tall"
       % (len(SCREWS), BOSS_TOP, BOSS_TOP - (tlo + FLOOR)))
 print("  insert bore %.2f dia x %.2f deep for %s" % (INSERT_D, INSERT_L + 0.4, INSERT))
@@ -223,6 +234,13 @@ for o in (lid, tray, capobj):
     bv.angle_limit = 0.698  # 40 deg
     bpy.ops.object.modifier_apply(modifier=bv.name)
 print("edges softened: 0.6mm bevel, 3 segments")
+
+# USB port cut post-bevel: a 0.6mm bevel on a 3.6mm opening would choke it
+# to ~2.4mm effective - smaller than the plug shell. Cut after so the port
+# edges stay crisp and full-size.
+cut(tray, box("usbport", 40.203, 49.797, -9.013, -1.007, -3.453, 0.147))
+cut(tray, box("usbnotch", 39.303, 50.697, -5.213, -2.847, -4.403, 0.997))
+print("USB port cut post-bevel (crisp, full-size)")
 
 # ---------------------------------------------------------------- report
 for o in (lid, tray, capobj):
