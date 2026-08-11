@@ -87,9 +87,9 @@ Wisevision N114-2413THBIG01-H13 (LCSC C2890618, $2.54, in stock):
 - Role: named agent status lines (what the six RGB keys say in colour, the
   LCD says in words), battery %, BLE/USB link state, active layer.
 - Interface budget: SPI at 40 MHz plus DC/CS/RST/backlight = 6 GPIO.
-- The panel is an FPC part; footprint and mating connector need drawing
-  from the Wisevision datasheet before layout (same custom-footprint flow
-  as the V1 joystick).
+- The panel's FPC tail solders directly to the board (the LCSC footprint
+  is a direct-solder pad row, 13 pins) - no mating connector needed.
+  Backlight is PWM-dimmed through an AO3400A low-side FET.
 
 ### Power
 
@@ -100,10 +100,12 @@ Wisevision N114-2413THBIG01-H13 (LCSC C2890618, $2.54, in stock):
   simultaneously; battery isolated when USB is present.
 - Logic rail: 3.3 V buck (not an AMS1117 - a linear drop from 4.2 V wastes
   20 percent of the cell), low quiescent current for standby.
-- LED rail: SK6812MINI-E wants 3.7-5.5 V, which a sagging cell cannot
-  guarantee, so the LEDs run from a small 5 V boost behind a load switch.
-  On battery the firmware dims or duty-cycles the chain; standby cuts the
-  rail entirely.
+- LED rail: the SK6812 chain runs from VSYS behind the power switch (the
+  V3-proven arrangement) through an AHCT125 level shifter. On USB that is
+  5 V; on battery it sags toward 3.7 V, slightly under the SK6812 minimum,
+  which works in practice at reduced brightness - the firmware dims on
+  battery. A dedicated 5 V boost was considered and dropped: one more
+  switcher hurts standby draw more than dim-on-battery hurts the product.
 - Budget target: 2 weeks standby, a full work week of active BLE use with
   LEDs at desk brightness. The LCD backlight is the swing item; it gets
   PWM dimming and an idle timeout.
@@ -146,10 +148,10 @@ battery sense (1) + charge status (1) = 25. Comfortable headroom.
 
 ## Phases
 
-1. Parts manifest (`v2/PARTS.yaml`) with live LCSC stock checks - the
-   V3 pattern, enforced by the same verify script
-2. LCD footprint + symbol from the Wisevision datasheet
-3. Schematic: V1 input blocks + V3 power blocks + LCD
+1. Parts manifest (`v2/PARTS.yaml`) with live LCSC stock checks - DONE
+2. LCD footprint + symbol - DONE (pulled from LCSC, direct-solder FPC)
+3. Schematic - DONE: `v2/tools/gen_schematic.py` generates
+   `v2/hardware/AgentDeckV2.kicad_sch`; ERC 0 errors, 0 warnings
 4. Layout on the new ~95 x 112 outline; battery keep-out and antenna
    keep-out are the two new placement constraints (module antenna must
    overhang a copper-free zone at the board edge)
