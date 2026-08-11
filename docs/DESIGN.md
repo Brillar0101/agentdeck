@@ -1,4 +1,4 @@
-# AgentDeck — hardware design (v0, spec freeze)
+# AgentDeck: hardware design (v0, spec freeze)
 
 > Companion to PLAN.md (research + rationale). This file tracks the build.
 > Method: fully script-generated KiCad, same pipeline as NeuralCard
@@ -6,9 +6,9 @@
 
 ## Version roadmap
 
-- **V1 (this board)**: single integrated PCB — keys + RP2040 + all I/O on one
+- **V1 (this board)**: single integrated PCB, keys + RP2040 + all I/O on one
   95x95mm board, USB-C powered. Fully routed, DRC-clean, ordered-ready.
-- **V2**: two-deck system — this controller as the upper deck + a separate
+- **V2**: two-deck system, this controller as the upper deck + a separate
   lower PowerDeck (Qi wireless charging + Li-ion battery) that attaches
   magnetically and feeds 5V through pogo pins. Spec:
   ~/kicad-projects/agentdeck-powerdeck/DESIGN.md.
@@ -63,7 +63,7 @@ not PCBA), frosted caps for agent keys (sourcing risk flagged in PLAN.md).
 
 ## Datasheet-required practices (sources in datasheets/, bindings for the design)
 
-### RP2040 — "Hardware design with RP2040" (Raspberry Pi, ch. 2)
+### RP2040: "Hardware design with RP2040" (Raspberry Pi, ch. 2)
 - 100nF decoupling per power pin, placed close (pins 48/49 may share one).
 - Internal 1.1V regulator: 1uF close to BOTH VREG_VIN and VREG_VOUT;
   VREG_VOUT feeds the DVDD pins. Small ceramics satisfy the ESR limits.
@@ -122,7 +122,7 @@ freerouting -> stitch/verify -> DRC -> fab export. Renders in render/.
 - [x] Parts verified at JLCPCB
 - [x] Libraries pulled (10/11)
 - [x] Custom footprints drawn (joystick THT, touch pad, SWD pads)
-- [x] Schematic complete — ERC 0 errors, 69 components, custom symbols
+- [x] Schematic complete, ERC 0 errors, 69 components, custom symbols
 - [x] PCB placement + layout
 - [x] Routing + DRC (see below)
 - [ ] Fab outputs
@@ -163,7 +163,7 @@ the PowerDeck, so V1 needs no electrical change. V1 ships standalone as-is.
 
 Case-mounting revision (user chose 4-layer to fit screw holes):
 - [x] Converted to 4-layer stackup: F.Cu (signal), In1.Cu (solid GND plane),
-  In2.Cu (GND/power), B.Cu (signal). Standard inner-layer names are REQUIRED —
+  In2.Cu (GND/power), B.Cu (signal). Standard inner-layer names are REQUIRED , 
   custom names (GND_plane/PWR_plane) break freerouting SES via-layer mapping on
   import (silent 78-net connectivity loss). Lesson logged.
 - [x] 4x M2.5 corner mounting holes at rounded-corner arc centers (6,6),(84,6),
@@ -172,7 +172,7 @@ Case-mounting revision (user chose 4-layer to fit screw holes):
 - [x] 209/213 nets routed on 4 layers; GND flood on all 4 layers; 0 clearance /
   short / edge / hole violations.
 - [ ] 4 RP2040 QFN-escape nets unrouted: ENC_B, K4, K6, RUN. Freerouting cannot
-  close these in ANY config tried (2-layer, 4-layer, 20+ seeds, incremental) —
+  close these in ANY config tried (2-layer, 4-layer, 20+ seeds, incremental) , 
   the 0.4mm-pitch escape channels next to U1 are saturated. These need KiCad's
   interactive push-and-shove router (~10 min) or a U1 pin reassignment. This is
   an autorouter limitation, not a placement error.
@@ -213,27 +213,27 @@ Result: ALL 213 nets connected on 4-layer (F/B signals, In1/In2 = GND flood +
 Board: /tmp/cm_213routed.kicad_pcb
 
 REMAINING: 9 DRC violations, 7 of them in the joystick centre-button (JOY_CTR)
-escape — 5 joystick signals + LED_DATA all exit adjacent RP2040 pins in a ~2mm
+escape: 5 joystick signals + LED_DATA all exit adjacent RP2040 pins in a ~2mm
 cluster; JOY_CTR is the 6th and can't via-escape without shoving neighbours.
 Plus 2 pre-existing freerouting via clearances (K12 vs +3V3, K9 vs VBUS) and
 2 GND island vias. All are interactive-router touchups (shove traces / nudge
 vias) that headless scripting can't do cleanly.
 
 
-## ✅ BOARD COMPLETE (2026-07-20)
+## Board complete (2026-07-20)
 
-**0 DRC errors, 0 unconnected — all 213 nets routed on 4 layers.**
+**0 DRC errors, 0 unconnected, all 213 nets routed on 4 layers.**
 
 Final recipe that worked:
-1. Exclude GND from freerouting (route signals + 3V3 only) — frees massive capacity.
+1. Exclude GND from freerouting (route signals + 3V3 only), which frees massive capacity.
 2. Import SES, flood GND on all 4 layers, strict-clearance stitch (rect-aware
-   pad geometry — circular approximation over-blocks 0.85x0.2 QFN pads).
+   pad geometry: circular approximation over-blocks 0.85x0.2 QFN pads).
 3. JOY_CTR (last net): 60um bump spliced into the In1 USB_DM/DP pair to open
    9um of missing clearance, then VIA-IN-PAD on U1-30 (0.3/0.15 via) with an
    F.Cu haul (2 waypoints, auto-searched with DRC-validated path checker).
 4. Board constraints updated from stale 2-layer values to JLCPCB 4-layer
    capability: track 0.1, via 0.25/0.15, annular 0.05, hole-clearance 0.2,
-   netclass clearance 0.13 (was self-imposed 0.2 — every 'violation' was
+   netclass clearance 0.13 (was self-imposed 0.2; every 'violation' was
    0.128-0.196 actual, all JLC-legal).
 
 Deliverables: 4-layer, 4x M2.5 corner mounting holes, BOOT/C16/U3 clear of

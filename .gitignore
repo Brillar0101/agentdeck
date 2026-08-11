@@ -56,3 +56,6 @@ docs/reference/codex-micro-*.png
 # --- stray board backups from ad-hoc edits ---
 .backups_*.kicad_pcb
 *.kicad_pcb-bak
+
+# --- autorouter logs anywhere ---
+route*.log

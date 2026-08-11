@@ -1,4 +1,4 @@
-# AgentDeck — plan (no build yet)
+# AgentDeck: plan (no build yet)
 
 > A desk controller for Claude Code, in the spirit of the Work Louder x OpenAI
 > Codex Micro. Planning document only. Nothing here is committed to hardware.
@@ -131,7 +131,7 @@ Draft cost target: $45-70 in parts DIY (PCB+PCBA ~$25-35, switches/caps
 ## 7. Prior art: pi-codex-micro (major input)
 
 https://github.com/jal-co/pi-codex-micro (cloned in reference/, no license
-file — treat as read-only study material, don't copy code until licensed).
+file, treat as read-only study material, don't copy code until licensed).
 A TypeScript extension wiring the real Codex Micro to the pi coding agent.
 What it teaches us:
 
@@ -146,7 +146,7 @@ What it teaches us:
    as software first: same daemon, same protocol, virtual device in a
    browser. Hardware then just replaces the mock transport.
 3. **Expected HID shape of Work Louder hardware** (their protocol notes):
-   QMK-style interfaces — keyboard 0x0001/0x0006, consumer 0x000C/0x0001,
+   QMK-style interfaces, keyboard 0x0001/0x0006, consumer 0x000C/0x0001,
    and VIA raw HID at usage page 0xFF60 usage 0x0061. Our clone should
    expose exactly this, which makes their extension trivially portable to
    our hardware later.
@@ -154,11 +154,11 @@ What it teaches us:
    ZENTTY_PANE_ID, tmux via TMUX_PANE, WezTerm via WEZTERM_PANE, Kitty via
    KITTY_WINDOW_ID; each session runs its own focus command. Adopt this
    design directly in our daemon.
-5. **The real Codex Micro's LED protocol is undocumented** — they ship a
+5. **The real Codex Micro's LED protocol is undocumented**, they ship a
    mock transport waiting on reverse engineering. Our clone's advantage:
    we own the firmware, so our LED protocol is open by construction.
 
-Plan change this implies: insert a phase 0 before hardware — build the
+Plan change this implies: insert a phase 0 before hardware, build the
 daemon + browser simulator against Claude Code hooks. It validates the
 whole UX for zero dollars and becomes the host software the hardware needs
 anyway.
@@ -203,11 +203,11 @@ Micro 2 / Nomad line it's built on.
 | Novelty that tests OpenAI hardware ops, not a tool | HN | Ship the daemon as genuinely useful software; hardware earns its place or the sim suffices |
 
 An HN commenter also linked a r/ClaudeCode post titled "I built..." that
-appears to be a DIY Claude equivalent already — locate that thread and
+appears to be a DIY Claude equivalent already, locate that thread and
 study it before phase 0 (open item).
 
 Net effect on the plan: the differentiators are now explicit
-requirements — text-file config, UF2 recovery, USB-first, simulator as a
+requirements, text-file config, UF2 recovery, USB-first, simulator as a
 first-class product, open LED protocol.
 
 ## 10. What the Claude Code community already built, and what's missing

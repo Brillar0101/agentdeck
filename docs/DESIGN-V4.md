@@ -1,4 +1,4 @@
-# AgentDeck V4 — Voice + Screen AI Control Deck
+# AgentDeck V4: Voice + Screen AI Control Deck
 
 > Method unchanged from V3: script-generated KiCad (v4/tools, tracked),
 > freerouting + finish pipeline, home hand assembly, manifest-first
@@ -10,7 +10,7 @@
 | Version | What it is | Where |
 |---|---|---|
 | V1 | 90x90 4-layer RP2040, JLC-assembled (rev 0.1, ordered) | `hardware/` |
-| V2 | PowerDeck two-deck concept (pogo/Qi) — paper design | separate repo |
+| V2 | PowerDeck two-deck concept (pogo/Qi), paper design | separate repo |
 | V3 | 150x110 2-layer ESP32-S3, 24 keys, OLED, touch, LiPo, USB+BLE | `v3/` |
 | V4 | THIS: V3 platform + voice (wake word/PTT audio) + 1.69" touch LCD + 2nd encoder | `v4/` |
 
@@ -60,10 +60,10 @@ Phase 1 deliverable printed by the generator (V3 rule: pins.h diffs against it).
 
 - NS4168 (C910588): CONFIRMED, 3,230 pcs, ESOP-8-EP = same hand-solder class
   as our TP4056.
-- MEMS I2S mic: MSM261S4030H0R (C2840615) page is DEAD at LCSC — VERIFY line
+- MEMS I2S mic: MSM261S4030H0R (C2840615) page is DEAD at LCSC, VERIFY line
   with alternates (MSM261DGT003 C48227730 is PDM not I2S; external INMP441
   breakout is the fallback, ubiquitous).
-- 1.69" ST7789 240x280 touch module: not a native LCSC catalog item — VERIFY
+- 1.69" ST7789 240x280 touch module: not a native LCSC catalog item, VERIFY
   line, two paths: LCSC bare panel + 0.5 mm FPC connector (within the V3
   hand-solder floor), or the ubiquitous external 8-pin header module
   (same mounting trick as the V3 OLED fallback).
@@ -72,15 +72,15 @@ Phase 1 deliverable printed by the generator (V3 rule: pins.h diffs against it).
 ## Phases (V3 playbook, per-phase gates)
 
 0. Scaffold + manifest (this doc, v4/PARTS.yaml, tools copied/parameterized)
-1. Schematic gen — ERC 0; pinout table printed and mirrored into firmware
-2. PCB gen + routing — freerouting pipeline + finish_v4; DRC 0/0;
+1. Schematic gen, ERC 0; pinout table printed and mirrored into firmware
+2. PCB gen + routing, freerouting pipeline + finish_v4; DRC 0/0;
    verify_parts green (audio placement rules 11-14 as constraints)
-3. Firmware — V3 base + ESP-SR wake word ("hey Claude" custom or "hi ESP"
+3. Firmware, V3 base + ESP-SR wake word ("hey Claude" custom or "hi ESP"
    stock), I2S duplex, LVGL or plain ST7789 UI, `S`-protocol superset;
    compile gate + wake-word smoke test documented
-4. Enclosure — V3 case generator + LCD window, mic gasket boss, speaker
+4. Enclosure, V3 case generator + LCD window, mic gasket boss, speaker
    chamber + grille; dressed assembly render
-5. Fab + order — gerbers, gated order list, live stock pass
+5. Fab + order, gerbers, gated order list, live stock pass
 
 ## Non-goals (scope by exclusion)
 

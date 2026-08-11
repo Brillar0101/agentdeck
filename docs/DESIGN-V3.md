@@ -1,4 +1,4 @@
-# AgentDeck V3 — Hand-Solderable AI Control Deck
+# AgentDeck V3: Hand-Solderable AI Control Deck
 
 > Method: script-generated KiCad (v3/tools, tracked in git this time), freerouting,
 > home hand assembly with parts ordered from JLCPCB/LCSC. Purpose unchanged from V1:
@@ -9,10 +9,10 @@
 | Version | What it is | Where |
 |---|---|---|
 | V1 | 90×90 4-layer RP2040 board, JLC-assembled (rev 0.1, ordered 2026-07-28) | `hardware/` |
-| V2 | V1 + PowerDeck two-deck concept (pogo/Qi) — paper design | `~/kicad-projects/agentdeck-powerdeck` |
+| V2 | V1 + PowerDeck two-deck concept (pogo/Qi), paper design | `~/kicad-projects/agentdeck-powerdeck` |
 | V3 | THIS: bigger, hand-solderable, 24 keys, OLED, touch, LiPo, USB+BLE | `v3/` |
 
-Enclosure files named "v2/v3-assembled.blend" are *assembly iterations of V1* — an
+Enclosure files named "v2/v3-assembled.blend" are *assembly iterations of V1*, an
 unfortunate collision; V3 outputs use the `AgentDeckV3-` prefix throughout.
 
 ## Feature set (from market research, see plan)
@@ -59,13 +59,13 @@ time (LCSC links rotated). `v3/tools/place_pcb.py` implements these as constrain
 3. **USB differential pair** (V1 lore + guidelines): D+/D− routed as a coupled pair,
    length-matched ±0.5 mm, over solid ground, no layer change between connector, ESD
    part, and module; ESD diode (U3) placed at the connector, stubs minimized. On a
-   2-layer 1.6 mm board true 90 Ω is not achievable — keep the pair **short (<15 mm)**
+   2-layer 1.6 mm board true 90 Ω is not achievable, keep the pair **short (<15 mm)**
    which is fine at full-speed USB (V1 shipped the same compromise, documented).
-4. **TP4056 thermal** (tp4056.pdf): it is a linear charger — dissipates
+4. **TP4056 thermal** (tp4056.pdf): it is a linear charger and dissipates
    (VBUS−VBAT)·Icharge ≈ 0.6 W worst case at 500 mA. Copper pour on its tab/GND pins
    ≥1 cm², thermal vias to bottom pour; keep ≥5 mm from the touch pad and battery.
 5. **SK6812 chain** (sk6812mini-e.pdf): 100 nF per LED at its VDD; power injected at
-   both chain ends (24 LEDs ≈ 1.4 A worst-case white — VSYS pour, not a trace);
+   both chain ends (24 LEDs ≈ 1.4 A worst-case white, VSYS pour, not a trace);
    data line series 330 R at the head; keep data stubs < 5 mm.
 6. **Touch pad** (S3 guidelines touch-sensor section): pad on top layer, **no ground
    pour directly under the pad** (hatch or void), trace to the touch pin thin
@@ -73,7 +73,7 @@ time (LCSC links rotated). `v3/tools/place_pcb.py` implements these as constrain
 7. **Matrix diodes**: cathode to row (COL2ROW), consistent orientation for firmware;
    diode next to its switch pad, not bussed at a distance.
 8. **Load-share FET** (NeuralCard DESIGN.md §3): Q1 gate to VBUS with 100 k bleed,
-   source to VSYS, drain to BAT side — battery isolated when USB present; place at
+   source to VSYS, drain to BAT side, battery isolated when USB present; place at
    the power entry corner with the TP4056.
 9. **EC11/tacts/power switch**: mechanical parts on board edges per their drawings;
    MSK12C02 actuator overhangs the edge (NeuralCard pattern).
@@ -87,11 +87,11 @@ time (LCSC links rotated). `v3/tools/place_pcb.py` implements these as constrain
   adjacent ground return).
 - Power distribution as pours/wide traces: VSYS pour region on top around the LED
   field; 3V3 min 0.5 mm trace ring.
-- All vias ≥ 0.45/0.3 mm (standard fab bracket — pricing lesson from V1 rev0.1).
+- All vias ≥ 0.45/0.3 mm (standard fab bracket, pricing lesson from V1 rev0.1).
 - Track/clearance defaults 0.2/0.2 mm (hand-friendly, easy fab); 0.15 only where the
   OLED tab forces it.
 - Silkscreen: every ref + pin-1 marks + polarity bars; flashing instructions and
-  pinout legend printed on the board (V1 style); text ≥1 mm height (JLC legibility —
+  pinout legend printed on the board (V1 style); text ≥1 mm height (JLC legibility , 
   V1 DRC lesson).
 - No components under the battery pocket footprint (keepout zone in the PCB and a
   matching pocket in the case bottom).
