@@ -183,8 +183,11 @@ BOSS_TOP = 0.0                         # PCB underside - the board sits on these
 # side port in the TRAY wall: J1's shell spans z 0..-3.26 (below the board).
 # Tunnel for the plug shell through the wall, plus a slim full-height rim
 # notch so the 6.5mm-tall cable overmould (centre z=-1.6) seats the plug fully.
-cut(tray, box("usbport", USB_X[0], USB_X[1], -6.0, -2.0, -3.5, 0.3))
-cut(tray, box("usbnotch", NOTCH[0], NOTCH[1], NOTCH[2], NOTCH[3], tlo - 1, thi + 1))
+# minimal opening - just the plug, nothing more:
+#   tunnel = shell 8.94x3.26 + 0.33/side -> 9.6 x 3.6
+#   recess = overmould 12x6.5 + 0.3/side, height-limited (was full tray height)
+cut(tray, box("usbport", 40.20, 49.80, -6.0, -2.0, -3.45, 0.15))
+cut(tray, box("usbnotch", 38.70, 51.30, NOTCH[2], NOTCH[3], -5.00, 1.70))
 print("  USB slot %.1f mm wide, z %.2f..%.2f (%.2f tall), flared to %.1f mm at the mouth"
       % (USB_X[1] - USB_X[0], USB_Z_BOTTOM, LID_Z[1], LID_Z[1] - USB_Z_BOTTOM,
          FLARE_X[1] - FLARE_X[0]))
