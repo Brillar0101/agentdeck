@@ -86,6 +86,6 @@ hardware-verified yet.
 ### Fab
 - Gerbers, drill, BOM, and CPL generated for JLCPCB.
 
-[Unreleased]: https://github.com/Brillar0101/claude-micro/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/Brillar0101/claude-micro/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/Brillar0101/claude-micro/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Brillar0101/agentdeck/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Brillar0101/agentdeck/compare/v0.1.0...v1.0.0
+[0.1.0]: https://github.com/Brillar0101/agentdeck/releases/tag/v0.1.0
