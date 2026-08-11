@@ -69,7 +69,12 @@ JOY = (67.90, 80.10, 10.47, 21.52)     # 5-way joystick
 # a chunky cable is bigger, so a tight slot traps the lead even though the plug
 # itself mates. The slot therefore spans the tray wall as well as the lid, and
 # gets a flared mouth on the outer face so the cable is guided, not pinched.
-USB_X = (38.00, 52.00)                 # 14.0 wide: 12 mm overmould + 2 mm
+# The lid opening now HUGS the connector: J1's shell is 8.94 wide x 3.2 tall
+# and its body ends at y=6.04. The old 14mm x (to y=9) cut read as a gaping
+# trench in the top face. Inside the wall only the bare shell needs room;
+# the fat cable overmould lives OUTSIDE the wall, where the flare handles it.
+USB_X = (39.75, 50.25)                 # 10.5 wide: shell 8.94 + 0.78/side
+USB_TRENCH_END = 6.50                  # just past the connector body (6.04)
 USB_Z_BOTTOM = 0.00                    # down through the tray wall to the PCB
 FLARE_X = (36.00, 54.00)               # 18.0 wide lead-in
 FLARE_Z = (-1.00, 6.50)
@@ -151,7 +156,7 @@ for i, (x0, x1, y0, y1) in enumerate(KEYS):
     cut(lid, box("k%d" % i, x0, x1, y0, y1, lo - 1, hi + 1))
 cut(lid, box("enc", *ENC, lo - 1, hi + 1))
 cut(lid, box("joy", *JOY, lo - 1, hi + 1))
-cut(lid, box("usb", USB_X[0], USB_X[1], -5.0, 9.0, lo - 1, hi + 1))
+cut(lid, box("usb", USB_X[0], USB_X[1], -5.0, USB_TRENCH_END, lo - 1, hi + 1))
 cut(lid, box("usbflare", FLARE_X[0], FLARE_X[1], -5.0, -3.6 + FLARE_DEPTH,
              FLARE_Z[0], FLARE_Z[1]))
 for i, (cx, cy) in enumerate(LEDS):
