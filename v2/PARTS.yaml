@@ -1,0 +1,119 @@
+# AgentDeck V2 parts manifest
+# Pattern follows v3/PARTS.yaml. stock: CONFIRMED means checked live on LCSC
+# on stock_date; VERIFY means the line must be re-checked before ordering.
+# Carried lines inherit their verification from the file named in `source`.
+
+meta:
+  version: v2
+  concept: V1 control surface + V3 power/radio platform + status LCD
+  checked: 2026-08-11
+
+parts:
+  # ---- new in V2 ----
+  - ref_prefix: LCD1
+    name: Wisevision N114-2413THBIG01-H13 1.14" IPS 240x135 ST7789V SPI
+    lcsc: C2890618
+    package: FPC
+    stock: CONFIRMED           # 395 pcs live
+    stock_date: 2026-08-11
+    unit_price: 2.54
+    qty_per_board: 1
+    notes: 2.4-3.3V, non-touch. FPC pin count and mating connector TBD from
+      datasheet - blocks footprint work (phase 2). Backlight needs PWM pin.
+
+  - ref_prefix: J3
+    name: FPC connector for LCD1
+    lcsc: null
+    stock: VERIFY
+    qty_per_board: 1
+    notes: Select after reading the Wisevision datasheet (pin count/pitch
+      unknown). Prefer a JLC basic-library part.
+
+  - ref_prefix: U7
+    name: 5V boost for SK6812 rail, with EN (load switch function)
+    lcsc: null
+    stock: VERIFY
+    qty_per_board: 1
+    notes: Cell sag takes VBAT below the SK6812 3.7V minimum. Candidates
+      MT3608-class or TPS61023; pick for Iq and EN pin at order time.
+
+  - ref_prefix: BT1
+    name: LiPo 103450 2000mAh w/ JST-PH plug, protected
+    lcsc: null
+    package: pouch 10.5 x 34 x 50 mm
+    stock: EXTERNAL            # Amazon/Adafruit, not an LCSC line
+    qty_per_board: 1
+    notes: Matches Creator Micro 2 PRO 2100mAh class. Thickness drives the
+      deeper tray in the case generator.
+
+  # ---- carried from v3/PARTS.yaml (already stock-checked there) ----
+  - ref_prefix: U1
+    name: ESP32-S3-WROOM-1-N8R2
+    lcsc: C2913204
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+    notes: Antenna overhangs a copper-free board-edge zone.
+
+  - ref_prefix: U4
+    name: TP4056 LiPo charger 1A
+    lcsc: C16581
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+
+  - ref_prefix: D25
+    name: SS34 Schottky 3A (VBUS -> VSYS diode-OR leg)
+    lcsc: C8678
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+
+  - ref_prefix: J2
+    name: JST-PH 2.0 2-pin battery connector S2B-PH-SM4-TB
+    lcsc: C295747
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+
+  - ref_prefix: U5
+    name: low-Iq 3.3V regulator (V3 selection - NOT AMS1117)
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+    notes: Copy the exact V3 line at schematic time; V2 adds the LCD
+      backlight load (~30mA) which it covers.
+
+  # ---- carried from V1 (fab/AgentDeck-BOM-v1.0.0.csv) ----
+  - ref_prefix: D1-D13
+    name: SK6812MINI-E reverse-mount RGB
+    lcsc: C5149201
+    source: v1
+    qty_per_board: 13
+
+  - ref_prefix: ENC1
+    name: EC11 rotary encoder
+    lcsc: C361165
+    source: v1
+    qty_per_board: 1
+
+  - ref_prefix: JS1
+    name: Alps SKQUCAA010 5-way joystick
+    lcsc: null
+    stock: EXTERNAL            # AliExpress/Newark, see V1 BOM notes
+    source: v1
+    qty_per_board: 1
+
+  - ref_prefix: J1
+    name: USB-C receptacle TYPE-C-31-M-12
+    lcsc: C165948
+    source: v1
+    qty_per_board: 1
+
+  - ref_prefix: U6
+    name: USBLC6-2SC6 ESD
+    lcsc: C7519
+    source: v1
+    qty_per_board: 1
+
+  - ref_prefix: SW1-SW14
+    name: Kailh Choc hot-swap socket CPG135001S30
+    lcsc: null
+    stock: EXTERNAL            # AliExpress, LCSC line discontinued
+    source: v1
+    qty_per_board: 13

@@ -50,7 +50,7 @@ V1 is complete. V2 through V4 exist as designs, not hardware.
 | Version | What it is | Where |
 |---|---|---|
 | **V1** (this release) | 95 x 95 mm 4-layer RP2040 board, 13 keys, JLCPCB PCBA | `v1/hardware/` |
-| V2 | V1 plus a magnetic PowerDeck lower deck (Qi charging + battery), planned on paper | `v2/`, [design notes](v2/DESIGN.md) |
+| V2 | wireless Creator Micro 2 competitor: BLE + USB-C, 2000 mAh battery, 1.14" status LCD | `v2/`, [design notes](v2/DESIGN.md) |
 | V3 | hand-solderable ESP32-S3 redesign: 24 keys, OLED, touch, LiPo, USB + BLE | `v3/`, [design notes](v3/DESIGN.md) |
 | V4 | V3 platform plus voice (wake word, mic, speaker) and a 1.69" touch LCD | `v4/`, [design notes](v4/DESIGN.md) |
 
