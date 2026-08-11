@@ -179,7 +179,7 @@ FP = {
     "U4": "JLC:ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP",
     "U5": "JLC_V1:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
     "Q1": "Package_TO_SOT_SMD:SOT-23",
-    "Q2": "JLC:SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95",
+    "Q2": "JLC:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
     "J1": "JLC:USB-C_SMD-TYPE-C-31-M-12_1",
     "J2": "JLC:CONN-SMD_P2.00_S2B-PH-SM4-TB-LF-SN",
     "J3": "AgentDeck:ProgPads_1x4",
