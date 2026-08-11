@@ -13,7 +13,7 @@ Versions are hardware revisions, not software releases.
 - Voice + screen successor under `v4/`: V3 platform plus I2S MEMS mic with
   on-device wake word (ESP-SR), NS4168 class-D amp + speaker, 1.69" 240x280
   ST7789 touch LCD (replaces the supply-fragile 0.96" OLED), second EC11.
-- Scaffold: `docs/DESIGN-V4.md` (deltas, audio placement rules 11-14, phase
+- Scaffold: `v4/DESIGN.md` (deltas, audio placement rules 11-14, phase
   plan) and `v4/PARTS.yaml` (carried lines live-confirmed 2026-07-29; new
   audio/LCD lines stock-checked - NS4168 confirmed, mic and LCD gated VERIFY).
 
@@ -21,7 +21,7 @@ Versions are hardware revisions, not software releases.
 - New hand-solderable version under `v3/`: ESP32-S3-WROOM, 24-key 4x6 Choc matrix,
   0.96" OLED, capacitive touch PTT, LiPo + TP4056 charging, USB-C + BLE HID.
 - Parts manifest `v3/PARTS.yaml` (2D/3D dims, LCSC stock) enforced by
-  `v3/tools/verify_parts.py`; design doc `docs/DESIGN-V3.md`; V3 tools are
+  `v3/tools/verify_parts.py`; design doc `v3/DESIGN.md`; V3 tools are
   git-tracked (unlike V1 generators).
 
 ## [1.0.0] - 2026-08-11
@@ -42,7 +42,7 @@ The V1 release. Everything below was re-verified end to end: 0 DRC errors,
   heat-set inserts, printed cover caps.
 
 ### Enclosure
-- Case is now parametric: `enclosure/src/generate_case.py` builds both
+- Case is now parametric: `v1/enclosure/src/generate_case.py` builds both
   shells and the cover caps from measured board geometry. Watertight STLs,
   screw axes coaxial with the PCB holes to 0.003 mm.
 - Measured fastener stack: lid counterbore 5.2 x 2.5 mm over a 2.9 mm shaft,

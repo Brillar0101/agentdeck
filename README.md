@@ -12,7 +12,7 @@ _AgentDeck is optimized for people running several coding agents at once who
 want glanceable status and one-hand control. It is a desk device, not a
 portable one: USB-C only, no battery, no radio._
 
-- [Design notes](docs/DESIGN.md)
+- [Design notes](v1/DESIGN.md)
 - [Changelog](CHANGELOG.md)
 - [Licensing](LICENSING.md)
 
@@ -42,10 +42,10 @@ V1 is complete. V2 through V4 exist as designs, not hardware.
 
 | Version | What it is | Where |
 |---|---|---|
-| **V1** (this release) | 95 x 95 mm 4-layer RP2040 board, 13 keys, JLCPCB PCBA | `hardware/` |
-| V2 | V1 plus a magnetic PowerDeck lower deck (Qi charging + battery), planned on paper | sibling repo `agentdeck-powerdeck` |
-| V3 | hand-solderable ESP32-S3 redesign: 24 keys, OLED, touch, LiPo, USB + BLE | `v3/`, [design notes](docs/DESIGN-V3.md) |
-| V4 | V3 platform plus voice (wake word, mic, speaker) and a 1.69" touch LCD | `v4/`, [design notes](docs/DESIGN-V4.md) |
+| **V1** (this release) | 95 x 95 mm 4-layer RP2040 board, 13 keys, JLCPCB PCBA | `v1/hardware/` |
+| V2 | V1 plus a magnetic PowerDeck lower deck (Qi charging + battery), planned on paper | `v2/`, [design notes](v2/DESIGN.md) |
+| V3 | hand-solderable ESP32-S3 redesign: 24 keys, OLED, touch, LiPo, USB + BLE | `v3/`, [design notes](v3/DESIGN.md) |
+| V4 | V3 platform plus voice (wake word, mic, speaker) and a 1.69" touch LCD | `v4/`, [design notes](v4/DESIGN.md) |
 
 ## Status
 
@@ -66,11 +66,11 @@ and has its own README where the workflow needs explaining.
 
 | Directory | Contents |
 |---|---|
-| `hardware/` | KiCad 10 project: `AgentDeck.kicad_pcb`, `AgentDeck.kicad_sch`, footprint / symbol / 3D libraries |
-| `enclosure/` | Blender assembly (`AgentDeck-v2-assembled.blend`), the parametric case generator (`src/generate_case.py`), printable STLs, keycap icon art |
-| `firmware/` | CircuitPython firmware (`boot.py`, `code.py`) and the Arduino port |
-| `host/` | `agentdeck_bridge.py`, the Claude Code hook bridge |
-| `fab/` | Gerbers, drill files, BOM and CPL for JLCPCB |
+| `v1/hardware/` | KiCad 10 project: `AgentDeck.kicad_pcb`, `AgentDeck.kicad_sch`, footprint / symbol / 3D libraries |
+| `v1/enclosure/` | Blender assembly (`AgentDeck-v2-assembled.blend`), the parametric case generator (`src/generate_case.py`), printable STLs, keycap icon art |
+| `v1/firmware/` | CircuitPython firmware (`boot.py`, `code.py`) and the Arduino port |
+| `v1/host/` | `agentdeck_bridge.py`, the Claude Code hook bridge |
+| `v1/fab/` | Gerbers, drill files, BOM and CPL for JLCPCB |
 | `docs/` | design notes, datasheets, reference material, renders in `docs/img/` |
 | `v3/`, `v4/` | the V3 and V4 designs (boards, parts manifests, tools) |
 | `LICENSES/` | full licence texts |
@@ -108,29 +108,29 @@ stack into brass inserts.
 | USB | side port through the tray wall, sized for the plug plus a slim overmould |
 | Walls | 2.6 mm, with a 0.6 mm bevel on exposed edges |
 
-Print `enclosure/case-bottom.stl`, `enclosure/case-top-lid.stl`, and four of
-`enclosure/case-cover-plug.stl`. The case is generated, not sculpted: edit the
-parameters in `enclosure/src/generate_case.py` and re-run it to get new STLs.
+Print `v1/enclosure/case-bottom.stl`, `v1/enclosure/case-top-lid.stl`, and four of
+`v1/enclosure/case-cover-plug.stl`. The case is generated, not sculpted: edit the
+parameters in `v1/enclosure/src/generate_case.py` and re-run it to get new STLs.
 
 ## Firmware
 
-Copy `firmware/boot.py` and `code.py` onto a CIRCUITPY drive running
+Copy `v1/firmware/boot.py` and `code.py` onto a CIRCUITPY drive running
 CircuitPython 9.x, with `adafruit_hid` and `neopixel` in `lib/`. An Arduino
-port with identical behaviour lives in `firmware/arduino/` if you prefer a
+port with identical behaviour lives in `v1/firmware/arduino/` if you prefer a
 compiled build.
 
 The command keys send Ctrl+Alt chords, the dial sets reasoning effort, and the
-joystick navigates. `firmware/README.md` has the full control table, colour
+joystick navigates. `v1/firmware/README.md` has the full control table, colour
 legend, pin map, and the three constants to confirm on first hardware.
 
 ## Development
 
-- **Board edits**: open `hardware/AgentDeck.kicad_pcb` in KiCad 10. After
-  copper changes, refill zones before running DRC, then regenerate `fab/`
+- **Board edits**: open `v1/hardware/AgentDeck.kicad_pcb` in KiCad 10. After
+  copper changes, refill zones before running DRC, then regenerate `v1/fab/`
   with `kicad-cli`.
-- **Case edits**: run `enclosure/src/generate_case.py` in Blender to rebuild
+- **Case edits**: run `v1/enclosure/src/generate_case.py` in Blender to rebuild
   the STLs from parameters.
-- **Renders**: the assembly lives in `enclosure/AgentDeck-v2-assembled.blend`;
+- **Renders**: the assembly lives in `v1/enclosure/AgentDeck-v2-assembled.blend`;
   reference renders are committed under `docs/img/`.
 - Derived files (board 3D exports, `.dsn`/`.ses` routing intermediates,
   autorouter logs) are gitignored and regenerate from the board.
@@ -141,7 +141,7 @@ Multi-licensed, as is normal for open hardware. See [LICENSING.md](LICENSING.md)
 
 | What | Licence |
 |---|---|
-| Software (`firmware/`, `host/`) | [MIT](LICENSES/MIT.txt) |
+| Software (`v1/firmware/`, `v1/host/`) | [MIT](LICENSES/MIT.txt) |
 | Hardware (board, enclosure, fab files) | [CERN-OHL-S v2](LICENSES/CERN-OHL-S-v2.txt) |
 | Documentation | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
 
