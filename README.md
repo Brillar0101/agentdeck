@@ -30,6 +30,13 @@ of my sessions needs me?" without alt-tabbing.
 > repository (vendor footprints, datasheets, reference photographs, third-party
 > cap and knob models) is not ours to license. See [LICENSING.md](LICENSING.md).
 
+## Renders
+
+| | |
+|---|---|
+| ![front](docs/img/agentdeck-front-low.png) | ![side](docs/img/agentdeck-side-usb.png) |
+| ![rear](docs/img/agentdeck-rear-quarter.png) | ![top](docs/img/agentdeck-top-down.png) |
+
 ## Changelog
 
 Hardware revisions are tracked in the [changelog](CHANGELOG.md). Because the
