@@ -69,12 +69,17 @@ JOY = (67.90, 80.10, 10.47, 21.52)     # 5-way joystick
 # a chunky cable is bigger, so a tight slot traps the lead even though the plug
 # itself mates. The slot therefore spans the tray wall as well as the lid, and
 # gets a flared mouth on the outer face so the cable is guided, not pinched.
-# The lid opening now HUGS the connector: J1's shell is 8.94 wide x 3.2 tall
-# and its body ends at y=6.04. The old 14mm x (to y=9) cut read as a gaping
-# trench in the top face. Inside the wall only the bare shell needs room;
-# the fat cable overmould lives OUTSIDE the wall, where the flare handles it.
-USB_X = (39.75, 50.25)                 # 10.5 wide: shell 8.94 + 0.78/side
-USB_TRENCH_END = 6.50                  # just past the connector body (6.04)
+# USB-C access, side-port style: the top face stays SOLID over the connector.
+# Three cuts replace the old open trench:
+#   1. underside pocket - cavity from below over J1's 3.2mm shell, leaving a
+#      0.55mm roof (top face unbroken over the board)
+#   2. side tunnel - the plug shell's path through the front wall, under the roof
+#   3. edge notch - a slim full-height nick at the very rim so the 6.5mm-tall
+#      cable overmould (taller than the case - can never come inside) gets
+#      2.2mm closer and the plug seats fully (6.0mm insertion, needs ~6)
+USB_X = (39.75, 50.25)                 # tunnel: shell 8.94 + 0.78/side
+POCKET = (39.50, 50.50, -3.00, 6.60, 4.95)   # x0,x1,y0,y1,ceiling-z
+NOTCH = (38.60, 51.40, -5.20, -2.85)   # 12.8 wide for the 12mm overmould
 USB_Z_BOTTOM = 0.00                    # down through the tray wall to the PCB
 FLARE_X = (36.00, 54.00)               # 18.0 wide lead-in
 FLARE_Z = (-1.00, 6.50)
@@ -156,9 +161,9 @@ for i, (x0, x1, y0, y1) in enumerate(KEYS):
     cut(lid, box("k%d" % i, x0, x1, y0, y1, lo - 1, hi + 1))
 cut(lid, box("enc", *ENC, lo - 1, hi + 1))
 cut(lid, box("joy", *JOY, lo - 1, hi + 1))
-cut(lid, box("usb", USB_X[0], USB_X[1], -5.0, USB_TRENCH_END, lo - 1, hi + 1))
-cut(lid, box("usbflare", FLARE_X[0], FLARE_X[1], -5.0, -3.6 + FLARE_DEPTH,
-             FLARE_Z[0], FLARE_Z[1]))
+cut(lid, box("usbpocket", POCKET[0], POCKET[1], POCKET[2], POCKET[3], lo - 1, POCKET[4]))
+cut(lid, box("usbtunnel", USB_X[0], USB_X[1], -6.0, -2.0, lo - 1, POCKET[4]))
+cut(lid, box("usbnotch", NOTCH[0], NOTCH[1], NOTCH[2], NOTCH[3], lo - 1, hi + 1))
 for i, (cx, cy) in enumerate(LEDS):
     cut(lid, cylinder("led%d" % i, cx, cy, LED_D, lo - 1, hi + 1))
 cut(lid, cylinder("boot", *BOOT, BOOT_D, lo - 1, hi + 1))
