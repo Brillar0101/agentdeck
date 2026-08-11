@@ -161,9 +161,8 @@ for i, (x0, x1, y0, y1) in enumerate(KEYS):
     cut(lid, box("k%d" % i, x0, x1, y0, y1, lo - 1, hi + 1))
 cut(lid, box("enc", *ENC, lo - 1, hi + 1))
 cut(lid, box("joy", *JOY, lo - 1, hi + 1))
-cut(lid, box("usbpocket", POCKET[0], POCKET[1], POCKET[2], POCKET[3], lo - 1, POCKET[4]))
-cut(lid, box("usbtunnel", USB_X[0], USB_X[1], -6.0, -2.0, lo - 1, POCKET[4]))
-cut(lid, box("usbnotch", NOTCH[0], NOTCH[1], NOTCH[2], NOTCH[3], lo - 1, hi + 1))
+# no USB cuts in the lid: J1 hangs BELOW the board (all SMD parts do - the
+# sockets/RP2040/USB face down into the tray). The lid front edge is solid.
 for i, (cx, cy) in enumerate(LEDS):
     cut(lid, cylinder("led%d" % i, cx, cy, LED_D, lo - 1, hi + 1))
 cut(lid, cylinder("boot", *BOOT, BOOT_D, lo - 1, hi + 1))
@@ -181,9 +180,11 @@ tray = prism("CaseBottom", rrect_pts(CASE_R), *TRAY_Z)
 tlo, thi = TRAY_Z
 cut(tray, prism("pocket", rrect_pts(BOARD_R + FIT), tlo + FLOOR, thi + 1))
 BOSS_TOP = 0.0                         # PCB underside - the board sits on these
-cut(tray, box("usbtray", USB_X[0], USB_X[1], -5.0, 2.0, USB_Z_BOTTOM, thi + 1))
-cut(tray, box("usbtrayflare", FLARE_X[0], FLARE_X[1], -5.0, -3.6 + FLARE_DEPTH,
-              FLARE_Z[0], FLARE_Z[1]))
+# side port in the TRAY wall: J1's shell spans z 0..-3.26 (below the board).
+# Tunnel for the plug shell through the wall, plus a slim full-height rim
+# notch so the 6.5mm-tall cable overmould (centre z=-1.6) seats the plug fully.
+cut(tray, box("usbport", USB_X[0], USB_X[1], -6.0, -2.0, -3.5, 0.3))
+cut(tray, box("usbnotch", NOTCH[0], NOTCH[1], NOTCH[2], NOTCH[3], tlo - 1, thi + 1))
 print("  USB slot %.1f mm wide, z %.2f..%.2f (%.2f tall), flared to %.1f mm at the mouth"
       % (USB_X[1] - USB_X[0], USB_Z_BOTTOM, LID_Z[1], LID_Z[1] - USB_Z_BOTTOM,
          FLARE_X[1] - FLARE_X[0]))
