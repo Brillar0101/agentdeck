@@ -258,7 +258,8 @@ parts:
     lcsc: null
     package: FPC/module - TWO sourcing paths, decide at Phase 1
     pitch_mm: 0.5
-    dims_2d: [33.0, 38.0]      # est. module land incl tab; firm up on selection
+    dims_2d: [42.0, 34.0]      # firmed Phase 2: V4.pretty LCD_1x12_2p54_Module
+                               # glass outline 42x34 north of the 1x12 pad row
     height_3d: 2.5
     dims_source: estimate
     hand_solder: drag

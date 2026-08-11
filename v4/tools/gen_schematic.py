@@ -269,7 +269,7 @@ FP = {
     "U3": "JLC_V1:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL",
     "U4": "V3:ESOP-8_TP4056",
     "U5": "JLC_V1:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
-    "U6": "V3:ESOP-8_TP4056",     # pin-compatible ESOP-8-EP body, NS4168 pin functions
+    "U6": "V4:ESOP-8_NS4168",     # V3 ESOP-8 body, EP renumbered 3->7 (NS4168 GND)
     "Q1": "Package_TO_SOT_SMD:SOT-23",
     "J1": "JLC_V1:USB-C_SMD-TYPE-C-31-M-12_1",
     "J2": "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
