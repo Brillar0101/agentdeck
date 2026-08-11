@@ -1,6 +1,6 @@
 # AgentDeck
 
-A 90 x 90 mm RP2040 desk macropad. It has 13 Kailh Choc hot-swap keys with
+A 95 x 95 mm RP2040 desk macropad. It has 13 Kailh Choc hot-swap keys with
 per-key RGB, a rotary encoder, a 5-way joystick, and USB-C, on a 4-layer PCB,
 plus a printable two-part enclosure.
 
@@ -21,7 +21,7 @@ handle scrubbing and navigation.
 
 | Version | Board | Assembly | Where |
 |---|---|---|---|
-| V1 (rev 0.1) | 90x90 4-layer RP2040, 13 keys | JLCPCB PCBA | `hardware/` |
+| V1 (rev 1.0.0) | 95x95 4-layer RP2040, 13 keys | JLCPCB PCBA | `hardware/` |
 | V2 | V1 + PowerDeck two-deck concept | paper design | sibling repo `agentdeck-powerdeck` |
 | V3 | ~150x110 2-layer ESP32-S3, 24 keys, OLED, touch, LiPo, USB+BLE | hand-soldered (parts from JLCPCB/LCSC) | `v3/` — see `docs/DESIGN-V3.md` |
 | V4 | V3 platform + voice (wake word, mic/amp/speaker), 1.69" touch LCD, 2nd encoder | hand-soldered | `v4/` — see `docs/DESIGN-V4.md` |

@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "V0.1"
+      "sch_revision": "1.0.0"
     },
     "layer_pairs": [],
     "layer_presets": [],

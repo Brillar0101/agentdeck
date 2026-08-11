@@ -7,7 +7,7 @@
 ## Version roadmap
 
 - **V1 (this board)**: single integrated PCB — keys + RP2040 + all I/O on one
-  90x90mm board, USB-C powered. Fully routed, DRC-clean, ordered-ready.
+  95x95mm board, USB-C powered. Fully routed, DRC-clean, ordered-ready.
 - **V2**: two-deck system — this controller as the upper deck + a separate
   lower PowerDeck (Qi wireless charging + Li-ion battery) that attaches
   magnetically and feeds 5V through pogo pins. Spec:
@@ -25,7 +25,7 @@
 - **Wiring**: no matrix. RP2040 has 30 GPIO; everything direct:
   12 keys + encoder(3) + joystick(5) + touch(1) + SK6812 data(1) +
   aux LEDs(3) = 25 GPIO. Simplest possible firmware, no ghosting, ever.
-- **Footprint**: ~90 x 90 mm, Choc spacing 18 x 17 mm.
+- **Footprint**: ~95 x 95 mm (grown from 90 for corner-screw clearance), Choc spacing 18 x 17 mm.
 - **Recovery**: RP2040 UF2 bootloader (BOOTSEL button on back). Unbrickable.
 
 ## Verified parts (JLCPCB, checked 2026-07-20)

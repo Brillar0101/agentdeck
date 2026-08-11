@@ -1,8 +1,8 @@
 (export
 	(version "E")
 	(design
-		(source "/Users/barakaeli/kicad-projects/agentdeck/AgentDeck.kicad_sch")
-		(date "2026-07-20T02:17:10")
+		(source "/Users/barakaeli/kicad-projects/claude-micro/hardware/AgentDeck.kicad_sch")
+		(date "2026-08-10T23:04:18")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -11,7 +11,7 @@
 			(title_block
 				(title "AgentDeck")
 				(company "Barakaeli Lawuo")
-				(rev "V0.1")
+				(rev "1.0.0")
 				(date)
 				(source "AgentDeck.kicad_sch")
 				(comment
