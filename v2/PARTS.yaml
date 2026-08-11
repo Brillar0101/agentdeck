@@ -46,6 +46,13 @@ parts:
     notes: Matches Creator Micro 2 PRO 2100mAh class. Thickness drives the
       deeper tray in the case generator.
 
+  - ref_prefix: D14-D33
+    name: 1N4148W matrix diode
+    lcsc: C81598
+    source: v3/PARTS.yaml
+    qty_per_board: 20
+    notes: One per key; V2 uses the V3 matrix wiring.
+
   # ---- carried from v3/PARTS.yaml (already stock-checked there) ----
   - ref_prefix: U1
     name: ESP32-S3-WROOM-1-N8R2
@@ -84,7 +91,7 @@ parts:
     name: SK6812MINI-E reverse-mount RGB
     lcsc: C5149201
     source: v1
-    qty_per_board: 13
+    qty_per_board: 20
 
   - ref_prefix: ENC1
     name: EC11 rotary encoder
@@ -111,9 +118,9 @@ parts:
     source: v1
     qty_per_board: 1
 
-  - ref_prefix: SW1-SW14
+  - ref_prefix: SW1-SW20
     name: Kailh Choc hot-swap socket CPG135001S30
     lcsc: null
     stock: EXTERNAL            # AliExpress, LCSC line discontinued
     source: v1
-    qty_per_board: 13
+    qty_per_board: 20

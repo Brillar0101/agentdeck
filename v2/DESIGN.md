@@ -1,14 +1,15 @@
 # AgentDeck V2: wireless deck with status LCD
 
-V2 competes head-on with the Work Louder Creator Micro 2 PRO. Same brief:
-13 keys, encoder, joystick, agent-state RGB, but wireless with a built-in
-battery, plus a small always-on status screen the Creator Micro does not have.
+V2 competes head-on with the Work Louder Creator Micro 2 PRO and outgrows
+it: 20 keys instead of 13, encoder, joystick, agent-state RGB, wireless with
+a built-in battery, plus a small always-on status screen the Creator Micro
+does not have.
 
 Target spec against the competition:
 
 | | Creator Micro 2 PRO | AgentDeck V2 |
 |---|---|---|
-| Keys | 13 mechanical + touch | 13 Kailh Choc hot-swap (V1 layout carried) |
+| Keys | 13 mechanical + touch | 20 Kailh Choc hot-swap (4 x 5 grid) |
 | Encoder / joystick | 1 / 1 | 1 / 1 (same EC11 + SKQUCAA010) |
 | Agent status | per-key RGB | per-key RGB + 1.14" LCD text panel |
 | Connectivity | BLE + USB-C | BLE + USB-C |
@@ -53,15 +54,28 @@ Wisevision N114-2413THBIG01-H13 (LCSC C2890618, $2.54, in stock):
   LEDs at desk brightness. The LCD backlight is the swing item; it gets
   PWM dimming and an idle timeout.
 
+### Keys
+
+20 keys in a 4 x 5 grid at V1 spacing (18.7 x 19.3 mm): the six agent keys
+and V1 command set, plus a row of user macro keys. Twenty direct GPIO lines
+plus the LCD would not fit, so V2 switches to a 4 x 5 matrix with 1N4148W
+diodes (the V3 wiring, parts carried from its manifest). Per-key RGB stays:
+the SK6812 chain grows to 20.
+
+The extra row makes the board taller: the outline grows from 95 x 95 to
+roughly 95 x 112 mm, with the LCD centred on the new top edge between the
+encoder and joystick. The case generator takes the new outline as
+parameters.
+
 ### GPIO budget (ESP32-S3, ~33 usable)
 
-13 keys + encoder (3) + joystick (5) + LED data (1) + LCD (6) +
-battery sense (1) + charge status (1) = 30. No matrix, same as V1.
+matrix (4 + 5) + encoder (3) + joystick (5) + LED data (1) + LCD (6) +
+battery sense (1) + charge status (1) = 25. Comfortable headroom.
 
 ## What carries over from V1 unchanged
 
-- Board outline, mounting holes, case generator (`v1/enclosure/src/
-  generate_case.py` re-parameterized for the taller battery tray)
+- Case generator (`v1/enclosure/src/generate_case.py` re-parameterized
+  for the taller outline and battery tray)
 - Choc hot-swap sockets, EC11, SKQUCAA010 joystick, SK6812MINI-E LEDs
 - USB-C connector and ESD chain
 - Keycap icon set
@@ -70,6 +84,7 @@ battery sense (1) + charge status (1) = 30. No matrix, same as V1.
 
 - ESP32-S3-WROOM-1-N8R2 module (same part as V3, LCSC C2913204) replaces RP2040 + flash + crystal (all internal
   to the module)
+- 20-key 4 x 5 matrix with diodes (V1 was 13 keys direct-wired)
 - LCD C2890618 + FPC connector + custom footprint
 - Battery, charger, protection, fuel-gauge-by-ADC, 5 V boost, power mux
 - Deeper bottom tray (battery sits under the key field, cell is 10.5 mm
@@ -81,9 +96,9 @@ battery sense (1) + charge status (1) = 30. No matrix, same as V1.
    V3 pattern, enforced by the same verify script
 2. LCD footprint + symbol from the Wisevision datasheet
 3. Schematic: V1 input blocks + V3 power blocks + LCD
-4. Layout in the V1 95 x 95 outline; battery keep-out and antenna keep-out
-   are the two new placement constraints (module antenna must overhang a
-   copper-free zone at the board edge)
+4. Layout on the new ~95 x 112 outline; battery keep-out and antenna
+   keep-out are the two new placement constraints (module antenna must
+   overhang a copper-free zone at the board edge)
 5. Case: re-run the V1 generator with a deeper tray and LCD window
 6. Firmware: V3 firmware tree, V1 keymap, LCD status page
 

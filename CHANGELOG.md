@@ -12,7 +12,7 @@ Versions are hardware revisions, not software releases.
 ### V2 (redesigned)
 - V2 redefined as a wireless Creator Micro 2 PRO competitor: V1 control
   surface on the V3 ESP32-S3 power/radio platform. BLE + USB-C, built-in
-  2000 mAh 103450 LiPo, and a 1.14" 240x135 ST7789V status LCD (LCSC
+  2000 mAh 103450 LiPo, 20 keys in a diode matrix, and a 1.14" 240x135 ST7789V status LCD (LCSC
   C2890618, stock-confirmed). Replaces the earlier PowerDeck two-deck
   concept. Design doc `v2/DESIGN.md`, parts manifest `v2/PARTS.yaml`.
 
