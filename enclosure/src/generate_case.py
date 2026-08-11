@@ -211,6 +211,19 @@ for o in scratch:
     if o.name in bpy.data.objects:
         bpy.data.objects.remove(o, do_unlink=True)
 
+# ---------------------------------------------------------------- soften edges
+# 0.6mm bevel on every edge sharper than 40deg: outer corners, cutout rims,
+# the USB port mouth - printed parts read as moulded instead of machined
+for o in (lid, tray, capobj):
+    bpy.context.view_layer.objects.active = o
+    bv = o.modifiers.new("soften", 'BEVEL')
+    bv.width = 0.0006
+    bv.segments = 3
+    bv.limit_method = 'ANGLE'
+    bv.angle_limit = 0.698  # 40 deg
+    bpy.ops.object.modifier_apply(modifier=bv.name)
+print("edges softened: 0.6mm bevel, 3 segments")
+
 # ---------------------------------------------------------------- report
 for o in (lid, tray, capobj):
     bm = bmesh.new()
