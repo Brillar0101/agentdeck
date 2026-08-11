@@ -23,4 +23,6 @@ Item,Designators,Qty,Value,Footprint,Supplier,Supplier PN,MPN,Status,Notes
 22,JS1,1,5-way navigation switch,SKQUCAA010 (THT),AliExpress,,SKQUCAA010,NOT ON LCSC,"Also Newark 59M1983 / Farnell 1435775. DigiKey does not stock it. LCSC's C139794 (SKRHABE010) would need a new footprint AND a case change"
 23,"SW1-SW12,SW14",13,Kailh Choc V1 switch,plugs into socket,AliExpress,,,Not a PCB part,Never an LCSC line - keyboard vendor only
 24,"SW1-SW12,SW14",13,Choc keycap,n/a,AliExpress,,,Not a PCB part,Keyboard vendor
-25,MH1-MH4,4,M2.5 standoff + screw,n/a,AliExpress,,,Not a PCB part,"Case hardware. M2.5 confirmed by PCB: 2.70 mm drill = ISO 273 close clearance for M2.5; lid counterbore 5.00 mm seats the 4.50 mm M2.5 head"
+25,MH1-MH4,4,M2.5 x 8mm button-head screw (ISO 7380),n/a,AliExpress,,,Not a PCB part,"Case hardware. Passes lid 2.9mm shaft + counterbore, PCB 2.7mm hole, into heat-set insert below. Button head (4.7mm dia x 1.3mm) - NOT socket cap (2.5mm head too tall for the 3.9mm lid)"
+26,MH1-MH4,4,M2.5 brass heat-set insert (4.0mm OD x 5.0mm),n/a,AliExpress,,,Not a PCB part,"The 'nut' the screw threads into. Melts into the tray boss 3.6mm bore. Search 'M2.5 heat set insert 4mm OD'. Install with soldering iron"
+27,MH1-MH4,4,Cover cap (printed),case-cover-plug.stl,3D print,,,Not a purchased part,"5.0mm dia x 1.2mm printed plug that hides the screw head in the counterbore. Print 4 from enclosure/case-cover-plug.stl"
