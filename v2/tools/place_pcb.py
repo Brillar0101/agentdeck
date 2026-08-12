@@ -93,11 +93,6 @@ layout = {
     "U3": (68.5, 5.3, 0, False),        # ESD at the connector
     "R1": (49.0, 7.9, 0, False),        # CC1 5.1k
     "R2": (53.0, 7.9, 0, False),        # CC2 5.1k
-    "LCD1": (56.0, 30.5, 180, False),   # pad row; glass folds up over LCD_GLASS
-    "C10": (67.0, 10.5, 0, False),      # LCD 100nF
-    "Q2": (71.0, 14.5, 0, False),       # backlight FET
-    "R12": (74.5, 10.5, 0, False),      # backlight 22R
-    "R13": (76.5, 14.5, 90, False),     # BL gate pulldown 10k
     "JS1": (86.0, 13.0, 0, False),      # joystick top-right
     # joystick matrix diodes on the back under JS1
     "D21": (80.0, 22.0, 0, True),
@@ -106,22 +101,9 @@ layout = {
     "D24": (82.5, 25.0, 0, True),
     "D25": (87.5, 25.0, 0, True),
     # power cluster, top-right
-    "U4": (100.0, 8.0, 0, False),       # TP4056
-    "R3": (95.0, 14.5, 0, False),       # PROG 1.2k
-    "C11": (99.5, 14.5, 0, False),      # VBUS 10uF
-    "Q1": (106.5, 13.0, 90, False),       # AO3401A load share
-    "R6": (99.5, 19.0, 0, False),      # gate bleed 100k
-    "D26": (105.5, 19.0, 0, False),     # SS34 VBUS->VSYS
-    "U5": (99.0, 24.5, 0, False),       # ME6211 LDO
-    "C6": (94.0, 29.5, 0, False),
-    "C7": (103.5, 29.5, 0, False),
-    "R4": (94.5, 24.0, 90, False),       # CHRG 10k
-    "R5": (94.5, 19.0, 90, False),       # STDBY 10k
-    "R7": (108.0, 24.5, 90, False),     # VBAT div 100k
-    "R8": (108.0, 29.5, 90, False),     # VBAT div 47k
-    "C8": (108.0, 34.5, 90, False),
-    "J2": (106.0, 42.0, 180, False),    # JST-PH battery, wire toward tray
-    "SW25": (110.5, 58.0, 90, False),   # power switch, actuator over right edge
+    "U5": (99.0, 10.0, 0, False),       # ME6211 LDO (VBUS -> 3V3)
+    "C6": (94.0, 15.0, 0, False),
+    "C7": (103.5, 15.0, 0, False),
     # LED chain head (B.Cu, near LED1 under SW1)
     "U2": (24.0, 35.0, 0, True),
     "C9": (19.5, 37.5, 90, True),
@@ -260,19 +242,13 @@ def add_silk(board):
     text(board, "BOOT", 32.0, 32.2, 1.0, F, 0.16)
     text(board, "RST", 41.0, 32.2, 1.0, F, 0.16)
     text(board, "3V3 TX GND RX", 5.5, 57.5, 1.0, F, 0.16)
-    text(board, "BAT", 101.0, 42.0, 1.0, F, 0.16, justify="right")
-    text(board, "PWR", 108.0, 65.0, 1.0, F, 0.16)
     text(board, "USB-C", USB_X, 10.2, 1.0, F, 0.16)
     legend = ["AgentDeckV2  ESP32-S3-WROOM-1",
               "ROW0-3=IO4-7 ROW4(JS)=IO15  COL0-4=IO10-14",
-              "LCD MOSI/SCK/DC/CS/RST=IO8/9/16/17/18 BL=IO1",
-              "LED=IO21  ENC A/B/SW=IO40/41/42  VBAT=IO2",
+              "LED=IO21  ENC A/B/SW=IO40/41/42",
               "UART TX=IO43 RX=IO44   USB=IO19/20"]
     for i, line in enumerate(legend):
         text(board, line, 56.0, 58.0 + 3.2 * i, 1.2, B, 0.2, mirror=True)
-    text(board, "BATTERY 103450 2000mAh IN TRAY BELOW - KEEP FLAT", 56.0, 77.0,
-         1.2, pcbnew.Dwgs_User, 0.2)
-    text(board, "LCD GLASS", 56.0, 22.0, 1.2, pcbnew.Dwgs_User, 0.2)
 
 
 def main():
@@ -393,8 +369,6 @@ def main():
 
     mounting_holes(board)
 
-    rect(board, *BATT, pcbnew.Dwgs_User)
-    rect(board, *LCD_GLASS, pcbnew.Dwgs_User)
     rule_area(board, *ANT_KEEPOUT, [pcbnew.F_Cu, pcbnew.B_Cu], no_pour=True,
               no_vias=True, name="antenna_keepout")
     rule_area(board, USB_X - 5.5, 5.9, USB_X + 5.5, 7.6, [pcbnew.F_Cu],

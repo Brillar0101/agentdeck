@@ -16,7 +16,7 @@ import pcbnew
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
 BRD = os.path.join(HW, "AgentDeckV2.kicad_pcb")
-EXCLUDE = {"GND", "VSYS_SW", "CC2", "CC1"}   # CC1/CC2 pre-routed by place_pcb
+EXCLUDE = {"GND", "VBUS", "CC2", "CC1"}   # CC1/CC2 pre-routed by place_pcb
 
 out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HW, "AgentDeckV2.dsn")
 tmp = os.path.join(HW, "_route_copy.kicad_pcb")
@@ -35,8 +35,30 @@ for fp in b.GetFootprints():
             pad.SetNet(orphan)
             cleared += 1
 doomed = [t for t in b.GetTracks() if t.GetNetname() in EXCLUDE]
+locked_vias = [(pcbnew.ToMM(t.GetPosition().x), pcbnew.ToMM(t.GetPosition().y))
+               for t in doomed if t.GetClass() == "PCB_VIA" and t.IsLocked()]
 for t in doomed:
     b.Delete(t)
+# fence every deleted locked via on ALL copper layers - the router cannot see
+# them once their net is cleared, and through-vias block inner layers too
+for (vx, vy) in locked_vias:
+    z = pcbnew.ZONE(b)
+    z.SetIsRuleArea(True)
+    z.SetZoneName("locked_via_fence")
+    ls = pcbnew.LSET()
+    for lay in (pcbnew.F_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu, pcbnew.B_Cu):
+        ls.AddLayer(lay)
+    z.SetLayerSet(ls)
+    z.SetDoNotAllowTracks(True)
+    z.SetDoNotAllowVias(True)
+    z.SetDoNotAllowPads(False)
+    z.SetDoNotAllowFootprints(False)
+    poly = z.Outline()
+    poly.NewOutline()
+    for (x, y) in [(vx-0.75, vy-0.75), (vx+0.75, vy-0.75),
+                   (vx+0.75, vy+0.75), (vx-0.75, vy+0.75)]:
+        poly.Append(pcbnew.FromMM(x), pcbnew.FromMM(y))
+    b.Add(z)
 # the battery pocket rule area only forbids FOOTPRINTS on B.Cu, but the DSN
 # exporter turns every rule area into a hard routing keepout - drop it here
 for z in [z for z in b.Zones() if z.GetZoneName() == "battery_pocket"]:

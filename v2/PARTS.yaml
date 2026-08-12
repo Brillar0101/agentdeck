@@ -5,38 +5,11 @@
 
 meta:
   version: v2
-  concept: V1 control surface + V3 power/radio platform + status LCD
+  concept: 20-key USB deck on the ESP32-S3 platform (BLE capable)
   checked: 2026-08-11
 
 parts:
   # ---- new in V2 ----
-  - ref_prefix: LCD1
-    name: Wisevision N114-2413THBIG01-H13 1.14" IPS 240x135 ST7789V SPI
-    lcsc: C2890618
-    package: FPC
-    stock: CONFIRMED           # 395 pcs live
-    stock_date: 2026-08-11
-    unit_price: 2.54
-    qty_per_board: 1
-    notes: 2.4-3.3V, non-touch. FPC pin count and mating connector TBD from
-      datasheet - blocks footprint work (phase 2). Backlight needs PWM pin.
-
-  - ref_prefix: Q2
-    name: AO3400A N-FET SOT-23 (LCD backlight PWM low-side)
-    lcsc: C20917
-    stock: CONFIRMED           # library pull succeeded 2026-08-11
-    stock_date: 2026-08-11
-    qty_per_board: 1
-
-  - ref_prefix: BT1
-    name: LiPo 103450 2000mAh w/ JST-PH plug, protected
-    lcsc: null
-    package: pouch 10.5 x 34 x 50 mm
-    stock: EXTERNAL            # Amazon/Adafruit, not an LCSC line
-    qty_per_board: 1
-    notes: Matches Creator Micro 2 PRO 2100mAh class. Thickness drives the
-      deeper tray in the case generator.
-
   - ref_prefix: DM1-DM20
     name: 1N4148W matrix diode
     lcsc: C81598
@@ -45,45 +18,17 @@ parts:
     notes: One per key; V2 uses the V3 matrix wiring.
 
   # ---- carried from v3/PARTS.yaml (already stock-checked there) ----
+  - ref_prefix: U5
+    name: ME6211C33M5G-N 3.3V LDO (VBUS input)
+    source: v3/PARTS.yaml
+    qty_per_board: 1
+
   - ref_prefix: U1
     name: ESP32-S3-WROOM-1-N8R2
     lcsc: C2913204
     source: v3/PARTS.yaml
     qty_per_board: 1
     notes: Antenna overhangs a copper-free board-edge zone.
-
-  - ref_prefix: U4
-    name: TP4056 LiPo charger 1A
-    lcsc: C16581
-    source: v3/PARTS.yaml
-    qty_per_board: 1
-
-  - ref_prefix: D25
-    name: SS34 Schottky 3A (VBUS -> VSYS diode-OR leg)
-    lcsc: C8678
-    source: v3/PARTS.yaml
-    qty_per_board: 1
-
-  - ref_prefix: J2
-    name: JST-PH 2.0 2-pin battery connector S2B-PH-SM4-TB
-    lcsc: C295747
-    source: v3/PARTS.yaml
-    qty_per_board: 1
-
-  - ref_prefix: Q1
-    name: AO3401A P-FET (battery load-share mux)
-    source: v3/PARTS.yaml
-    qty_per_board: 1
-
-  - ref_prefix: U5
-    name: ME6211C33M5G-N low-Iq 3.3V LDO
-    source: v3/PARTS.yaml
-    qty_per_board: 1
-
-  - ref_prefix: SW25
-    name: MSK12C02 slide power switch
-    source: v3/PARTS.yaml
-    qty_per_board: 1
 
   # ---- carried from V1 (fab/AgentDeck-BOM-v1.0.0.csv) ----
   - ref_prefix: U2

@@ -29,14 +29,14 @@ KICAD_CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 
 W, H = 112.0, 112.0
 HOLES = [(6, 6), (106, 6), (6, 106), (106, 106)]
-POWER_NETS = ("VBUS", "VSYS", "BAT+", "+3V3")
-POUR_NETS = {"GND", "VSYS_SW"}
+POWER_NETS = ("+3V3",)
+POUR_NETS = {"GND", "VBUS"}
 VIA_D, VIA_DRILL = 0.6, 0.3
 VR = mm(VIA_D / 2)
 # rectangles where vias must not go (mirrors place_pcb rule areas)
 NO_VIA_RECTS = [(10.0, 0.0, 30.0, 0.9)]
 # VSYS_SW pour on B.Cu: key field + arm up the right side to SW25/U5
-VSYS_POLY = [(9, 22), (111, 22), (111, 66), (103, 66), (103, 109), (9, 109)]
+VSYS_POLY = [(9, 22), (92, 22), (92, 4), (111, 4), (111, 109), (9, 109)]
 
 
 def load():
@@ -430,8 +430,8 @@ def zone(bd, net, layer, name, pts, priority=0):
 
 full = [(0.4, 0.4), (W - 0.4, 0.4), (W - 0.4, H - 0.4), (0.4, H - 0.4)]
 gnd = b.FindNet("GND")
-vsys_sw = b.FindNet("VSYS_SW")
-zone(b, vsys_sw, pcbnew.B_Cu, "VSYS_SW_B", VSYS_POLY, priority=2)
+vsys_sw = b.FindNet("VBUS")
+zone(b, vsys_sw, pcbnew.B_Cu, "VBUS_B", VSYS_POLY, priority=2)
 zone(b, gnd, pcbnew.F_Cu, "GND_F", full)
 zone(b, gnd, pcbnew.In1_Cu, "GND_IN1", full)
 zone(b, gnd, pcbnew.In2_Cu, "GND_IN2", full)
@@ -493,8 +493,8 @@ def stitch_net(b, model, net_name, grid=None):
 
 b = load()
 model = build_model(b)
-d, f, _ = stitch_net(b, model, "VSYS_SW")
-print(f"phase3a: VSYS_SW stitched {d} pads, {f} failed")
+d, f, _ = stitch_net(b, model, "VBUS")
+print(f"phase3a: VBUS stitched {d} pads, {f} failed")
 d, f, g = stitch_net(b, model, "GND", grid=10)
 print(f"phase3b: GND stitched {d} pads ({f} failed) + {g} grid vias")
 pcbnew.ZONE_FILLER(b).Fill(b.Zones())
@@ -712,7 +712,7 @@ for rnd in range(8):
     pcbnew.ZONE_FILLER(b).Fill(b.Zones())
     model = build_model(b)
     total_fix = total_fail = 0
-    for nname in ("GND", "VSYS_SW"):
+    for nname in ("GND", "VBUS"):
         fx, fl = knit_pour(b, model, nname)
         total_fix += fx
         total_fail += fl

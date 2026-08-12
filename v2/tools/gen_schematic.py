@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate v2/hardware/AgentDeckV2.kicad_sch (and V2.kicad_sym) section by section.
 
-AgentDeck V2 — wireless 20-key deck with status LCD (ESP32-S3, BLE+USB, LiPo).
+AgentDeck V2 — 20-key deck (ESP32-S3, USB powered, BLE capable).
 Ported from the V3 emitter (KiCad 10 S-expressions). Coordinates: sheet mm,
 1.27 grid, y DOWN. Symbols at angle 0, no mirror: a pin at symbol-local
 (lx, ly) maps to sheet (px + lx, py - ly).
@@ -10,18 +10,9 @@ PINOUT (ESP32-S3-WROOM-1-N8R2, module pin -> GPIO -> net):
   ROW0..ROW3   GPIO4/5/6/7      (p4-p7)   matrix row drives (keys)
   ROW4         GPIO15           (p8)      joystick COM row
   COL0..COL4   GPIO10..14       (p18-p22) matrix column senses
-  LCD_MOSI     GPIO8            (p12)     ST7789V SDA
-  LCD_SCK      GPIO9            (p17)     ST7789V SCL
-  LCD_DC       GPIO16           (p9)      ST7789V RS
-  LCD_CS       GPIO17           (p10)
-  LCD_RST      GPIO18           (p11)
-  LCD_BL       GPIO1            (p39)     backlight PWM via Q2 AO3400A
   USB_DM/DP    GPIO19 / GPIO20  (p13/p14) native USB (fixed)
-  LED_DATA     GPIO21           (p23)     SK6812 x20 via U2 AHCT125
-  CHRG_SNS     GPIO47           (p24)     TP4056 /CHRG via 10k
-  STDBY_SNS    GPIO48           (p25)     TP4056 /STDBY via 10k
+  LED_DATA     GPIO21           (p23)     SK6812 x20 via U2 AHCT125 (VBUS rail)
   ENC_A/B/SW   GPIO40/41/42     (p33/34/35) EC11
-  VBAT_SNS     GPIO2  (ADC1_CH1)(p38)     battery divider 100k/47k
   TXD / RXD    GPIO43 / GPIO44  (p37/p36) UART0 prog pads
   BOOT / EN    GPIO0 (p27) / EN (p3)      tacts; 10k pullups
   Strapping GPIO3(p15)/45(p26)/46(p16) no-connect; PSRAM GPIO35/36/37(p28-30) NC.
@@ -55,9 +46,8 @@ CUSTOM_LIB = os.path.join(V1_HW, "AgentDeck_Custom.kicad_sym")
 
 # Symbols copied into V2.kicad_sym at generation time.
 V2_FROM_V3 = ["ESP32-S3-WROOM-1", "TYPE-C-31-M-12", "USBLC6-2SC6",
-              "ME6211C33M5G-N", "AO3401A", "TS-1187A-B-A-B", "TP4056",
-              "MSK12C02", "ChocV1"]
-V2_FROM_JLC = ["N114-2413THBIG01-H13", "AO3400A"]
+              "ME6211C33M5G-N", "TS-1187A-B-A-B", "ChocV1"]
+V2_FROM_JLC = []
 
 
 def extract_block(path, name):
@@ -103,13 +93,8 @@ LIBSYMS = {
     "V2:TYPE-C-31-M-12": (V2_LIB, "TYPE-C-31-M-12"),
     "V2:USBLC6-2SC6": (V2_LIB, "USBLC6-2SC6"),
     "V2:ME6211C33M5G-N": (V2_LIB, "ME6211C33M5G-N"),
-    "V2:AO3401A": (V2_LIB, "AO3401A"),
-    "V2:AO3400A": (V2_LIB, "AO3400A"),
     "V2:TS-1187A-B-A-B": (V2_LIB, "TS-1187A-B-A-B"),
-    "V2:TP4056": (V2_LIB, "TP4056"),
-    "V2:MSK12C02": (V2_LIB, "MSK12C02"),
     "V2:ChocV1": (V2_LIB, "ChocV1"),
-    "V2:N114-2413THBIG01-H13": (V2_LIB, "N114-2413THBIG01-H13"),
     "JLC_V1:SK6812MINI-E_C5149201": (JLC_V1_LIB, "SK6812MINI-E_C5149201"),
     "JLC_V1:SN74AHCT1G125DBVR": (JLC_V1_LIB, "SN74AHCT1G125DBVR"),
     "JLC_V1:EC11E1834403": (JLC_V1_LIB, "EC11E1834403"),
@@ -176,20 +161,14 @@ FP = {
     "U1": "JLC:WIRELM-SMD_ESP32-S3-WROOM-1",
     "U2": "JLC_V1:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
     "U3": "JLC:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL",
-    "U4": "JLC:ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP",
     "U5": "JLC_V1:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
-    "Q1": "Package_TO_SOT_SMD:SOT-23",
-    "Q2": "JLC:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
     "J1": "JLC:USB-C_SMD-TYPE-C-31-M-12_1",
-    "J2": "JLC:CONN-SMD_P2.00_S2B-PH-SM4-TB-LF-SN",
     "J3": "AgentDeck:ProgPads_1x4",
     "JS1": "AgentDeck:SKQUCAA010",
-    "SW25": "V3:MSK12C02",
     "SW26": "JLC_V1:SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
     "SW27": "JLC_V1:SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
     "ENC1": "JLC_V1:SW-TH_EC11E1820402",
     "D26": "Diode_SMD:D_SMA",
-    "LCD1": "JLC:LCD-SMD_1.14IPS-LCD",
 }
 for _n in range(1, 21):
     FP[f"SW{_n}"] = "JLC_V1:CONN-SMD_HOTPLUGPAKAGE__C9900010116"
@@ -390,7 +369,7 @@ def sw_btn(ref, x, y, signal):
 # POWER — USB-C + ESD, TP4056 charger, AO3401A load share, switch, LDO
 def section_power():
     section_box(20, 25, 400, 140,
-                "POWER  (USB-C + TP4056 charge + AO3401A load-share + MSK12C02 switch + ME6211 3V3)",
+                "POWER  (USB-C + ESD + ME6211 3V3, VBUS LED rail)",
                 22, 23)
 
     jx, jy = 45.0, 70.0
@@ -425,66 +404,16 @@ def section_power():
         lx, _ = PIN_XY[esd][pn]
         tap_dir(spec, px, py, 'L' if lx < 0 else 'R')
 
-    tx, ty = 170.0, 55.0
-    tp = "V2:TP4056"
-    part(tp, "U4", "TP4056", tx, ty, ["1", "2", "3", "4", "5", "6", "7", "8"])
-    tspec = {"4": ("pwr", "VBUS"), "8": ("pwr", "VBUS"), "1": ("gnd",),
-             "2": ("lbl", "PROG"), "3": ("gnd",),
-             "5": ("lbl", "BAT+"), "7": ("lbl", "CHRG"), "6": ("lbl", "STDBY")}
-    for pn, spec in tspec.items():
-        px, py = ep(tx, ty, tp, pn)
-        lx, _ = PIN_XY[tp][pn]
-        tap_dir(spec, px, py, 'L' if lx < 0 else 'R')
-    rc_net("Device:R", "R3", "1.2k", 145.0, 110.0, ("lbl", "PROG"), ("gnd",))       # 1 A for 2000mAh cell
-    rc_net("Device:R", "R4", "10k", 200.0, 100.0, ("lbl", "CHRG"), ("lbl", "CHRG_SNS"))
-    rc_net("Device:R", "R5", "10k", 213.0, 100.0, ("lbl", "STDBY"), ("lbl", "STDBY_SNS"))
-    rc_net("Device:C", "C11", "10uF", 158.0, 110.0, ("pwr", "VBUS"), ("gnd",))
-
-    bx, by = 240.0, 110.0
-    conn = "Connector_Generic:Conn_01x02"
-    part(conn, "J2", "JST-PH-2 LiPo", bx, by, ["1", "2"])
-    p1 = ep(bx, by, conn, "1")
-    p2 = ep(bx, by, conn, "2")
-    tap_dir(("lbl", "BAT+"), p1[0], p1[1], 'L')
-    tap_dir(("gnd",), p2[0], p2[1], 'L')
-
-    diode_net("D26", "SS34", 250.0, 40.0, ("lbl", "VSYS"), ("pwr", "VBUS"))
-
-    qx, qy = 285.0, 55.0
-    fet = "V2:AO3401A"
-    part(fet, "Q1", "AO3401A", qx, qy, ["1", "2", "3"])
-    g = ep(qx, qy, fet, "1")
-    s = ep(qx, qy, fet, "2")
-    d = ep(qx, qy, fet, "3")
-    tap_dir(("pwr", "VBUS"), g[0], g[1], 'L', 5.08)
-    tap_dir(("lbl", "VSYS"), s[0], s[1], 'D')
-    tap_dir(("lbl", "BAT+"), d[0], d[1], 'U')
-    rc_net("Device:R", "R6", "100k", 265.0, 100.0, ("pwr", "VBUS"), ("gnd",))
-
-    rc_net("Device:R", "R7", "100k", 310.0, 80.0, ("lbl", "BAT+"), ("lbl", "VBAT_SNS"))
-    rc_net("Device:R", "R8", "47k", 310.0, 110.0, ("lbl", "VBAT_SNS"), ("gnd",))
-    rc_net("Device:C", "C8", "100nF", 325.0, 110.0, ("lbl", "VBAT_SNS"), ("gnd",))
-
-    sx, sy = 340.0, 40.0
-    psw = "V2:MSK12C02"
-    part(psw, "SW25", "MSK12C02", sx, sy, ["1", "2", "3"])
-    c = ep(sx, sy, psw, "2")
-    a = ep(sx, sy, psw, "1")
-    b = ep(sx, sy, psw, "3")
-    tap_dir(("lbl", "VSYS"), c[0], c[1], 'L')
-    tap_dir(("lbl", "VSYS_SW"), a[0], a[1], 'R')
-    tap_dir(("nc",), b[0], b[1], 'R')
-
     lx, ly = 360.0, 70.0
     ldo = "V2:ME6211C33M5G-N"
     part(ldo, "U5", "ME6211C33", lx, ly, ["1", "2", "3", "4", "5"])
-    lspec = {"1": ("lbl", "VSYS_SW"), "2": ("gnd",), "3": ("lbl", "VSYS_SW"),
+    lspec = {"1": ("pwr", "VBUS"), "2": ("gnd",), "3": ("pwr", "VBUS"),
              "4": ("nc",), "5": ("pwr", "+3V3")}
     for pn, spec in lspec.items():
         px, py = ep(lx, ly, ldo, pn)
         plx, _ = PIN_XY[ldo][pn]
         tap_dir(spec, px, py, 'L' if plx < 0 else 'R')
-    rc_net("Device:C", "C6", "1uF", 345.0, 110.0, ("lbl", "VSYS_SW"), ("gnd",))
+    rc_net("Device:C", "C6", "1uF", 345.0, 110.0, ("pwr", "VBUS"), ("gnd",))
     rc_net("Device:C", "C7", "1uF", 358.0, 110.0, ("pwr", "+3V3"), ("gnd",))
 
     fy = 33.0
@@ -497,9 +426,7 @@ def section_power():
     pwr("+3V3", 360.68, snap(fy) - 2.54)
     wire(360.68, snap(fy) - 2.54, 360.68, snap(fy))
     pwr_flag_at(360.68, snap(fy))
-    flag_label("BAT+", 378.46, 45.72)
-    flag_label("VSYS", 378.46, 58.42)
-    flag_label("VSYS_SW", 378.46, 71.12)
+
 
 
 # ================================================================ SECTION 2
@@ -508,21 +435,21 @@ ESP_SPECS = {
     "1": ("gnd",), "2": ("pwr", "+3V3"), "3": ("lbl", "EN"),
     "4": ("lbl", "ROW0"), "5": ("lbl", "ROW1"), "6": ("lbl", "ROW2"), "7": ("lbl", "ROW3"),
     "8": ("lbl", "ROW4"),
-    "9": ("lbl", "LCD_DC"), "10": ("lbl", "LCD_CS"), "11": ("lbl", "LCD_RST"),
-    "12": ("lbl", "LCD_MOSI"), "13": ("lbl", "USB_DM"), "14": ("lbl", "USB_DP"),
+    "9": ("nc",), "10": ("nc",), "11": ("nc",),
+    "12": ("nc",), "13": ("lbl", "USB_DM"), "14": ("lbl", "USB_DP"),
     "15": ("nc",),                  # GPIO3 strapping - keep free
     "16": ("nc",),                  # GPIO46 strapping - keep free
-    "17": ("lbl", "LCD_SCK"),
+    "17": ("nc",),
     "18": ("lbl", "COL0"), "19": ("lbl", "COL1"), "20": ("lbl", "COL2"),
     "21": ("lbl", "COL3"), "22": ("lbl", "COL4"),
-    "23": ("lbl", "LED_DATA"), "24": ("lbl", "CHRG_SNS"), "25": ("lbl", "STDBY_SNS"),
+    "23": ("lbl", "LED_DATA"), "24": ("nc",), "25": ("nc",),
     "26": ("nc",),                  # GPIO45 strapping - keep free
     "27": ("lbl", "IO0"),
     "28": ("nc",), "29": ("nc",), "30": ("nc",),   # GPIO35/36/37 PSRAM (N8R2)
     "31": ("nc",), "32": ("nc",),   # GPIO38/39 spare
     "33": ("lbl", "ENC_A"), "34": ("lbl", "ENC_B"), "35": ("lbl", "ENC_SW"),
     "36": ("lbl", "RXD"), "37": ("lbl", "TXD"),
-    "38": ("lbl", "VBAT_SNS"), "39": ("lbl", "LCD_BL"),
+    "38": ("nc",), "39": ("nc",),
     "40": ("gnd",), "41": ("gnd",),
 }
 
@@ -601,18 +528,18 @@ def section_matrix():
 # LED CHAIN — SN74AHCT1G125 (VCC=VSYS_SW) + 330R + 20x SK6812MINI-E
 def section_leds():
     section_box(20, 345, 790, 545,
-                "RGB LEDs  (U2 AHCT125 @VSYS_SW + 330R head + 20x SK6812MINI-E, 100nF each)", 22, 343)
+                "RGB LEDs  (U2 AHCT125 @VBUS + 330R head + 20x SK6812MINI-E, 100nF each)", 22, 343)
 
     bx, by = 45.0, 375.0
     buf = "JLC_V1:SN74AHCT1G125DBVR"
     part(buf, "U2", "SN74AHCT1G125", bx, by, ["1", "2", "3", "4", "5"])
     bspec = {"1": ("gnd",), "2": ("lbl", "LED_DATA"), "3": ("gnd",),
-             "4": ("lbl", "LED_DATA_BUF"), "5": ("lbl", "VSYS_SW")}
+             "4": ("lbl", "LED_DATA_BUF"), "5": ("pwr", "VBUS")}
     for pn, spec in bspec.items():
         px, py = ep(bx, by, buf, pn)
         lx, _ = PIN_XY[buf][pn]
         tap_dir(spec, px, py, 'L' if lx < 0 else 'R')
-    rc_net("Device:C", "C9", "100nF", 70.0, 375.0, ("lbl", "VSYS_SW"), ("gnd",))
+    rc_net("Device:C", "C9", "100nF", 70.0, 375.0, ("pwr", "VBUS"), ("gnd",))
     rc_net("Device:R", "R11", "330R", 85.0, 375.0, ("lbl", "LED_DATA_BUF"), ("lbl", "LED_D1"))
 
     led = "JLC_V1:SK6812MINI-E_C5149201"
@@ -628,48 +555,19 @@ def section_leds():
         dout = ep(x, y, led, "4")
         tap_dir(("gnd",), gnd_p[0], gnd_p[1], 'L', 5.08)
         tap_dir(("lbl", f"LED_D{idx + 1}"), din[0], din[1], 'L')
-        tap_dir(("lbl", "VSYS_SW"), vdd[0], vdd[1], 'R')
+        tap_dir(("pwr", "VBUS"), vdd[0], vdd[1], 'R')
         if idx < 19:
             tap_dir(("lbl", f"LED_D{idx + 2}"), dout[0], dout[1], 'R', 5.08)
         else:
             tap_dir(("nc",), dout[0], dout[1], 'R')
         rc_net("Device:C", f"C{12 + idx}", "100nF", x + 5.0, y + 17.78,
-               ("lbl", "VSYS_SW"), ("gnd",))
+               ("pwr", "VBUS"), ("gnd",))
 
 
 # ================================================================ SECTION 5
 # PERIPHERALS — ST7789V SPI LCD + backlight FET, EC11 encoder
 def section_periph():
-    section_box(270, 150, 410, 335, "PERIPHERALS  (1.14in ST7789V SPI LCD + EC11)", 272, 148)
-
-    ox, oy = 330.0, 195.0
-    lcd = "V2:N114-2413THBIG01-H13"
-    part(lcd, "LCD1", "N114-2413THBIG01-H13", ox, oy,
-         [str(i) for i in range(1, 14)])
-    lspec = {
-        "1": ("nc",), "2": ("nc",), "9": ("nc",),
-        "3": ("lbl", "LCD_MOSI"), "4": ("lbl", "LCD_SCK"), "5": ("lbl", "LCD_DC"),
-        "6": ("lbl", "LCD_RST"), "7": ("lbl", "LCD_CS"),
-        "8": ("gnd",), "13": ("gnd",),
-        "10": ("pwr", "+3V3"),
-        "11": ("lbl", "LCD_LEDK"), "12": ("lbl", "LCD_LEDA"),
-    }
-    for pn, spec in lspec.items():
-        px, py = ep(ox, oy, lcd, pn)
-        tap_dir(spec, px, py, 'L')
-    rc_net("Device:C", "C10", "100nF", 388.0, 180.0, ("pwr", "+3V3"), ("gnd",))
-    # backlight: +3V3 -> R12 -> LEDA ... LEDK -> Q2 drain; Q2 gate = LCD_BL PWM
-    rc_net("Device:R", "R12", "22R", 360.0, 180.0, ("pwr", "+3V3"), ("lbl", "LCD_LEDA"))
-    qx, qy = 375.0, 240.0
-    nfet = "V2:AO3400A"
-    part(nfet, "Q2", "AO3400A", qx, qy, ["1", "2", "3"])
-    g = ep(qx, qy, nfet, "1")
-    s = ep(qx, qy, nfet, "2")
-    d = ep(qx, qy, nfet, "3")
-    tap_dir(("lbl", "LCD_BL"), g[0], g[1], 'L', 5.08)
-    tap_dir(("gnd",), s[0], s[1], 'D')
-    tap_dir(("lbl", "LCD_LEDK"), d[0], d[1], 'U')
-    rc_net("Device:R", "R13", "10k", 352.0, 290.0, ("lbl", "LCD_BL"), ("gnd",))
+    section_box(270, 150, 410, 335, "PERIPHERALS  (EC11 encoder)", 272, 148)
 
     ex, ey = 320.0, 260.0
     enc = "JLC_V1:EC11E1834403"
@@ -703,7 +601,7 @@ out = f'''(kicad_sch
 \t\t(title "AgentDeckV2")
 \t\t(rev "V0.1")
 \t\t(company "Barakaeli Lawuo")
-\t\t(comment 1 "Wireless 20-key AI control deck - LCD, LiPo, BLE+USB, ESP32-S3")
+\t\t(comment 1 "20-key AI control deck - ESP32-S3, USB powered, BLE capable")
 \t)
 \t(lib_symbols
 {lib_symbols}

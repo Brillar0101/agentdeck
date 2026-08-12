@@ -1,9 +1,10 @@
 # AgentDeck V2: wireless deck with status LCD
 
-V2 competes head-on with the Work Louder Creator Micro 2 PRO and outgrows
-it: 20 keys instead of 13, encoder, joystick, agent-state RGB, wireless with
-a built-in battery, plus a small always-on status screen the Creator Micro
-does not have.
+V2 outgrows the Creator Micro 2: 20 keys instead of 13, encoder, joystick,
+agent-state RGB, on the ESP32-S3 platform (native USB, BLE capable). The
+LCD and battery that were in earlier drafts were cut on 2026-08-11: V2 is
+USB powered, which keeps the board at V1's power simplicity and the BOM
+lean. Battery and screen remain V3/V4 territory.
 
 Target spec against the competition:
 
@@ -11,9 +12,9 @@ Target spec against the competition:
 |---|---|---|
 | Keys | 13 mechanical + touch | 20 Kailh Choc hot-swap (4 x 5 grid) |
 | Encoder / joystick | 1 / 1 | 1 / 1 (same EC11 + SKQUCAA010) |
-| Agent status | per-key RGB | per-key RGB + 1.14" LCD text panel |
-| Connectivity | BLE + USB-C | BLE + USB-C |
-| Battery | 2100 mAh | 2000 mAh LiPo (103450 cell) |
+| Agent status | per-key RGB | per-key RGB |
+| Connectivity | BLE + USB-C | USB-C (BLE capable, USB powered) |
+| Battery | 2100 mAh | none (USB powered) |
 | Frame | CNC aluminum | printed case (V1 tooling), CNC later |
 | Software | proprietary Input app | open firmware + text-file config |
 
