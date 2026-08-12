@@ -88,7 +88,7 @@ layout = {
     "SW26": (32.0, 28.0, 0, False),     # BOOT
     "SW27": (41.0, 28.0, 0, False),     # RESET
     "J3": (5.5, 50.0, 90, False),       # UART prog pads, left edge
-    "ENC1": (37.0, 13.0, 0, False),     # dial left of USB
+    "ENC1": (39.0, 13.0, 0, False),     # dial left of USB
     "J1": (USB_X, 4.4, 180, False),     # USB-C, mouth over the top edge
     "U3": (68.5, 5.3, 0, False),        # ESD at the connector
     "R1": (49.0, 7.9, 0, False),        # CC1 5.1k
@@ -109,8 +109,8 @@ layout = {
     "U4": (100.0, 8.0, 0, False),       # TP4056
     "R3": (95.0, 14.5, 0, False),       # PROG 1.2k
     "C11": (99.5, 14.5, 0, False),      # VBUS 10uF
-    "Q1": (107.5, 6.0, 0, False),       # AO3401A load share
-    "R6": (104.0, 14.5, 0, False),      # gate bleed 100k
+    "Q1": (106.5, 13.0, 90, False),       # AO3401A load share
+    "R6": (99.5, 19.0, 0, False),      # gate bleed 100k
     "D26": (105.5, 19.0, 0, False),     # SS34 VBUS->VSYS
     "U5": (99.0, 24.5, 0, False),       # ME6211 LDO
     "C6": (94.0, 29.5, 0, False),
@@ -280,7 +280,10 @@ def main():
     board = pcbnew.CreateEmptyBoard()
     board.SetFileName(BRD)
     bds = board.GetDesignSettings()
-    bds.SetCopperLayerCount(2)
+    bds.SetCopperLayerCount(4)
+    bds.m_TrackMinWidth = mm(0.1)
+    if hasattr(bds, "m_MinClearance"):
+        bds.m_MinClearance = mm(0.13)
     if hasattr(bds, "m_CopperEdgeClearance"):
         bds.m_CopperEdgeClearance = mm(0.3)
 
@@ -295,8 +298,13 @@ def main():
             missing.append(fpid)
             continue
         fp.SetReference(ref)
+        r = fp.Reference()
+        r.SetVisible(True)
+        r.SetTextSize(pcbnew.VECTOR2I(mm(0.7), mm(0.7)))
+        r.SetTextThickness(mm(0.11))
         fix_models(fp, fpid)
-        if ref == "J1":
+        if ref == "J1" or ref.startswith("SW"):
+            # locating pegs modeled as zero-annulus PTH -> make NPTH
             for pad in fp.Pads():
                 if not pad.GetNumber() and pad.HasHole():
                     pad.SetAttribute(pcbnew.PAD_ATTRIB_NPTH)
