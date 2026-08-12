@@ -152,11 +152,16 @@ battery sense (1) + charge status (1) = 25. Comfortable headroom.
 2. LCD footprint + symbol - DONE (pulled from LCSC, direct-solder FPC)
 3. Schematic - DONE: `v2/tools/gen_schematic.py` generates
    `v2/hardware/AgentDeckV2.kicad_sch`; ERC 0 errors, 0 warnings
-4. Layout on the new ~95 x 112 outline; battery keep-out and antenna
-   keep-out are the two new placement constraints (module antenna must
-   overhang a copper-free zone at the board edge)
-5. Case: re-run the V1 generator with a deeper tray and LCD window
-6. Firmware: V3 firmware tree, V1 keymap, LCD status page
+   (board grew to 112 x 112 mm during layout - 5 columns at V1 key
+   spacing plus the top control strip need the full square)
+4. Layout - DONE: `v2/tools/place_pcb.py` + `export_dsn.py` +
+   freerouting + `finish_v2.py`. 112 x 112 mm, 4 copper layers,
+   126 footprints, fully routed: 0 DRC errors, 0 unconnected.
+   GND flooded on all four layers, VSYS_SW LED pour on B.Cu,
+   antenna keep-out at the top edge, designators on silk.
+5. Case: re-run the V1 generator with a deeper tray and LCD window - TODO
+6. Firmware: V3 firmware tree, V1 keymap, LCD status page - TODO
+7. Fab outputs (gerbers, BOM, CPL) - TODO
 
 ## Open questions
 
