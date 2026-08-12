@@ -114,7 +114,7 @@ layout = {
 for idx in range(20):
     r, c = idx // 5, idx % 5
     kx, ky = COLS[c], ROWS[r]
-    layout[f"SW{idx + 1}"] = (kx, ky, 0, False)
+    layout[f"SW{idx + 1}"] = (kx, ky, 0, True)   # socket on the back
     layout[f"D{idx + 1}"] = (kx - 5.0, ky - 6.0, 0, True)
     led_i = r * 5 + (c if r % 2 == 0 else 4 - c)      # serpentine LED order
     layout[f"LED{led_i + 1}"] = (kx, ky + 4.8, 180 if r % 2 else 0, True)
