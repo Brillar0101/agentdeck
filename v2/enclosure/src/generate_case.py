@@ -180,12 +180,12 @@ for o in scratch:
 for o in (lid, tray, capobj):
     bpy.context.view_layer.objects.active = o
     bv = o.modifiers.new("soften", 'BEVEL')
-    bv.width = 0.0006
-    bv.segments = 3
+    bv.width = 0.0012
+    bv.segments = 4
     bv.limit_method = 'ANGLE'
     bv.angle_limit = 0.698
     bpy.ops.object.modifier_apply(modifier=bv.name)
-print("edges softened: 0.6mm bevel")
+print("edges softened: 1.2mm bevel")
 
 # USB port cut post-bevel (V1 lesson: a bevel chokes small openings).
 # The port pierces the LID's front wall - the connector sits on the top face.
