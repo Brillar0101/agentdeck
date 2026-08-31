@@ -1,7 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "V2")(type "KiCad")(uri "${KIPRJMOD}/V2.kicad_sym")(options "")(descr ""))
-  (lib (name "JLC")(type "KiCad")(uri "${KIPRJMOD}/JLC.kicad_sym")(options "")(descr ""))
-  (lib (name "JLC_V1")(type "KiCad")(uri "${KIPRJMOD}/../../v1/hardware/JLC.kicad_sym")(options "")(descr ""))
-  (lib (name "AgentDeck_Custom")(type "KiCad")(uri "${KIPRJMOD}/../../v1/hardware/AgentDeck_Custom.kicad_sym")(options "")(descr ""))
-)

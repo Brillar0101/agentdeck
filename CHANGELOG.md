@@ -9,27 +9,8 @@ Versions are hardware revisions, not software releases.
 
 ## [Unreleased]
 
-### V2 (redesigned)
-- V2 redefined as a wireless Creator Micro 2 PRO competitor: V1 control
-  surface on the V3 ESP32-S3 power/radio platform. BLE + USB-C, built-in
-  2000 mAh 103450 LiPo, 20 keys in a diode matrix, and a 1.14" 240x135 ST7789V status LCD (LCSC
-  C2890618, stock-confirmed). Replaces the earlier PowerDeck two-deck
-  concept. Design doc `v2/DESIGN.md`, parts manifest `v2/PARTS.yaml`.
-
-### V4 (started)
-- Voice + screen successor under `v4/`: V3 platform plus I2S MEMS mic with
-  on-device wake word (ESP-SR), NS4168 class-D amp + speaker, 1.69" 240x280
-  ST7789 touch LCD (replaces the supply-fragile 0.96" OLED), second EC11.
-- Scaffold: `v4/DESIGN.md` (deltas, audio placement rules 11-14, phase
-  plan) and `v4/PARTS.yaml` (carried lines live-confirmed 2026-07-29; new
-  audio/LCD lines stock-checked - NS4168 confirmed, mic and LCD gated VERIFY).
-
-### V3 (in progress)
-- New hand-solderable version under `v3/`: ESP32-S3-WROOM, 24-key 4x6 Choc matrix,
-  0.96" OLED, capacitive touch PTT, LiPo + TP4056 charging, USB-C + BLE HID.
-- Parts manifest `v3/PARTS.yaml` (2D/3D dims, LCSC stock) enforced by
-  `v3/tools/verify_parts.py`; design doc `v3/DESIGN.md`; V3 tools are
-  git-tracked (unlike V1 generators).
+- Removed the unbuilt V2-V4 paper designs. The project refocuses on
+  manufacturing and validating V1 before any successor is designed.
 
 ## [1.0.0] - 2026-08-11
 

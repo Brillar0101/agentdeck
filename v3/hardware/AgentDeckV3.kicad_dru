@@ -1,9 +1,0 @@
-(version 1)
-
-# The TYPE-C-31-M-12 land pattern (V1-proven, easyeda origin) has 0.10 mm
-# between its wide VBUS/GND custom pads and the 0.5 mm-pitch signal pads.
-# That is the connector's own geometry, not a routing error - relax the
-# clearance check inside the marked connector area only.
-(rule usbc_finepitch
-  (condition "A.intersectsArea('usb_area') && B.intersectsArea('usb_area')")
-  (constraint clearance (min 0.05mm)))

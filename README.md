@@ -45,14 +45,9 @@ and a physical board can be traced back to the exact design it was made from.
 
 ## Versions
 
-V1 is complete. V2 through V4 exist as designs, not hardware.
-
 | Version | What it is | Where |
 |---|---|---|
 | **V1** (this release) | 95 x 95 mm 4-layer RP2040 board, 13 keys, JLCPCB PCBA | `v1/hardware/` |
-| V2 | Creator Micro 2 competitor: 20 keys, ESP32-S3, USB powered, BLE capable | `v2/`, [design notes](v2/DESIGN.md) |
-| V3 | hand-solderable ESP32-S3 redesign: 24 keys, OLED, touch, LiPo, USB + BLE | `v3/`, [design notes](v3/DESIGN.md) |
-| V4 | V3 platform plus voice (wake word, mic, speaker) and a 1.69" touch LCD | `v4/`, [design notes](v4/DESIGN.md) |
 
 ## Status
 
@@ -79,7 +74,6 @@ and has its own README where the workflow needs explaining.
 | `v1/host/` | `agentdeck_bridge.py`, the Claude Code hook bridge |
 | `v1/fab/` | Gerbers, drill files, BOM and CPL for JLCPCB |
 | `docs/` | design notes, datasheets, reference material, renders in `docs/img/` |
-| `v3/`, `v4/` | the V3 and V4 designs (boards, parts manifests, tools) |
 | `LICENSES/` | full licence texts |
 
 ## Hardware

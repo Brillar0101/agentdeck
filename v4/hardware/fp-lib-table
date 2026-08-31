@@ -1,7 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "V4")(type "KiCad")(uri "${KIPRJMOD}/V4.pretty")(options "")(descr "V4 footprints: LCD 1x12 module, MEMS mic - drawn in Phase 2"))
-  (lib (name "V3")(type "KiCad")(uri "${KIPRJMOD}/../../v3/hardware/V3.pretty")(options "")(descr "V3 footprints reused: ESP32-S3 module, ChocV1_Direct, MSK12C02, ESOP-8_TP4056 (also used for U6 NS4168)"))
-  (lib (name "JLC_V1")(type "KiCad")(uri "${KIPRJMOD}/../../hardware/JLC.pretty")(options "")(descr "V1 JLCPCB/LCSC footprints: USB-C, SK6812, tact, EC11, SOT-23-5/6"))
-  (lib (name "AgentDeck")(type "KiCad")(uri "${KIPRJMOD}/../../hardware/AgentDeck.pretty")(options "")(descr "V1 custom footprints: TouchPad_D12, ProgPads_1x4"))
-)
