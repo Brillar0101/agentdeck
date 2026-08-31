@@ -91,9 +91,16 @@ deck, without alt-tabbing to check status.
 
 ## V2 - wireless platform
 
-Decision (2026-08-30): AgentDeck goes wireless. V2 is V1's 13-key control
-surface on the power/radio platform recovered from the deleted V3 design
-(git history, pre-297fabb): ESP32-S3-WROOM, LiPo + charging, USB-C + BLE.
+Decision (2026-08-30): AgentDeck goes wireless. V2 is a 20-key (4x5)
+control surface on the power/radio platform recovered from the deleted V3
+design (git history, pre-297fabb): ESP32-S3-WROOM, LiPo + charging,
+USB-C + BLE.
+
+Key layout (decided 2026-08-30): fixed system row (interrupt / PTT /
+record / mode - never remapped) + 8 agent keys + 8 action keys in a diode
+matrix. An action row doubles as the pipeline progress bar. Board grows to
+roughly 115 x 95 mm. V1 stays 13 keys as designed; it is the testbed, not
+the product surface.
 
 Architecture:
 - ESP32-S3-WROOM module (BLE + USB in one chip; module carries modular
