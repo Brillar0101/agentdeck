@@ -41,6 +41,13 @@ macro pad could replicate it.
   Markdown notes (summary / decisions / action items) to a configured folder
 - Token awareness without a screen: a configured key shifts green -> amber ->
   red as the rate-limit window burns; rate-limited state gets its own colour
+- Modes (layered layouts, Stream Deck-style): named layouts - Agents /
+  Dispatch / Desk - switched by encoder press and auto-switched by context
+  (recording flips to Desk). Hard cap of 3 modes. Each mode has its own
+  colour theme so the active mode reads at a glance; a host-side HUD overlay
+  flashes the current layout for 2 s on mode change (keys have no displays -
+  per-key e-paper labels stay parked and are the eventual fix). The
+  interrupt key is mode-invariant: it means stop in every mode, always
 
 ### Platform
 - Linux and macOS both first-class
