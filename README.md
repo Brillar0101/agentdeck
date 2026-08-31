@@ -49,6 +49,9 @@ and a physical board can be traced back to the exact design it was made from.
 |---|---|---|
 | **V1** (this release) | 95 x 95 mm 4-layer RP2040 board, 13 keys, JLCPCB PCBA | `v1/hardware/` |
 
+What comes next (v1.0 bring-up, the v1.1 depth release, and what is
+deliberately parked) is in the [roadmap](docs/ROADMAP.md).
+
 ## Status
 
 | Part | State |
