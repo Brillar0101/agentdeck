@@ -34,6 +34,12 @@ macro pad could replicate it.
 - Focus-on-press: tmux-first (`switch-client` / `select-window` - works on
   X11, Wayland, and over SSH), window-manager raise as fallback only
 - Dispatch keys: saved prompts / slash commands bound per-project profile
+- Role packs: Dispatch mode loads a curated layout from a YAML pack file
+  (key -> label -> colour -> skill/command). Ships with a Software Engineer
+  pack bound to real slash commands (review, tdd, verify, build-fix,
+  security-scan, simplify, plan, continue, commit). Packs point at skills
+  and slash commands, never long inline prompt strings - skills version and
+  improve independently; frozen prompts rot. More packs are just more files
 - Push-to-talk: hold key, speak, release; local transcription to the active
   session (host microphone)
 - Meeting capture: record key toggles; solid red while recording (visible to
