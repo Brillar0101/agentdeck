@@ -40,6 +40,13 @@ macro pad could replicate it.
   security-scan, simplify, plan, continue, commit). Packs point at skills
   and slash commands, never long inline prompt strings - skills version and
   improve independently; frozen prompts rot. More packs are just more files
+- Pipelines: a pack key can run an ordered sequence of steps (each a
+  skill/command pointer plus a pass condition) instead of one action. The
+  key row is the progress bar - stages light green as they pass; a failing
+  stage goes red, halts the pipeline, and pressing it focuses the failure.
+  Examples: PCB release (ERC -> DRC -> gerbers -> BOM stock -> CPL -> tag),
+  SWE ship (test -> review -> security -> commit -> push). Pipelines are
+  always interruptible - the interrupt key aborts a running pipeline
 - Push-to-talk: hold key, speak, release; local transcription to the active
   session (host microphone)
 - Meeting capture: record key toggles; solid red while recording (visible to
