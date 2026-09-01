@@ -9,7 +9,24 @@ Versions are hardware revisions, not software releases.
 
 ## [Unreleased]
 
-- Removed the unbuilt V2-V4 paper designs. The project refocuses on
+### V2 (wireless platform, in design)
+- New `v2/`: the V3 ESP32-S3 / LiPo / BLE platform recovered from history
+  (pre-297fabb) and re-cut to the roadmap's 20-key 4x5 control surface.
+  Row 0 is the fixed system row (INT / PTT / REC / MODE / DND).
+- Touch pad removed; Alps SKQUCAA010 5-way joystick (V1 part) added on
+  GPIO15/16/17/18 + GPIO1. Battery pocket regrown to 34x50 mm for a 103450
+  2000 mAh cell on the right-hand strip; board stays 150x110 mm.
+- Schematic, symbol lib, netlist, placement and routing are script-generated
+  (`v2/tools`), ERC clean (0 errors; 72 pin-type warnings from vendor
+  symbols with "unspecified" pin types).
+- Stays 2-layer. The USB pair and the module decoupling comb are pre-routed
+  and locked; the USB-C clearance marker is no longer exported as a router
+  keepout. Links the scripted flow leaves open are hand-routed in KiCad.
+- Firmware re-cut for 20 keys, 3 modes, joystick `J` lines, system-row
+  roles via `K` lines, agent slots 1-8.
+- Charger stays TP4056 + load-share and battery level stays ADC: BQ24074 /
+  fuel-gauge parts break the hand-solder floor (recorded in ROADMAP).
+- Removed the unbuilt V2-V4 paper designs (297fabb). The project refocuses on
   manufacturing and validating V1 before any successor is designed.
 
 ## [1.0.0] - 2026-08-11

@@ -59,3 +59,10 @@ docs/reference/codex-micro-*.png
 
 # --- autorouter logs anywhere ---
 route*.log
+
+# router scratch
+v2/hardware/*.dsn
+v2/hardware/*.ses
+v2/hardware/_route_copy.*
+v2/hardware/*-backups/
+v2/hardware/fp-info-cache

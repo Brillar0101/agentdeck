@@ -96,30 +96,40 @@ control surface on the power/radio platform recovered from the deleted V3
 design (git history, pre-297fabb): ESP32-S3-WROOM, LiPo + charging,
 USB-C + BLE.
 
-Key layout (decided 2026-08-30): fixed system row (interrupt / PTT /
-record / mode - never remapped) + 8 agent keys + 8 action keys in a diode
-matrix. An action row doubles as the pipeline progress bar. Board grows to
-roughly 115 x 95 mm. V1 stays 13 keys as designed; it is the testbed, not
-the product surface.
+Key layout (decided 2026-08-30, cut 2026-09-01): 4x5 diode matrix. Row 0
+is the fixed system row - INT / PTT / REC / MODE / DND - never remapped;
+rows 1-3 are 15 assignable keys (8 agent keys + 7 action keys). An action
+row doubles as the pipeline progress bar. The board stays at V3's 150 x
+110 mm: the column freed by going 6 -> 5 becomes the right-hand strip that
+holds the 103450 battery pocket and the joystick. V1 stays 13 keys as
+designed; it is the testbed, not the product surface.
 
 Architecture:
 - ESP32-S3-WROOM module (BLE + USB in one chip; module carries modular
   FCC/CE radio certification, which a commercial version inherits)
 - Dual-mode: BLE HID + custom GATT for the state protocol; USB-C is
   charger and full wired fallback - plugged in, the cable wins
-- Protected 103450-class LiPo (~2000 mAh), power-path charger (BQ24074
-  class, run-while-charging), fuel gauge, charge LED, ship mode
+- Protected 103450-class LiPo (~2000 mAh). Charger stays TP4056 + AO3401A
+  load-share FET (run-while-charging, battery isolated when USB present)
+  and battery level stays the ADC divider: the BQ24074 / fuel-gauge parts
+  are QFN/DFN and break the hand-solder floor. Swap in if V2 ever moves to
+  JLCPCB assembly. Charge LED and ship mode carried from the V3 design
+- 2-layer board (decided 2026-09-01): the scripted router closes all but a
+  few links; those are hand-routed in KiCad
 - Firmware: the Arduino/C++ port becomes primary (CircuitPython BLE on
   ESP32-S3 is not dependable)
 - Bridge grows a BLE transport (bleak) beside HID; every reconnect repaints
   full state so a BLE drop can never leave stale colours
-- Stretch only if free: the 0.96" OLED carried by the V3 design survives
-  the delta spec (would give the token screen early)
+- The 0.96" OLED carried by the V3 design is in (token screen lands early)
+- V3's capacitive touch pad is out: PTT is a mechanical key in the system
+  row. The Alps 5-way joystick from V1 is in, on GPIO15/16/17/18/1
 
 Phases:
 - A (wk 1): recover V3 assets to a `v2-wireless` branch, re-verify LCSC
-  stock, write the delta spec
-- B (wk 2-4): schematic + layout; RF keepout, battery bay in enclosure
+  stock, write the delta spec - DONE 2026-09-01 (see v2/DESIGN.md)
+- B (wk 2-4): schematic + layout; RF keepout, battery bay in enclosure -
+  schematic generated ERC-clean and PCB placed/autorouted 2026-09-01 via
+  v2/tools; remaining: review, enclosure regeneration, LCSC stock pass
 - C (wk 4-6): fab + PCBA; firmware port and BLE transport built while
   boards are in transit
 - D (wk 6-9): bring-up; measure 8 h battery target and <= 1 s BLE state

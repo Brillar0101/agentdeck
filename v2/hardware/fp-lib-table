@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "V2")(type "KiCad")(uri "${KIPRJMOD}/V2.pretty")(options "")(descr "V2 footprints: ESP32-S3 module (copied), OLED/JST/ChocDirect/MSK12C02/ESOP-8 drawn in Phase 2"))
+  (lib (name "JLC_V1")(type "KiCad")(uri "${KIPRJMOD}/../../v1/hardware/JLC.pretty")(options "")(descr "V1 JLCPCB/LCSC footprints: USB-C, SK6812, tact, EC11, SOT-23-5/6"))
+  (lib (name "AgentDeck")(type "KiCad")(uri "${KIPRJMOD}/../../v1/hardware/AgentDeck.pretty")(options "")(descr "V1 custom footprints: TouchPad_D12, ProgPads_1x4"))
+)
