@@ -41,7 +41,7 @@
 	(pad "1" thru_hole circle (at 0 -5.9) (size 2.4 2.4) (drill 1.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no))
 	(pad "2" thru_hole circle (at 5 -3.8) (size 2.4 2.4) (drill 1.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no))
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../hardware/JLC.3dshapes/ChocV1.wrl"
+	(model "${KIPRJMOD}/jlc3d/JLC.3dshapes/KEY-TH_CPG135001D0X.step"
 		(offset (xyz 0 0 3.0))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

@@ -165,7 +165,7 @@ LIBSYMS = {
     "JLC_V1:SK6812MINI-E_C5149201": (JLC_V1_LIB, "SK6812MINI-E_C5149201"),
     "JLC_V1:SN74AHCT1G125DBVR": (JLC_V1_LIB, "SN74AHCT1G125DBVR"),
     "JLC_V1:EC11E1834403": (JLC_V1_LIB, "EC11E1834403"),
-    "AgentDeck_Custom:SKQUCAA010": (CUSTOM_LIB, "SKQUCAA010"),
+    "JLC_V1:SKRHABE010": (JLC_V1_LIB, "SKRHABE010"),
     "AgentDeck_Custom:ProgPads_1x4": (CUSTOM_LIB, "ProgPads_1x4"),
 }
 
@@ -213,8 +213,9 @@ PIN_XY = {
     "JLC_V1:EC11E1834403": {"A": (-2.54, -7.62), "B": (2.54, -7.62), "C": (0.0, -7.62),
                             "D": (-2.54, 7.62), "E": (2.54, 7.62),
                             "F": (7.62, 0.0), "G": (-7.62, 0.0)},
-    "AgentDeck_Custom:SKQUCAA010": {"1": (-12.7, 5.08), "2": (-12.7, 0.0), "3": (-12.7, -5.08),
-                                    "6": (12.7, 5.08), "5": (12.7, 0.0), "4": (12.7, -5.08)},
+    "JLC_V1:SKRHABE010": {"1": (-10.16, 2.54), "2": (-10.16, 0.0), "3": (-10.16, -2.54),
+                          "4": (10.16, 2.54), "5": (10.16, 0.0), "6": (10.16, -2.54),
+                          "7": (0.0, 7.62), "8": (0.0, -7.62)},
     "AgentDeck_Custom:ProgPads_1x4": {"1": (-12.7, 3.81), "2": (-12.7, 1.27),
                                         "3": (-12.7, -1.27), "4": (-12.7, -3.81)},
 }
@@ -236,7 +237,7 @@ FP = {
     "ENC1": "JLC_V1:SW-TH_EC11E1820402",
     "D25": "Diode_SMD:D_SMA",
     "OLED1": "V2:OLED_HS96L03",
-    "JS1": "AgentDeck:SKQUCAA010",
+    "JS1": "V2:SW-SMD_SKRHABE010",
 }
 for _n in range(1, 21):
     FP[f"SW{_n}"] = "V2:ChocV1_Direct"
@@ -327,6 +328,23 @@ def place(lib_id, ref, value, x, y, angle, pins, props):
         f'\t\t\t\t\t(reference "{ref}")\n\t\t\t\t\t(unit 1)\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t)')
 
 
+LCSC_BY_REF = {
+    "U1": "C2913204", "U2": "C7484", "U3": "C7519", "U4": "C16581", "U5": "C841192",
+    "Q1": "C15127", "D25": "C8678", "J1": "C165948", "J2": "C295747", "SW25": "C431540",
+    "SW26": "C318884", "SW27": "C318884", "ENC1": "C361165", "JS1": "C139794",
+}
+LCSC_BY_VALUE = {
+    "100nF": "C14663", "10uF": "C15850", "1uF": "C28323", "10k": "C25804", "100k": "C25803",
+    "4.7k": "C23162", "5.1k": "C23186", "2.4k": "C22940", "330R": "C23138", "47k": "C25819",
+    "1N4148W": "C81598", "SK6812MINI-E": "C5149201",
+    "ChocV1": "C400229",          # Kailh CPG135001D01 - in the JLC library, stock 0 (consign)
+}
+
+
+def lcsc_for(ref, value):
+    return LCSC_BY_REF.get(ref) or LCSC_BY_VALUE.get(value, "")
+
+
 def part(lib_id, ref, value, x, y, pins):
     fp = FP.get(ref, "")
     place(lib_id, ref, value, x, y, 0, pins, [
@@ -335,6 +353,7 @@ def part(lib_id, ref, value, x, y, pins):
         prop("Footprint", fp, x, y, 0, hide=True),
         prop("Datasheet", "", x, y, 0, hide=True),
         prop("Description", "", x, y, 0, hide=True),
+        prop("LCSC", lcsc_for(ref, value), x, y, 0, hide=True),
     ])
 
 
@@ -343,6 +362,7 @@ def rc(lib_id, ref, value, x, y):
     place(lib_id, ref, value, x, y, 0, ["1", "2"], [
         prop("Reference", ref, x + 1.778, y - 1.016, 0, "left"),
         prop("Value", value, x + 1.778, y + 1.27, 0, "left"),
+        prop("LCSC", lcsc_for(ref, value), x, y, 0, hide=True),
         prop("Footprint", fp, x, y, 0, hide=True),
         prop("Datasheet", "", x, y, 0, hide=True),
         prop("Description", "", x, y, 0, hide=True),
@@ -534,7 +554,7 @@ def section_power():
     # --- LDO U5: VSYS_SW -> 3V3, CE tied high, 1uF in/out ---
     lx, ly = 360.0, 70.0
     ldo = "V2:ME6211C33M5G-N"
-    part(ldo, "U5", "ME6211C33", lx, ly, ["1", "2", "3", "4", "5"])
+    part(ldo, "U5", "RT9080-33GJ5", lx, ly, ["1", "2", "3", "4", "5"])   # same pinout as ME6211C33
     lspec = {"1": ("lbl", "VSYS_SW"), "2": ("gnd",), "3": ("lbl", "VSYS_SW"),
              "4": ("nc",), "5": ("pwr", "+3V3")}
     for pn, spec in lspec.items():
@@ -697,13 +717,16 @@ def section_periph():
     rc_net("Device:R", "R13", "4.7k", 373.0, 180.0, ("pwr", "+3V3"), ("lbl", "SCL"))
     rc_net("Device:C", "C10", "100nF", 388.0, 180.0, ("pwr", "+3V3"), ("gnd",))
 
-    # 5-way joystick JS1 (Alps SKQUCAA010, THT): directions + centre to GPIOs
-    # with internal pullups in firmware; COM (pin 4) to GND. V1 pin order kept.
+    # 5-way joystick JS1 (Alps SKRHABE010, SMD, JLCPCB C139794): A/B/C/D
+    # directions + CEN to GPIOs with internal pullups, COM (pin 5) to GND,
+    # pins 7/8 are the mounting pegs. Direction letters -> UP/LEFT/DOWN/RIGHT
+    # is a firmware constant; confirm on the bench (pins.h).
     jx, jy = 375.0, 240.0
-    joy = "AgentDeck_Custom:SKQUCAA010"
-    part(joy, "JS1", "SKQUCAA010", jx, jy, ["1", "2", "3", "4", "5", "6"])
-    jspec = {"1": ("lbl", "JOY_UP"), "2": ("lbl", "JOY_LEFT"), "3": ("lbl", "JOY_DOWN"),
-             "6": ("lbl", "JOY_CTR"), "5": ("lbl", "JOY_RIGHT"), "4": ("gnd",)}
+    joy = "JLC_V1:SKRHABE010"
+    part(joy, "JS1", "SKRHABE010", jx, jy, ["1", "2", "3", "4", "5", "6", "7", "8"])
+    jspec = {"1": ("lbl", "JOY_UP"), "6": ("lbl", "JOY_LEFT"), "3": ("lbl", "JOY_DOWN"),
+             "4": ("lbl", "JOY_RIGHT"), "2": ("lbl", "JOY_CTR"), "5": ("gnd",),
+             "7": ("nc",), "8": ("nc",)}
     for pn, spec in jspec.items():
         px, py = ep(jx, jy, joy, pn)
         jlx, _ = PIN_XY[joy][pn]

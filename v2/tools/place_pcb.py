@@ -16,6 +16,8 @@ Board: 150x110 mm, rounded corners r=6, y down, origin top-left.
 import os
 import re
 
+import sys
+
 import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -134,6 +136,10 @@ for idx in range(20):
     layout[f"C{12 + led_i}"] = (kx - 4.6, ky + 4.8, 90, True)
 
 
+sys.path.insert(0, HERE)
+from attach_3d import STEP as JLC_STEP  # noqa: E402
+
+
 def fix_models(fp, fpid):
     """Rewrite 3D model paths that are only valid in their home projects.
     Mutating FP_3DMODEL elements in place does not stick through SWIG -
@@ -148,6 +154,10 @@ def fix_models(fp, fpid):
         # KiCad 10 ships no SM4 (boss) variant - use the plain S2B model
         fn = fn.replace("JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
                         "JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
+        # JLCPCB/EasyEDA STEP models (v2/hardware/jlc3d, see tools/attach_3d.py)
+        fpname = fpid.split(":")[-1]
+        if fpname in JLC_STEP:
+            fn = "${KIPRJMOD}/jlc3d/JLC.3dshapes/" + JLC_STEP[fpname]
         fixed.append((fn, m.m_Offset, m.m_Rotation, m.m_Scale))
     fp.Models().clear()
     for fn, off, rot, sc in fixed:

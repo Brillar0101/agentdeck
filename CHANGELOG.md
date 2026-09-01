@@ -26,6 +26,12 @@ Versions are hardware revisions, not software releases.
   roles via `K` lines, agent slots 1-8.
 - Charger stays TP4056 + load-share and battery level stays ADC: BQ24074 /
   fuel-gauge parts break the hand-solder floor (recorded in ROADMAP).
+- Sourcing pass against the JLCPCB assembly library (2026-09-01): every
+  symbol now carries an `LCSC` field; `v2/fab/` holds the JLCPCB BOM, CPL
+  and consigned-parts list. LDO swapped ME6211C33 -> RT9080-33GJ5 (stock),
+  joystick swapped SKQUCAA010 (THT, unstocked) -> SKRHABE010 (SMD, C139794)
+  with the JLC library footprint. STEP models for all library parts pulled
+  into `v2/hardware/jlc3d` (`tools/attach_3d.py` wires them into a board).
 - Removed the unbuilt V2-V4 paper designs (297fabb). The project refocuses on
   manufacturing and validating V1 before any successor is designed.
 

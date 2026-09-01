@@ -16,7 +16,7 @@ meta:
   version: 2
   board: AgentDeckV2
   currency: USD
-  updated: 2026-09-01
+  updated: 2026-09-01         # every LCSC code re-checked against the JLCPCB assembly library 2026-09-01
 
 parts:
   - ref_prefix: U1
@@ -57,15 +57,15 @@ parts:
       pads are the 4-pin header row.
 
   - ref_prefix: SW
-    name: Kailh Choc V1 switch (direct solder, NOT from JLC)
-    lcsc: null                 # JLC has zero Choc stock (checked 2026-07-28)
+    name: Kailh Choc V1 switch CPG135001D01 (red) - in the JLC library, stock 0
+    lcsc: C400229              # C400230 brown / C400231 white; all 0 stock 2026-09-01 -> consign
     package: ChocV1-THT
     pitch_mm: null
     dims_2d: [15.0, 15.0]
     height_3d: 11.0
     dims_source: v1-blend      # measured: 15.00 x 15.00 x 11.00
     hand_solder: easy
-    stock: EXTERNAL            # AliExpress/kbdfans, ~$0.35/pc
+    stock: EXTERNAL            # consign (AliExpress/kbdfans ~$0.35/pc) until JLC restocks
     qty_per_board: 20
     notes: 3D assets exist - hardware/JLC.3dshapes/ChocV1.wrl + ChocKeycap.x3d
 
@@ -202,19 +202,19 @@ parts:
       AO3401A gate (VBUS) equals its source (VSYS) and the FET never turns on.
 
   - ref_prefix: U5
-    name: ME6211C33 3.3V LDO low-Iq
-    lcsc: C82942
-    package: SOT-23-5
+    name: RT9080-33GJ5 3.3V 600mA LDO, 2uA Iq (was ME6211C33 C82942 - JLC stock 17 on 2026-09-01)
+    lcsc: C841192
+    package: TSOT-23-5           # same VIN/GND/EN/NC/VOUT pinout as ME6211C33M5G
     pitch_mm: 0.95
     dims_2d: [3.7, 3.2]        # land-pattern extent (body+leads 2.9x2.8)
     height_3d: 1.2
     dims_source: v2-fp
     hand_solder: easy
-    stock: CONFIRMED           # 168,870 pcs live at LCSC
-    stock_date: 2026-07-29
-    unit_price: 0.0515
+    stock: CONFIRMED           # 58,888 pcs at JLCPCB 2026-09-01
+    stock_date: 2026-09-01
+    unit_price: 0.12
     qty_per_board: 1
-    notes: NOT AMS1117 (5mA Iq kills battery). 500mA is enough - LEDs run from VSYS.
+    notes: NOT AMS1117 (5mA Iq kills battery). 600mA covers ESP32-S3 RF peaks; LEDs run from VSYS.
 
   - ref_prefix: J2
     name: JST-PH 2.0 2-pin battery connector (right angle SMD)
@@ -263,20 +263,21 @@ parts:
     qty_per_board: 2
 
   - ref_prefix: JS1
-    name: Alps SKQUCAA010 5-way navigation switch (THT snap-in, V1 part)
-    lcsc: null                 # V1 sourced externally; LCSC alt C2685749-class VERIFY at order
-    package: SKQUCAA010-THT (hardware/AgentDeck.pretty, V1 footprint)
+    name: Alps SKRHABE010 5-way navigation switch, SMD (V1 had the THT SKQUCAA010)
+    lcsc: C139794
+    package: SMD-8P 7.5x7.5mm (V2.pretty/SW-SMD_SKRHABE010)
     pitch_mm: null
-    dims_2d: [10.0, 10.0]
-    height_3d: 8.0
+    dims_2d: [7.5, 7.5]
+    height_3d: 3.0
     dims_source: datasheet
     hand_solder: easy
-    stock: VERIFY
+    stock: CONFIRMED           # 4,709 pcs at JLCPCB 2026-09-01, extended part
     stock_date: 2026-09-01
-    unit_price: 1.20
+    unit_price: 0.79
     qty_per_board: 1
     notes: Replaces the V3 touch pad; PTT is now a key in the fixed system row.
-      Directions + centre to GPIO15/16/17/18/1 (firmware pullups), COM to GND.
+      A/B/C/D + CEN to GPIO15/16/17/18/1 (firmware pullups), COM to GND; the
+      direction-letter to UP/LEFT/DOWN/RIGHT mapping is a pins.h constant.
 
   - ref_prefix: BT1
     name: LiPo 103450 2000mAh protected, w/ JST-PH plug (NOT from JLC)
@@ -294,7 +295,7 @@ parts:
   # ---- passives (0603 basics, all CONFIRMED in stock 2026-07-28) ----
   - ref_prefix: R(0603)
     name: 0603 resistors (5.1k CC x2, 330R LED, 10k pulls, 2.4k PROG=500mA, 100k/47k Vbat div, 27R USB x2)
-    lcsc: basic-0603           # C23186 / C23138 / C25804 / C21190 / C25803 etc
+    lcsc: basic-0603           # 5.1k C23186, 330R C23138, 10k C25804, 100k C25803, 2.4k C22940, 47k C25819, 4.7k C23162
     package: "0603"
     pitch_mm: null
     dims_2d: [1.6, 0.8]
@@ -307,7 +308,7 @@ parts:
 
   - ref_prefix: C(0603/0805)
     name: 0603 100nF decoupling + 0805 10uF/22uF bulk
-    lcsc: basic-0603-0805      # C14663 / C15850 / C45783
+    lcsc: basic-0603-0805      # 100nF C14663, 10uF C15850, 1uF C28323 (all BASIC, 2026-09-01)
     package: 0603/0805
     pitch_mm: null
     dims_2d: [2.0, 1.25]       # worst case 0805

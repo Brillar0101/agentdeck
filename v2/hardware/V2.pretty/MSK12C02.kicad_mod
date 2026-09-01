@@ -43,7 +43,7 @@
 	(pad "" smd rect (at -4.1 -1.9) (size 1.4 1.8) (layers "F.Cu" "F.Paste" "F.Mask"))
 	(pad "" smd rect (at 4.1 -1.9) (size 1.4 1.8) (layers "F.Cu" "F.Paste" "F.Mask"))
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step"
+	(model "${KIPRJMOD}/jlc3d/JLC.3dshapes/SW-SMD_3P-L6.6-W2.7-LS7.8-P1.50.step"
 		(offset (xyz 0 0 0))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
