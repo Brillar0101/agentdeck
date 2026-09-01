@@ -45,8 +45,8 @@
 	(pad "" np_thru_hole circle (at -11.35 -16.2) (size 2.2 2.2) (drill 2.2) (layers "*.Cu" "*.Mask"))
 	(pad "" np_thru_hole circle (at 11.35 -16.2) (size 2.2 2.2) (drill 2.2) (layers "*.Cu" "*.Mask"))
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Display.3dshapes/Adafruit_SSD1306.step"
-		(offset (xyz 0 -9.6 1.6))
+	(model "${KIPRJMOD}/jlc3d/JLC.3dshapes/OLED_HS96L03.wrl"
+		(offset (xyz 0 0 0))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)
