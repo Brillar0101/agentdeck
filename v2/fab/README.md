@@ -5,9 +5,9 @@ Sourcing was re-checked against the JLCPCB assembly library on 2026-09-01
 
 | File | What |
 |---|---|
-| `jlcpcb-bom.csv` | JLCPCB BOM (Comment, Designator, Footprint, LCSC Part #) - 26 lines, 118 placements |
+| `jlcpcb-bom.csv` | JLCPCB BOM (Comment, Designator, Footprint, LCSC Part #) - 27 lines, 119 placements |
 | `jlcpcb-cpl.csv` | JLCPCB pick-and-place, filtered to BOM designators |
-| `consigned-parts.csv` | parts JLCPCB does not stock: OLED breakout, prog pads (no part), battery |
+| `consigned-parts.csv` | parts JLCPCB does not stock: prog pads (no part), battery |
 | `kicad-pos.csv` | raw KiCad position export the CPL was made from |
 
 Regenerate the CPL after routing changes nothing - positions are fixed - but
@@ -34,8 +34,8 @@ reproduces `jlcpcb-bom.csv`.
   stocked) -> SKRHABE010 C139794 (SMD, 4.7k in stock).
 - Kailh Choc CPG135001D01/02/03 (C400229/230/231) ARE in the library but at
   zero stock - consigned until they restock; hand-soldered anyway (THT).
-- The 0.96" OLED exists at JLC only as bare COG glass (C5248080) - the
-  4-pin breakout stays consigned.
+- The 0.96" OLED is the JLCPCB library module C5248080 (HS96L03W2C03, 4-pin
+  THT header) with JLC's own footprint and STEP model.
 
 ## 3D models
 

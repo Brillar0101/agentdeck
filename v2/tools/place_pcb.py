@@ -79,7 +79,7 @@ layout = {
     "U3": (83.5, 5.3, 0, False),        # ESD at the connector
     "R1": (63.5, 7.9, 0, False),        # CC1 5.1k (CC1 pre-routed on B.Cu)
     "R2": (68.0, 7.9, 0, False),        # CC2 5.1k
-    "OLED1": (67.0, 28.6, 0, False),
+    "OLED1": (67.0, 28.6, 180, False),  # JLC module: body extends +Y, so 180 keeps it above the keys
     "R12": (56.0, 31.0, 0, False),      # SDA pullup
     "R13": (59.5, 31.0, 0, False),      # SCL pullup
     "C10": (63.0, 31.0, 0, False),      # OLED 100nF

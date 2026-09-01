@@ -35,17 +35,17 @@ parts:
     notes: MCU. Native USB HID + BLE. Keep antenna end overhanging board edge keepout.
 
   - ref_prefix: OLED1
-    name: Generic 0.96" OLED breakout 128x64 I2C 4-pin (SSD1306/SSD1315)
-    lcsc: null                 # DECISION 2026-07-29: sourced externally.
-    package: 4-pin-header-module
+    name: HS96L03W2C03 0.96" 128x64 I2C OLED module, 4-pin header (SSD1315)
+    lcsc: C5248080             # JLCPCB library part with its own footprint + STEP (2026-09-01)
+    package: OLED-TH_L27.8-W27.2-P2.54 (V2.pretty/OLED-TH_HS96L03_C5248080)
     pitch_mm: 2.54
     dims_2d: [27.0, 27.5]      # common breakout PCB incl. header row
     height_3d: 4.0             # PCB + glass + header profile above our pads
     dims_source: datasheet
     hand_solder: easy          # 4 pads at 2.54mm via pin header
-    stock: EXTERNAL            # AliExpress/Amazon/Adafruit, ~$2, ubiquitous
-    stock_date: 2026-07-29
-    unit_price: 2.00
+    stock: CONFIRMED           # 6,381 pcs at JLCPCB 2026-09-01, extended part
+    stock_date: 2026-09-01
+    unit_price: 2.33
     qty_per_board: 1
     notes: LCSC stocks only bare 30-pin FPC COG glass in this class - verified
       against the C18723026 datasheet (docs/datasheets/v2/x096.pdf, pin table

@@ -236,7 +236,7 @@ FP = {
     "SW27": "JLC_V1:SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
     "ENC1": "JLC_V1:SW-TH_EC11E1820402",
     "D25": "Diode_SMD:D_SMA",
-    "OLED1": "V2:OLED_HS96L03",
+    "OLED1": "V2:OLED-TH_HS96L03_C5248080",   # JLCPCB library module + STEP
     "JS1": "V2:SW-SMD_SKRHABE010",
 }
 for _n in range(1, 21):
@@ -332,6 +332,7 @@ LCSC_BY_REF = {
     "U1": "C2913204", "U2": "C7484", "U3": "C7519", "U4": "C16581", "U5": "C841192",
     "Q1": "C15127", "D25": "C8678", "J1": "C165948", "J2": "C295747", "SW25": "C431540",
     "SW26": "C318884", "SW27": "C318884", "ENC1": "C361165", "JS1": "C139794",
+    "OLED1": "C5248080",
 }
 LCSC_BY_VALUE = {
     "100nF": "C14663", "10uF": "C15850", "1uF": "C28323", "10k": "C25804", "100k": "C25803",
