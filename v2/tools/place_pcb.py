@@ -266,31 +266,18 @@ def text(board, t, x, y, size, layer, thick, justify=None, angle=0, mirror=False
 
 def add_silk(board):
     F, B = pcbnew.F_SilkS, pcbnew.B_SilkS
-    text(board, "AgentDeck V2 - princetekki.com", 24.0, 106.3, 1.6, F, 0.3,
-         justify="left")
-    text(board, "FLASH: hold BOOT - tap RST - release BOOT", 88.0, 105.3, 1.0,
-         F, 0.16, justify="left")
-    text(board, "OSHW - github.com/Brillar0101", 88.0, 107.3, 1.0, F, 0.16,
-         justify="left")
+    # Kept to what a person needs while holding the board. GPIO legend and
+    # flashing recipe live in firmware/AgentDeckV2/pins.h and the README.
+    text(board, "AgentDeck V2", 24.0, 106.3, 1.6, F, 0.3, justify="left")
     text(board, "BOOT", 34.0, 29.6, 1.0, F, 0.16)
     text(board, "RST", 44.0, 29.6, 1.0, F, 0.16)
     text(board, "3V3 TX GND RX", 6.5, 47.5, 1.0, F, 0.16, angle=0)
     text(board, "BAT+", 140.0, 21.5, 1.0, F, 0.16, justify="right")
     text(board, "GND", 140.0, 25.5, 1.0, F, 0.16, justify="right")
-    text(board, "JOY", 126.0, 92.5, 1.0, F, 0.16)
     text(board, "PWR", 146.5, 51.5, 1.0, F, 0.16)
-    text(board, "USB-C", 75.0, 10.2, 1.0, F, 0.16)
-    # pinout legend on the back (inside the battery pocket zone - flat area)
-    legend = ["AgentDeckV2  ESP32-S3-WROOM-1",
-              "ROW0-3=IO4-7  COL0-4=IO10-14",
-              "SDA=IO8 SCL=IO9  LED=IO21",
-              "JOY U/L/D/R=IO15/16/17/18 C=IO1",
-              "ENC A/B/SW=IO40/41/42  VBAT=IO2",
-              "UART TX=IO43 RX=IO44  USB=IO19/20"]
-    for i, line in enumerate(legend):
-        text(board, line, 125.0, 18.0 + 3.2 * i, 1.2, B, 0.2, mirror=True)
-    text(board, "BATTERY 103450 2000mAh POCKET - KEEP CLEAR", 125.0, 45.0, 1.2,
-         pcbnew.Dwgs_User, 0.2)
+    text(board, "github.com/Brillar0101/agentdeck", 125.0, 100.0, 1.2, B, 0.2,
+         mirror=True)
+    text(board, "103450 POCKET", 125.0, 45.0, 1.2, pcbnew.Dwgs_User, 0.2)
 
 
 # ---- pre-routes: nets freerouting could not close on V2 (runs 1-3) ---------
